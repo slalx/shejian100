@@ -10,12 +10,12 @@
 
 echo '我在php代码中开始连接数据库';
 
-require '/db/db_open.php';
+include '/db/db_open.php';
 
 echo '我在php代码中连接数据库结束';
 
 
-require '/db/db_close.php';
+include '/db/db_close.php';
 
 ?>
 </body>

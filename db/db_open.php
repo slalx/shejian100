@@ -1,5 +1,5 @@
 <?php 
-
+echo "定义数据库的变量";
 DEFINE('DB_HOST','42.96.139.171');
 DEFINE('DB_USER','root');
 DEFINE('DB_PASSWORD','41d16801c7');
