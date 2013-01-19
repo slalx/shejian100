@@ -10,12 +10,12 @@
 
 echo '我在php代码中开始连接数据库';
 
-include '/db/db_open.php';
+include 'http://42.96.139.171/db/db_open.php';
 
 echo '我在php代码中连接数据库结束';
 
 
-include '/db/db_close.php';
+include 'http://42.96.139.171/db/db_close.php';
 
 ?>
 </body>
