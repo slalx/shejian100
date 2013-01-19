@@ -17,7 +17,7 @@ DEFINE('DB_PASSWORD','41d16801c7');
 DEFINE('DB_NAME','shejian');
 
 echo "开始连接数据库<br>";
-$dbc = @mysql_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME) OR die('not conn mysql:'.mysql_connect_error() );
+$dbc = mysql_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME) OR die('not conn mysql:'.mysql_connect_error() );
 printf("connction success <br>");
 
 echo '我在php代码中连接数据库结束<br>';
