@@ -8,6 +8,7 @@
 	<div>我是张胜利</div>
 <?php 
 
+phpinfo();
 
 require '/db/db_open.php';
 
