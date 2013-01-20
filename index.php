@@ -14,13 +14,16 @@ echo "定义数据库的变量<br>";
 DEFINE('DB_HOST','42.96.139.171');
 DEFINE('DB_USER','root');
 DEFINE('DB_PASSWORD','41d16801c7');
-DEFINE('DB_NAME','shejian');
+DEFINE('DB_NAME','shejian100');
 
 echo "开始连接数据库<br>";
-$dbc = mysql_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME) OR die('not conn mysql:'.mysql_connect_error() );
-printf("connction success <br>");
-
+$con = mysql_connect("DB_HOST","DB_USER","DB_PASSWORD");
+if (!$con){
+  die('Could not connect: ' . mysql_error());
+}
+mysql_select_db(DB_NAME, $con);
 echo '我在php代码中连接数据库结束<br>';
+
 
 $name = '麻辣香锅'/*$_POST["name"]*/;
 echo $name."我传第的名字<br>";
@@ -34,7 +37,7 @@ printf("insert success<br>");
 
 
 
-mysql_close($dbc);
+mysql_close($con);
 ?>
 </body>
 </html>
