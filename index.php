@@ -6,10 +6,10 @@
 </head>
 <body>
 	<div>我是张胜利</div>
+<?php include './db/db_open.php'; ?>
 <?php 
 
 echo "包含<br>";
-require DB_HOST.'/db/db_open.php';
 
 $name = '麻辣香锅'/*$_POST["name"]*/;
 echo $name."我传第的名字<br>";
