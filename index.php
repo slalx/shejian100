@@ -17,7 +17,7 @@ DEFINE('DB_PASSWORD','41d16801c7');
 DEFINE('DB_NAME','shejian100');
 
 echo "开始连接数据库<br>";
-$con = mysql_connect("DB_HOST","DB_USER","DB_PASSWORD");
+$con = mysql_connect(DB_HOST,DB_USER,DB_PASSWORD);
 if (!$con){
   die('Could not connect: ' . mysql_error());
 }
