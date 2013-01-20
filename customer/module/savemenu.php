@@ -1,7 +1,7 @@
 
 <?php
 
-include '../db/db_open.php';
+include '../../db/db_open.php';
 
 for ($i=0;$i<count($_POST["name"]);$i++){
 	echo "插入第".$i."条记录";
@@ -13,5 +13,5 @@ for ($i=0;$i<count($_POST["name"]);$i++){
 	echo "插入第".$i."条记录";
 }
 
-include '../db/db_close.php';
+include '../../db/db_close.php';
 ?>
