@@ -25,7 +25,7 @@ if (!$r){
 printf("插入了一条d记录<br>");
 
 ?>
-<?php include './db/db_open.php'; echo "代码结束<br>";?>
+<?php include './db/db_close.php'; echo "代码结束<br>";?>
 </body>
 </html>
 
