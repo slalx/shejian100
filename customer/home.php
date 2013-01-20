@@ -2,8 +2,7 @@
     <head>
         <meta charset="utf-8">
         <title>客户中心</title>
-        <link rel="stylesheet" type="text/css" href="http://res.wx.qq.com/mpres/htmledition/style/common12946b.css">
-        <link rel="stylesheet" type="text/css" href="http://res.wx.qq.com/mpres/htmledition/style/emoji129516.css">
+        <link rel="stylesheet" type="text/css" href="/resource/common.css">
         <link href="http://res.wx.qq.com/mpres/htmledition/images/favicon125122.ico" rel="Shortcut Icon">
     </head>
     <body class="zh_CN indexPage">
