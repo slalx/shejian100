@@ -8,8 +8,8 @@
 	<div>我是张胜利</div>
 <?php 
 
-
-require '/db/db_open.php';
+echo "包含<br>";
+require DB_HOST.'/db/db_open.php';
 
 $name = '麻辣香锅'/*$_POST["name"]*/;
 echo $name."我传第的名字<br>";
@@ -22,10 +22,10 @@ $r = mysql_query($q);
 if (!$r){
   die('Error: ' . mysql_error());
 }
-printf("插入了一条记录<br>");
+printf("插入了一条d记录<br>");
 
 
-require '/db/db_close.php';
+require DB_HOST.'/db/db_close.php';
 
 ?>
 </body>
