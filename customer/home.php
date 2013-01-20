@@ -6,26 +6,9 @@
         <link href="http://res.wx.qq.com/mpres/htmledition/images/favicon125122.ico" rel="Shortcut Icon">
     </head>
     <body class="zh_CN indexPage">
-        <div id="header" class="header"> 
-            <div class="logoArea"> 
-                <a class="logo left block" href="/"> <img src="http://res.wx.qq.com/mpres/zh_CN/htmledition/images/logo1191e9.png" alt="微信公众平台"> </a> 
-                <div class="accountOp right"> 
-                    <span><a href="#">舌尖网</a></span> 
-                    <span class="none"><a href="#">帮助中心</a></span> 
-                    <span><a onclick="return WXM.logout();" href="/cgi-bin/logout?t=wxm-logout&amp;lang=zh_CN">退出</a></span> 
-                </div> 
-                <div class="clr"></div> 
-            </div> 
-            <div class="navigator"> 
-                <ul class="textLarge"> 
-                    <li class="selected"><a href="#" > 首页</a> </li> 
-                    <li><a href="#" > 实时消息</a> </li> 
-                    <li><a href="#" > 用户管理</a> </li> 
-                    <li><a href="#" > 群发消息</a> </li> 
-                    <li><a href="#" > 设置</a> </li> 
-                </ul> 
-            </div> 
-        </div>
+
+        <?php include './include/header.php'; ?>
+
         <div id="main" class="container">
             <div class="containerBox boxIndex"> 
                 <div class="mainPanel"> 
@@ -49,16 +32,7 @@
                 </div> 
             </div>
         </div>
-        <div id="footer" class="footer"> 
-            <div class="footer"> 
-                <div class="f12 textGray textEngraving"> 
-                    <a target="_blank" href="#">关于舌尖</a>&nbsp;|&nbsp; 
-                    <a target="_blank" href="#">服务协议</a>&nbsp;|&nbsp; 
-                    <a target="_blank" href="#">客服中心</a> 
-                </div>
-                <div>Copyright&nbsp;© 2012-2013 shejian. All Rights Reserved.</div> 
-            </div> 
-        </div>
+        <?php include './include/header.php'; ?>
     </body>
 </html>
 
