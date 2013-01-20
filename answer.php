@@ -6,7 +6,7 @@
 //define your token
 define("TOKEN", "shejian");
 $wechatObj = new wechatCallbackapiTest();
-$wechatObj->valid();
+$wechatObj->responseMsg();
 
 class wechatCallbackapiTest
 {
@@ -45,7 +45,7 @@ class wechatCallbackapiTest
 				if(!empty( $keyword ))
                 {
               		$msgType = "text";
-                	$contentStr = "Welcome to wechat world!";
+                	$contentStr = "欢迎来到舌尖网!";
                 	$resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
                 	echo $resultStr;
                 }else{
