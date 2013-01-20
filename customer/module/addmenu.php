@@ -9,16 +9,12 @@
 				<div class="msg-edit-area" id="msgEditArea" style="margin-top: 31px; "> 
 					<div class="rel msg-editer-wrapper"> 
 						<div class="msg-editer"> 
-							<label for="" class="block">标题</label> 
-							<input type="text" class="msg-input" id="title" value="爱的发声的发生地"> 
-							<label for="" class="block">封面</label> 
-							<a id="desc-block-link" href="javascript:(function(){jQuery('#desc-block').show();jQuery('#desc-block-link').hide()})()" class="url-link block" style="display: none; ">添加摘要</a> 
-							<label for="" class="block">正文</label> 
-							<a id="url-block-link" href="javascript:(function(){jQuery('#url-block').show();jQuery('#url-block-link').hide()})()" class="url-link" style="display: none; ">添加来源</a> 
-							<div id="url-block" class="none" style="display: block; "> 
-								<label for="" class="block">来源</label> 
-								<input type="text" class="msg-input" id="url" value=""> 
-							</div> 
+							<div>
+								<label for="">菜名</label> 
+								<input type="text" class="msg-input" value=""> 
+								<label for="">价格</label>
+								<input type="text" class="msg-input" value="">
+							</div>
 						</div> 
 						<div class="oh z shadow"> 
 							<span class="left ls"></span>
@@ -30,8 +26,7 @@
 				</div> 
 			</div> 
 			<p class="tc msg-btn"> 
-				<a href="javascript:;" id="previewAppMsg" class="btnGreen">发送预览</a> 
-				<a href="javascript:;" id="save" class="btnGreen">完成</a> 
+				<a href="javascript:;" id="save" class="btnGreen">保存</a> 
 			</p> 
 		</div>
 		<div class="clr"></div>
