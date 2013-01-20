@@ -22,7 +22,7 @@ $r = mysql_query($q);
 if (!$r){
   die('Error: ' . mysql_error());
 }
-printf("insert success<br>");
+printf("插入了一条记录<br>");
 
 
 require '/db/db_close.php';
