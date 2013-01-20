@@ -2335,41 +2335,6 @@ textarea[placeholder].placeholder { color: #aaa }
     width: 350px;
     color: #666;
 }
-#warningUser {
-    position: fixed;
-    *position: absolute;
-    top: 150px;
-    width: 540px;
-    left: 50%;
-    margin-left: -262px;
-    color: #000;
-    font-size: 14px;
-    background-color: #FFF;
-    border-radius: 10px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    z-index: 10000;
-    border: 1px solid #AAA;
-    overflow: hidden;
-}
-#warningUser .iconClose {
-    position: absolute;
-    top: 0;
-    right: 0;
-    cursor: pointer;
-}
-#warningUser .warningWrap {
-    background: url('/mpres/htmledition/images/warning.png') no-repeat scroll 0 0 transparent;
-    margin: 60px 35px 48px 46px;
-    padding-left: 60px;
-    min-height: 50px;
-}
-#warningUser .btnArea {
-    text-align: center;
-    padding: 5px 0;
-    border-top: 1px solid #AAA;
-    background-color: #CCC;
-}
 .regPage { font-size: 12px }
 .regPage .navigator { display: none }
 .regPage .containerBox {

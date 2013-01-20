@@ -7,8 +7,15 @@
     </head>
     <body class="zh_CN indexPage">
 
+        <?php 
+            $module = $_GET["module"];
+            if(!$module){
+                $module = 'homemodule';
+            }
+        ?>
+        
         <?php include './include/header.php'; ?>
-        <?php include './module/homemodule.php'?>
+        <?php include './module/'.$module.'.php'?>
         <?php include './include/footer.php'; ?>
     </body>
 </html>
