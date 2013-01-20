@@ -26,7 +26,7 @@ printf("插入了一条d记录<br>");
 
 
 require DB_HOST.'/db/db_close.php';
-
+echo "代码结束<br>";
 ?>
 </body>
 </html>
