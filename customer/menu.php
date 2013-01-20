@@ -8,7 +8,7 @@
     <body class="zh_CN indexPage">
 
         <?php include './include/header.php'; ?>
-        <?php include './module/homemodule.php'?>
+        <?php include './module/menumanager.php'; ?>
         <?php include './include/footer.php'; ?>
     </body>
 </html>
