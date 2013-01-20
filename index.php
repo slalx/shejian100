@@ -33,6 +33,9 @@ echo $name."我传第的名字<br>";
 $q = "insert into restaurant(name) VALUES ('".$name."')";
 echo $q."sql语句<br>";
 $r = mysql_query($q);
+if (!$r){
+  die('Error: ' . mysql_error());
+}
 printf("insert success<br>");
 
 
