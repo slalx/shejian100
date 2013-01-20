@@ -1,17 +1,12 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>微信公众平台</title>
+        <title>客户中心</title>
         <link rel="stylesheet" type="text/css" href="http://res.wx.qq.com/mpres/htmledition/style/common12946b.css">
         <link rel="stylesheet" type="text/css" href="http://res.wx.qq.com/mpres/htmledition/style/emoji129516.css">
         <link href="http://res.wx.qq.com/mpres/htmledition/images/favicon125122.ico" rel="Shortcut Icon">
     </head>
     <body class="zh_CN indexPage">
-        <div id="warningUser" class="none">
-            <div class="warningWrap"> 关于打击违法违规行为规范微信公众平台运营的公告：<br>微信公众平台一直致力于为用户提供文明健康、规范有序的网络环境。近期，我们在运营中发现部分公众帐号用户在下发消息中推送垃圾广告、骚扰信息甚至色情、暴力等违法违规的内容，或者进行强制、诱导分享，虚假、与帐号无关的推广等恶意行为。上述内容和行为已严重干扰了微信公众平台的正常运营，更涉及侵犯其他用户或第三方的合法权益。为了进一步规范平台运营，保障合法权益，我们将对违法违规内容进行清理，并对相关行为进行处罚。<br><a target="_blank" href="/cgi-bin/readtemplate?t=wxm-agreement&amp;type=info&amp;lang=zh_CN">查看微信公众平台服务协议</a></div>
-            <div class="btnArea"><button class="waringClose btnGreen">确定</button></div>
-            <div class="waringClose iconClose"></div>
-        </div>
         <div id="header" class="header"> 
             <div class="logoArea"> 
                 <a class="logo left block" href="/"> <img src="http://res.wx.qq.com/mpres/zh_CN/htmledition/images/logo1191e9.png" alt="微信公众平台"> </a> 
@@ -28,7 +23,6 @@
                     <li><a href="/cgi-bin/getmessage?t=wxm-message&amp;lang=zh_CN&amp;count=50" onclick="wx_get(2)"> 实时消息</a> </li> 
                     <li><a href="/cgi-bin/contactmanagepage?t=wxm-friend&amp;lang=zh_CN&amp;pagesize=10&amp;pageidx=0&amp;type=0&amp;groupid=0" onclick="wx_get(3)"> 用户管理</a> </li> 
                     <li><a href="/cgi-bin/masssendpage?t=wxm-send&amp;lang=zh_CN" onclick="wx_get(4)"> 群发消息</a> </li> 
-                    <li><a href="/cgi-bin/operate_appmsg?sub=list&amp;type=10&amp;subtype=3&amp;t=wxm-appmsgs-list-new&amp;pagesize=10&amp;pageidx=0&amp;lang=zh_CN" onclick="wx_get(5)"> 素材管理</a> </li> 
                     <li><a href="/cgi-bin/userinfopage?t=wxm-setting&amp;lang=zh_CN" onclick="wx_get(6)"> 设置</a> </li> 
                 </ul> 
             </div> 
@@ -53,7 +47,11 @@
                 <div class="extendPanel"> 
                     <div class="extInfo"> 
                         <h3>系统公告</h3> 
-                        <p>如果你在使用过程中有任何疑问或者建议，请加我们的公众号进行咨询反馈：weixingongzhong<br>联系邮箱：<a href="mailto:weixinmp@qq.com">weixinmp@qq.com</a><span class="sys-i-l"><a href="/cgi-bin/indexpage?t=wxm-systemi-p&amp;type=info&amp;lang=zh_CN">微信公众帐号“可信网址”申请指引</a><br></span><span class="sys-i-l"> <a href="/cgi-bin/readtemplate?t=wxm-systemi-msg&amp;type=info&amp;lang=zh_CN">公众平台新增加特性公告<span class="textNew">New</span></a><br></span></p> </div> <div class="extInfo"> <h3>新功能推荐</h3> <p>开放消息接口：有开发能力的第三方可以使用公众平台最新的接口，自主开发消息回复规则。 <a href="/cgi-bin/callbackprofile?t=wxm-callbackapi&amp;type=info&amp;lang=zh_CN">详情&gt;&gt;</a></p> 
+                        <p>如果你在使用过程中有任何疑问或者建议，请加我们的公众号进行咨询反馈：shejian_100<br>联系邮箱：<a href="mailto:shejian100@163.com">shejian100@163.com</a></a><br></span></p> 
+                    </div> 
+                    <div class="extInfo"> 
+                        <h3>新功能推荐</h3> 
+                        <p>商家广场 <a href="#">详情&gt;&gt;</a></p> 
                     </div> 
                 </div> 
             </div>
@@ -61,59 +59,14 @@
         <div id="footer" class="footer"> 
             <div class="footer"> 
                 <div class="f12 textGray textEngraving"> 
-                    <a target="_blank" href="http://www.tencent.com/zh-cn/index.shtml">关于腾讯</a>&nbsp;|&nbsp; 
+                    <a target="_blank" href="http://www.tencent.com/zh-cn/index.shtml">关于舌尖</a>&nbsp;|&nbsp; 
                     <a target="_blank" href="/cgi-bin/readtemplate?t=wxm-agreement&amp;type=info&amp;lang=zh_CN">服务协议</a>&nbsp;|&nbsp; 
                     <a target="_blank" href="http://kf.qq.com/special_auto/weixin.html">客服中心</a> 
                 </div>
                 <div>Copyright&nbsp;© 2012-2013 Tencent. All Rights Reserved.</div> 
             </div> 
         </div>
-        <script type="text/javascript" src="http://res.wx.qq.com/mpres/zh_CN/htmledition/js/jquery-1.7.2.min127738.js">
-    </script><script type="text/javascript" src="http://res.wx.qq.com/mpres/zh_CN/htmledition/js/wxm-core1292f3.js"></script>
-    <script type="text/javascript"> (function(jq){ var h = WXM.Helpers, getC = h.getCookie, setC = h.setCookie, cName = 'hasWarningUser', isSetC = getC(cName); //警告用户的cookie需要在退出后清除 WXM.logout = function(){ setC(cName, 1, -1);//set cookie setC('cb_api_open', 1, -1);//set cookie setC('cb_api_close', 1, -1);//set cookie } })(jQuery); </script> 
-    <!-- <script type="text/javascript" src="http://res.wx.qq.com/mpres/zh_CN/htmledition/js/noie6.js"></script> -->
-    <script id="tCommonHeaderNav" type="text/html"><#WXM#/*TEMPLATES*/#WXM#> <div class="navigator"> <ul class="textLarge"> <#WXM# var i=0,item; while(item = nav[i++]){ #WXM#> <li <#WXM# if (item.selected){ #WXM#> class="selected"><a href="<#WXM#=item.link#WXM#>" onclick="wx_get(<#WXM#=i#WXM#>)"> <#WXM# } else {#WXM#> ><a href="<#WXM#=item.link#WXM#>" onclick="wx_get(<#WXM#=i#WXM#>)"> <#WXM# } #WXM#><#WXM#=item.name#WXM#></a> </li> <#WXM# } #WXM#> </ul> </div> </script>
-    <script id="tCommonHeader" type="text/html"><#WXM#/*TEMPLATES*/#WXM#> <div class="logoArea"> <a class="logo left block" href="/"> <img src="http://res.wx.qq.com/mpres/zh_CN/htmledition/images/logo1191e9.png" alt="微信公众平台"/> </a> <div class="accountOp right"> <#WXM#= userinfo ? WXM.Helpers.tmpl('#tCommonHeaderLogin', userinfo) : WXM.Helpers.tmpl('#tCommonHeaderNologin', userinfo) #WXM#> </div> <div class="clr"></div> </div> <#WXM#= userinfo ? WXM.Helpers.tmpl('#tCommonHeaderNav',{nav:nav}) : '' #WXM#> </script>
-    <script id="tCommonHeaderLogin" type="text/html"><#WXM#/*TEMPLATES*/#WXM#> <span><a href="#"><#WXM#=NickName#WXM#></a></span> <span class="none"><a href="#">帮助中心</a></span> <span><a onclick="return WXM.logout();" href="/cgi-bin/logout?t=wxm-logout&lang=zh_CN">退出</a></span> </script>
-    <script id="tCommonHeaderNologin" type="text/html"><#WXM#/*TEMPLATES*/#WXM#> <span><a href="mailto:mpweixin@qq.com">咨询请发邮件至：mpweixin@qq.com</a></span> <span class="none"><a href="#">帮助中心</a></span> </script>
-    <script id="tCommonFooter" type="text/html"><#WXM#/*TEMPLATES*/#WXM#> <div class="footer"> <div class="f12 textGray textEngraving"> <a target="_blank" href="http://www.tencent.com/zh-cn/index.shtml">关于腾讯</a>&nbsp;|&nbsp; <a target="_blank" href="/cgi-bin/readtemplate?t=wxm-agreement&type=info&lang=zh_CN">服务协议</a>&nbsp;|&nbsp; <a target="_blank" href="http://kf.qq.com/special_auto/weixin.html">客服中心</a> </div> <div >Copyright&nbsp;&copy; 2012-2013 Tencent. All Rights Reserved.</div> </div> </script>
-    <script id="tCommonCatalogList" type="text/html"><#WXM#/*TEMPLATES*/#WXM#> <div class="sideBar"> <div class="catalogList"> <ul> <#WXM# var i=0, item; while(item = catalogList[i++]) { #WXM#> <li <#WXM# if (item.id) {#WXM#> id="<#WXM#=item.id#WXM#>" <#WXM# } #WXM#> class="<#WXM#=item.selected||''#WXM#> <#WXM#=item.subCatalogList||''#WXM#> <#WXM#=item.className#WXM#>" > <#WXM# if(item.link){ #WXM#> <a href="<#WXM#=item.link#WXM#>"><#WXM#=item.title#WXM#><#WXM#=item.num!==undefined?"("+item.num+")":""#WXM#></a> <#WXM# } else { #WXM#> <span><#WXM#=item.title#WXM#><#WXM#=item.num!==undefined?"("+item.num+")":""#WXM#></span> <#WXM# } #WXM#> </li> <#WXM# } #WXM#> </ul> </div> </div> </script>
-    <script id="tCommonMain" type="text/html"><#WXM#/*TEMPLATES*/#WXM#> <div class="containerBox"> <#WXM# if (title){ #WXM#> <div class="boxHeader"> <h2><#WXM#=title#WXM#></h2> </div> <#WXM# } #WXM#> <div class="content"></div> <#WXM#= catalogList ?WXM.Helpers.tmpl('#tCommonCatalogList', { catalogList : catalogList }) : '' #WXM#> <div class="clr"></div> </div> </script>
-    <script id="tTips" type="text/html"><#WXM#/*TEMPLATES*/#WXM#> <div class="tips"> <div class="tipContent"></div> </div> </script>
-    <script id="tDialog" type="text/html"><#WXM#/*TEMPLATES*/#WXM#> <div class="dialogBox"> <div class="background"></div> <div id="dialogBox" class="dialog"> <div id="dialogTitle" class="title">标题</div> <div id="dialogContent" class="content"></div> <div class="operation"> <button id="dialogOK" class="btn btnGreen">确定</button> <button id="dialogCancle" class="btn btnGray">取消</button> <button id="dialogClose" class="btn btnGray" style="display:none;">关闭</button> </div> </div> </div> </script>
-    <script id="tLoadingDialog" type="text/html"><#WXM#/*TEMPLATES*/#WXM#> <div class="dialogBox"> <div class="background"></div> <div id="loadingDialogBox" class="dialog"> <div class="content"><div class="iconLoading"></div><p>加载中...</p></div> </div> </div> </script>
-    <script id="tLoading" type="text/html"><#WXM#/*TEMPLATES*/#WXM#> <div class="loading">数据加载中...</div> </script>
-    <script type="text/javascript"> document.domain = document.location.hostname.match(/[^\.]+\.com/)[0]; var CGI_ROOT = WXM.ROOT.cgi; WXM.StaticPath = { recorder : "http://res.wx.qq.com/mpres/zh_CN/htmledition/plprecorder/recoder1191e9.html", plprecorder: "http://res.wx.qq.com/mpres/zh_CN/htmledition/plprecorder/plprecorder1191e9.swf", installer: "http://res.wx.qq.com/mpres/zh_CN/htmledition/plprecorder/expressInstall1191e9.swf", video : "http://res.wx.qq.com/mpres/zh_CN/htmledition/plprecorder/video-js1191e9.swf", audio : "http://res.wx.qq.com/mpres/zh_CN/htmledition/plprecorder/audiojs1191e9.swf", rimgcrop : "http://res.wx.qq.com/mpres/htmledition/images/cut-round125122.gif" }; WXM.DATA = {}; WXM.DATA.userinfo = {}; WXM.DATA = { ROOT : WXM.ROOT, userinfo : { NickName : "舌尖网", FakeID : "2394040080" }, nav : [ { _id: 'home', name : "首页", link : '/cgi-bin/indexpage?t=wxm-index&lang=zh_CN' }, { _id: 'realmsg', name : "实时消息", link : '/cgi-bin/getmessage?t=wxm-message&lang=zh_CN&count=50' }, { _id: 'friend', name : "用户管理", link : '/cgi-bin/contactmanagepage?t=wxm-friend&lang=zh_CN&pagesize=10&pageidx=0&type=0&groupid=0' } , { _id: 'groupmsg', name : "群发消息", link : '/cgi-bin/masssendpage?t=wxm-send&lang=zh_CN' } , { _id: 'filemanager', name : "素材管理", link : '/cgi-bin/operate_appmsg?sub=list&type=10&subtype=3&t=wxm-appmsgs-list-new&pagesize=10&pageidx=0&lang=zh_CN' }, { _id: 'setting', name : "设置", link : '/cgi-bin/userinfopage?t=wxm-setting&lang=zh_CN' } ], //权限列表 ACL : { 'canMassSend' : '1', 'haveChannel' : '0', 'needProtocol' : '0', 'canPublicChannel' : '1', 'massSendTimesLeft' : '1', 'haveAutoIvr' : '1', 'haveFriendIvr' : '1', 'haveCustomIvr' : '1', 'end' : 0 } }; </script>
-    <link rel="stylesheet" type="text/css" href="http://res.wx.qq.com/mpres/htmledition/style/wxm_systemi1315ce.css">
-    <script type="text/javascript" src="http://res.wx.qq.com/mpres/zh_CN/htmledition/js/highcharts127738.js"></script>
-    <script type="text/javascript" src="http://res.wx.qq.com/mpres/zh_CN/htmledition/js/exporting127738.js"></script>
-    <script id="tIndexMain" type="text/html"><#WXM#/*TEMPLATES*/#WXM#> <div class="containerBox boxIndex"> <div class="mainPanel"> <h2 class="h2">欢迎你，<#WXM#=userinfo.NickName#WXM#></h2> <div class="todoList"> <#WXM# if(todoLost.length>0){ #WXM#> <h3 class="">你有以下<#WXM#=todoLost.length#WXM#>个待办事项:</h3> <ul> <#WXM# var i = 0, item; while(item = todoLost[i++]){ #WXM#> <li><span class="left"> <#WXM#=item.title#WXM#></span><a class="right" href="<#WXM#=item.link#WXM#>">查看</a></li> <#WXM# } #WXM#> </ul> <#WXM# } else { #WXM#> <h3 class="">你暂无待办事项</h3> <#WXM# } #WXM#> </div> <div id="wxChartsFans" class="wxCharts"></div> <div id="wxChartsMsgNum" class="wxCharts"></div> <ul class="quickLaunch"> <#WXM# var i = 0, item; while(item = quickLaunch[i++]){ if(item.name){ #WXM#> <li> <a href="<#WXM#=item.link#WXM#>"><span class="icon48C <#WXM#=item.className#WXM#>"><#WXM#=item.name#WXM#></span></a> </li> <#WXM# } } #WXM#> </ul> </div> <div class="extendPanel"> <#WXM# var i = 0, item; while(item = textInfo[i++]){ #WXM#> <div class="extInfo"> <h3><#WXM#=item.title#WXM#></h3> <p><#WXM#=item.content.replace('\n','<br/>')#WXM#></p> </div> <#WXM# } #WXM#> </div> </div> </script>
-    <script type="text/javascript"> window.WXM && (function(WXM, win){ (function(jq){ var h = WXM.Helpers, getC = h.getCookie, setC = h.setCookie, cName = 'hasWarningUser', isSetC = getC(cName); if (!isSetC || isSetC != '1'){ jq("#warningUser").fadeIn();//show jq("#warningUser .waringClose").click(function(){ jq("#warningUser").fadeOut();//show setC(cName, 1, 1);//set cookie }); } })(jQuery); var DATA = WXM.DATA; DATA.title = "首页"; DATA.todoLost = [ ]; DATA.quickLaunch = [ { className : 'iconMsg', name : "实时消息", link : '/cgi-bin/getmessage?t=wxm-message&lang=zh_CN&count=50' }, { className : 'iconUser', name : "用户管理", link : '/cgi-bin/contactmanagepage?t=wxm-friend&lang=zh_CN&pagesize=10&pageidx=0&type=0&groupid=0' }, { className : 'iconFile', name : "素材管理", link : '/cgi-bin/operate_appmsg?sub=list&type=10&subtype=3&t=wxm-appmsgs-list-new&pagesize=10&pageidx=0&lang=zh_CN' }, { className : 'iconSetting', name : "个人设置", link : '/cgi-bin/userinfopage?t=wxm-setting&lang=zh_CN' } ]; DATA.textInfo = [ { title : "系统公告", content : '如果你在使用过程中有任何疑问或者建议，请加我们的公众号进行咨询反馈：weixingongzhong<br />联系邮箱：<a href="mailto:weixinmp@qq.com">weixinmp@qq.com</a><span class="sys-i-l"><a href="/cgi-bin/indexpage?t=wxm-systemi-p&type=info&lang=zh_CN">微信公众帐号“可信网址”申请指引</a><br /></span><span class="sys-i-l"> <a href="/cgi-bin/readtemplate?t=wxm-systemi-msg&type=info&lang=zh_CN">公众平台新增加特性公告<span class="textNew">New</span></a><br /></span>' }, { title : '新功能推荐', content : "开放消息接口：有开发能力的第三方可以使用公众平台最新的接口，自主开发消息回复规则。 <a href='/cgi-bin/callbackprofile?t=wxm-callbackapi&type=info&lang=zh_CN'>详情&gt;&gt;</a>" } ]; DATA.chartsData = { recvMsgStat: [0,0,0,0,0,0,0], fansStat: [0,0,0,0,0,0,0] }; DATA.userinfo = { NickName : "舌尖网", FakeID : "2394040080" }; DATA.month = "1" * 1; DATA.day = "20" * 1; var initChartsFans = function(days){ var chart = new Highcharts.Chart({ chart: { renderTo: 'wxChartsFans', zoomType: 'xy' }, title: { text: "每日新增订阅人数" }, xAxis: [{ labels:{ formatter: function() { return this.value; }, style: { color: '#7eafdd' } }, title: { text: '', style: { color: '#7eafdd' } }, categories: days }], yAxis: [{ // Secondary yAxis title: { text: "每日新增订阅人数", style: { color: '#4572A7' } }, labels: { formatter: function() { return this.value + '个'; }, style: { color: '#4572A7' } }, allowDecimals:false }], tooltip: { formatter: function() { var unit = { "每日新增订阅人数": "个" }[this.series.name]; return ''+ this.x +': '+ this.y +' '+ unit; } }, legend: { enabled:false }, series: [{ name: "每日新增订阅人数", color: '#4572A7', type: 'spline', data: DATA.chartsData.fansStat }], exporting: { enabled: false } }); } var initChartsMsgNum = function(days){ var chart = new Highcharts.Chart({ chart: { renderTo: 'wxChartsMsgNum', zoomType: 'xy' }, title: { text: "每日接收消息数" }, xAxis: [{ labels:{ formatter: function() { return this.value; }, style: { color: '#7eafdd' } }, title: { text: '', style: { color: '#7eafdd' } }, categories: days }], yAxis: [{ // Primary yAxis labels: { formatter: function() { return this.value + '条'; }, style: { color: '#89A54E' } }, min: 0, title: { text: "每日接收消息数", style: { color: '#89A54E' } }, allowDecimals:false }], tooltip: { formatter: function() { var unit = { "每日接收消息数": "条" }[this.series.name]; return ''+ this.x +': '+ this.y +' '+ unit; } }, legend: { enabled:false }, series: [{ name: "每日接收消息数", color: '#89A54E', type: 'spline', data: DATA.chartsData.recvMsgStat }], exporting: { enabled: false } }); } WXM.Handles = { '#main' : function(selector){ var main = WXM.Helpers.createDomByHtml( W.t('#tIndexMain', DATA) ); main.appendTo(selector); if (DATA.chartsData.recvMsgStat != '' && DATA.chartsData.recvMsgStat != ''){ DATA.chartsData = { recvMsgStat: DATA.chartsData.recvMsgStat.reverse(), fansStat: DATA.chartsData.fansStat.reverse() }; var days = getDaysList(DATA.day, DATA.month); initChartsFans(days); initChartsMsgNum(days); jQuery('.quickLaunch').addClass('none'); }else{ jQuery('#wxChartsFans').addClass('none'); jQuery('#wxChartsMsgNum').addClass('none'); } jQuery("#index-permission-tip-close").click(function(){ W.ajax('/cgi-bin/correct?t=ajax-response&opcode=2&lang=zh_CN', {}); jQuery("#index-permission-tip").fadeOut(); }); } }; var getDaysList = function(_day, _month){ var yesObj = {}, dayList = [], day = _day, month = _month; for(var i = 0; i < 7; i++){ yesObj = getYesterday(day,month); day = yesObj.day; month = yesObj.month; dayList.push(month+'-'+day); } return dayList.reverse(); } var getYesterday = function(day,month){ var monthDays = [31,28,31,30,31,30,31,31,30,31,30,31], yDay = day - 1, yMonth = month; if(yDay <= 0){/*last month*/ yMonth -= 1; yMonth = yMonth <= 0 ? 12 : yMonth; if(yMonth == 2 && isLeapYear()){ yDay = 29; }else if(yMonth == 2 && !isLeapYear()){ yDay = 28; }else{ yDay = monthDays[yMonth - 1]; } } return {day:yDay,month:yMonth}; } jQuery('body').addClass('indexPage'); var markSelectedInArr = WXM.Helpers.markSelectedInArr; /* 设置导航选中 */ markSelectedInArr({ tKey : '_id', tVal : 'home', list : DATA.nav }); WXM.main(); })(WXM, window); </script>
-    <div class="tips"> 
-        <div class="tipContent"></div> 
-    </div>
-    <div class="dialogBox"> 
-        <div class="background"></div> 
-        <div id="dialogBox" class="dialog"> 
-            <div id="dialogTitle" class="title">标题</div> 
-            <div id="dialogContent" class="content"></div> 
-            <div class="operation"> 
-                <button id="dialogOK" class="btn btnGreen">确定</button> 
-                <button id="dialogCancle" class="btn btnGray">取消</button> 
-                <button id="dialogClose" class="btn btnGray" style="display:none;">关闭</button> 
-            </div> 
-        </div> 
-    </div>
-    <div class="dialogBox"> 
-        <div class="background"></div> 
-        <div id="loadingDialogBox" class="dialog"> 
-            <div class="content">
-                <div class="iconLoading"></div>
-                <p>加载中...</p>
-            </div> 
-        </div> 
-    </div>
-</body>
+    </body>
 </html>
 
 
