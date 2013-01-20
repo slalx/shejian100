@@ -24,6 +24,11 @@ if (!$r){
 }
 printf("插入了一条d记录<br>");
 
+//测试json的支持情况
+$arr = Array('one', 'two', 'three');
+
+echo json_encode($arr);
+
 ?>
 <?php include './db/db_close.php'; echo "代码结束<br>";?>
 </body>
