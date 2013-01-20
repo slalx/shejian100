@@ -1,3 +1,3 @@
 <?php
-mysql_close($dbc);
+mysql_close($con);
 ?>
