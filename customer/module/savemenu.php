@@ -22,10 +22,10 @@ include '../../db/db_open.php';
 $dishes = $_POST['dish'];
 
 for ($i=0; $i<count($dishes); $i++){
-	$post_key = $dishes[$i];
-	print_r($post_key);
-	if ($post_key != ''){
-		$query_string .= " ('".$post_key['name']."', '".$post_key['price']."'),"; 
+	$row = $dishes[$i];
+	print_r($row);
+	if ($row != ''){
+		$query_string .= " ('".$row['name']."', '".$row['price']."'),"; 
 	}
 }
 
