@@ -1,5 +1,4 @@
 <?php 
-echo '我在php代码中开始连接数据库<br>';
 
 echo "定义数据库的变量<br>";
 DEFINE('DB_HOST','42.96.139.171');
@@ -13,7 +12,7 @@ if (!$con){
   die('Could not connect: ' . mysql_error());
 }
 mysql_select_db(DB_NAME, $con);
-echo '我在php代码中连接数据库结束<br>';
+echo '连接数据库结束<br>';
 
 /*$name = $_POST["name"];
 echo $name."我传第的名字<br>";*/
