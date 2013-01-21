@@ -2,16 +2,16 @@
 <?php
 
 include '../../db/db_open.php';
-
+echo "1";
 //设置每一页显示的记录数
   $pagesize = 3; 
-
+echo "2";
 //取得记录总数$rs，计算总页数用
-　$rs = mysql_query("select count(*) from dish");
-  $myrow = mysql_fetch_array($rs);
-　$numrows = $myrow[0];
+　$rs = mysql_query("select count(*) from dish");echo "3";
+  $myrow = mysql_fetch_array($rs);echo "4";
+　$numrows = $myrow[0];echo "5";
 //计算总页数
-　$pages = intval($numrows/$pagesize);
+　$pages = intval($numrows/$pagesize);echo "6";
 　if ($numrows%$pagesize)
 　　$pages++;
 //设置页数
