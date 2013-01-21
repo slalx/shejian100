@@ -7,24 +7,24 @@ include '../../db/db_open.php';
   $pagesize = 3; 
 
 //取得记录总数$rs，计算总页数用
-　$rs=mysql_query("select count(*) from dish");
+　$rs = mysql_query("select count(*) from dish");
   $myrow = mysql_fetch_array($rs);
-　$numrows=$myrow[0];
+　$numrows = $myrow[0];
 //计算总页数
-　$pages=intval($numrows/$pagesize);
+　$pages = intval($numrows/$pagesize);
 　if ($numrows%$pagesize)
 　　$pages++;
 //设置页数
 　if (isset($_GET['page'])){
-　　$page=intval($_GET['page']);
+　　$page = intval($_GET['page']);
 　}else{
 　　//设置为第一页 
-　　$page=1;
+　　$page = 1;
 　}
 //计算记录偏移量
-　$offset=$pagesize*($page - 1);
+　$offset = $pagesize*($page - 1);
 //读取指定记录数
-  $rs=mysql_query("select * from dish order by id desc limit $offset,$pagesize");
+  $rs = mysql_query("select * from dish order by id desc limit $offset,$pagesize");
 
 ?>
 
