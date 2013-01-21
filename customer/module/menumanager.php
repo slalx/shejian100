@@ -9,10 +9,10 @@ include '../db/db_open.php';
 //取得记录总数$rs，计算总页数用
 
 
-  
-　$rs = mysql_query("select count(*) from dish");
-  $myrow = mysql_fetch_array($rs);
-　$numrows = $myrow[0];
+
+　//$rs = mysql_query("select count(*) from dish");
+  //$myrow = mysql_fetch_array($rs);
+　$numrows = 3/*$myrow[0]*/;
 //计算总页数
 　$pages = intval($numrows/$pagesize);
 　if ($numrows%$pagesize)
