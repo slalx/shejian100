@@ -12,9 +12,9 @@ include '../db/db_open.php';
 
 　//$rs = mysql_query("select count(*) from dish");
   //$myrow = mysql_fetch_array($rs);
-　$numrows = 3/*$myrow[0]*/;
+　//$numrows = 10/*$myrow[0]*/;
 //计算总页数
-　$pages = intval($numrows/$pagesize);
+　/*$pages = intval($numrows/$pagesize);
 　if ($numrows%$pagesize)
 　　$pages++;
 //设置页数
@@ -25,7 +25,8 @@ include '../db/db_open.php';
 　　$page = 1;
 　}
 //计算记录偏移量
-　$offset = $pagesize*($page - 1);
+　$offset = $pagesize*($page - 1);*/
+$offset = 0;
 //读取指定记录数
   $rs = mysql_query("select * from dish order by id desc limit $offset,$pagesize");
 
