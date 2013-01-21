@@ -7,7 +7,7 @@ include '../../db/db_open.php';
   $pagesize = 3; 
 
 //取得记录总数$rs，计算总页数用
-　$rs=mysql_query("select count(*) from dish",$con);
+　$rs=mysql_query("select count(*) from dish");
   $myrow = mysql_fetch_array($rs);
 　$numrows=$myrow[0];
 //计算总页数
@@ -24,7 +24,7 @@ include '../../db/db_open.php';
 //计算记录偏移量
 　$offset=$pagesize*($page - 1);
 //读取指定记录数
-  $rs=mysql_query("select * from dish order by id desc limit $offset,$pagesize",$con);
+  $rs=mysql_query("select * from dish order by id desc limit $offset,$pagesize");
 
 ?>
 
