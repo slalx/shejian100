@@ -22,7 +22,7 @@
 									<label for="" class="dish_price">价格</label>
 									<input type="text" class="msg-input" value="" name="dish[0]['price']">
 									<label for="">种类</label> 
-									<select name="dish_type" name="dish[0]['type']">
+									<select name="dish[0]['type']">
 										<option value="1">热菜</option>
 										<option value="2">凉菜</option>
 									</select>
@@ -33,7 +33,7 @@
 									<label for="" class="dish_price">价格</label>
 									<input type="text" class="msg-input" value="" name="dish[1]['price']">
 									<label for="">种类</label> 
-									<select name="dish_type" name="dish[1]['type']">
+									<select name="dish[1]['type']">
 										<option value="1">热菜</option>
 										<option value="2">凉菜</option>
 									</select>
