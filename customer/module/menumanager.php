@@ -8,13 +8,14 @@ include '../../db/db_open.php';
 
 //取得记录总数$rs，计算总页数用
 
-　$rsss = mysql_query("select count(*) from dish;",$con);
+　$rsss = mysql_query("select count(*) from dish",$con);
   $myrow = mysql_fetch_array($rsss);
 　$numrows = $myrow[0];
 //计算总页数
 　$pages = intval($numrows/$pagesize);
-　if ($numrows%$pagesize)
+　if ($numrows%$pagesize){
 　　$pages++;
+  }
 //设置页数
 　if (isset($_GET['page'])){
 　　$page = intval($_GET['page']);
