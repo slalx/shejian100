@@ -25,7 +25,7 @@ for ($i=0; $i<count($dishes); $i++){
 	$row = $dishes[$i];
 	print_r($row);
 	if ($row != ''){
-		$query_string .= " ('".$row['name']."', '".$row['price']."'),"; 
+		$query_string .= " ('".$row[name]."', '".$row[price]."'),"; 
 	}
 }
 
