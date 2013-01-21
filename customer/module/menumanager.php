@@ -1,4 +1,34 @@
 
+<?php
+
+include '../../db/db_open.php';
+
+//设置每一页显示的记录数
+  $pagesize = 3; 
+
+//取得记录总数$rs，计算总页数用
+　$rs=mysql_query("select count(*) from dish",$con);
+  $myrow = mysql_fetch_array($rs);
+　$numrows=$myrow[0];
+//计算总页数
+　$pages=intval($numrows/$pagesize);
+　if ($numrows%$pagesize)
+　　$pages++;
+//设置页数
+　if (isset($_GET['page'])){
+　　$page=intval($_GET['page']);
+　}else{
+　　//设置为第一页 
+　　$page=1;
+　}
+//计算记录偏移量
+　$offset=$pagesize*($page - 1);
+//读取指定记录数
+  $rs=mysql_query("select * from dish order by id desc limit $offset,$pagesize",$con);
+
+?>
+
+
 <div id="main" class="container">
     <div class="containerBox boxIndex"> 
 		<div class="boxHeader"> 
@@ -20,9 +50,19 @@
 				</div> 
 				<div class="right title opt">操作</div> 
 			</div> 
-			<ul id="listContainer"> 
-				<li class="listItem buddyRichInfoC"> <div class="left"> <input class="chooseFriend" type="checkbox" value="983031980"> </div>  <a target="_blank" href="#" class="msgSender f16 c-l b left" data-fakeid="983031980">酸辣土豆丝</a> <span class="remarkName left" data-fakeid="983031980"></span> <div class="right"> <button class="msgSenderRemark right btnGrayS" data-fakeid="983031980">修改</button> <button data-gid="0" data-fid="983031980" class="putIntoGroup btnGrayS right">12</button>  <div class="clr"></div> </div> <div class="clr"></div> </li> 
-				<li class="listItem buddyRichInfoC"> <div class="left"> <input class="chooseFriend" type="checkbox" value="2412503920"> </div> <a target="_blank" href="#" class="msgSender f16 c-l b left" data-fakeid="2412503920">蒜蓉油麦菜</a> <span class="remarkName left" data-fakeid="2412503920"></span> <div class="right"> <button class="msgSenderRemark right btnGrayS" data-fakeid="2412503920">修改</button> <button data-gid="0" data-fid="2412503920" class="putIntoGroup btnGrayS right">30</button>  <div class="clr"></div> </div> <div class="clr"></div> </li> 
+			<ul id="listContainer">
+			<?php
+				if ($myrow = mysql_fetch_array($rs)){
+					$i=0;
+					do{
+　　　　					$i++;
+			?> 
+				<li class="listItem buddyRichInfoC"> <div class="left"> <input class="chooseFriend" type="checkbox" value="983031980"> </div>  <a target="_blank" href="#" class="msgSender f16 c-l b left" data-fakeid="983031980">＜?=$myrow["name"]?＞</a> <span class="remarkName left" data-fakeid="983031980"></span> <div class="right"> <button class="msgSenderRemark right btnGrayS" data-fakeid="983031980">修改</button> <button data-gid="0" data-fid="983031980" class="putIntoGroup btnGrayS right">＜?=$myrow["price"]?＞</button>  <div class="clr"></div> </div> <div class="clr"></div> </li> 
+			<?php
+					}
+					while ($myrow = mysql_fetch_array($rs));
+				}
+			?>
 			</ul> 
 			<div class="cLine"> 
 				<div class="pageNavigator right"> 
@@ -47,7 +87,9 @@
 	</div>
 </div>
 
-
+<?php
+include '../../db/db_close.php';
+?>
 
 
 
