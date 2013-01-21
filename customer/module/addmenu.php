@@ -18,22 +18,22 @@
 							<form method="post" action="./module/savemenu.php" id="savemenuform"> 
 								<div class="dish_item">
 									<label for="">菜名</label> 
-									<input type="text" class="msg-input" value="" name="dish[0]['name']"> 
+									<input type="text" class="msg-input" value="" name="dish[0][name]"> 
 									<label for="" class="dish_price">价格</label>
-									<input type="text" class="msg-input" value="" name="dish[0]['price']">
+									<input type="text" class="msg-input" value="" name="dish[0][price]">
 									<label for="">种类</label> 
-									<select name="dish[0]['type']">
+									<select name="dish[0][type]">
 										<option value="1">热菜</option>
 										<option value="2">凉菜</option>
 									</select>
 								</div>
 								<div class="dish_item">
 									<label for="">菜名</label> 
-									<input type="text" class="msg-input" value="" name="dish[1]['name']"> 
+									<input type="text" class="msg-input" value="" name="dish[1][name]"> 
 									<label for="" class="dish_price">价格</label>
-									<input type="text" class="msg-input" value="" name="dish[1]['price']">
+									<input type="text" class="msg-input" value="" name="dish[1][price]">
 									<label for="">种类</label> 
-									<select name="dish[1]['type']">
+									<select name="dish[1][type]">
 										<option value="1">热菜</option>
 										<option value="2">凉菜</option>
 									</select>
