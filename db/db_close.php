@@ -1,4 +1,4 @@
 <?php
 mysql_close($con);
-echo "关闭数据库";
+echo "<br>关闭数据库";
 ?>
