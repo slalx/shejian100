@@ -1,7 +1,7 @@
 
 <?php
 
-include '../db/db_open.php';
+include '../../db/db_open.php';
 
 //设置每一页显示的记录数
   $pagesize = 3; 
@@ -89,7 +89,7 @@ include '../db/db_open.php';
 </div>
 
 <?php
-include '../db/db_close.php';
+include '../../db/db_close.php';
 ?>
 
 
