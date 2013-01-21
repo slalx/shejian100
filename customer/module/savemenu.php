@@ -13,11 +13,20 @@ include '../../db/db_open.php';
 	}*/
 print_r($_POST['dish']);
 
-foreach($_POST['dish'] as $post_key){ 
+/*foreach($_POST['dish'] as $post_key){ 
 	print_r($post_key);
 	echo $post_key['name']."name的值";
     $query_string .= " ('".$post_key['name']."', '".$post_key['price']."'),"; 
-} 
+} */
+
+for ($i=0;$i<count($_POST["dish"]);$i++){
+	$post_key = $_POST["dish"][$i];
+	print_r($post_key);
+	if ($post_key != ''){
+		$query_string .= " ('".$post_key['name']."', '".$post_key['price']."'),"; 
+	}
+}
+
 //删除最后的逗号
 $query_string = substr_replace($query_string,"",-1);
 //合成sql语句
