@@ -38,6 +38,39 @@
 										<option value="2">凉菜</option>
 									</select>
 								</div>
+								<div class="dish_item">
+									<label for="">菜名</label> 
+									<input type="text" class="msg-input" value="" name="dish[2][name]"> 
+									<label for="" class="dish_price">价格</label>
+									<input type="text" class="msg-input" value="" name="dish[2][price]">
+									<label for="">种类</label> 
+									<select name="dish[2][type]">
+										<option value="1">热菜</option>
+										<option value="2">凉菜</option>
+									</select>
+								</div>
+								<div class="dish_item">
+									<label for="">菜名</label> 
+									<input type="text" class="msg-input" value="" name="dish[3][name]"> 
+									<label for="" class="dish_price">价格</label>
+									<input type="text" class="msg-input" value="" name="dish[3][price]">
+									<label for="">种类</label> 
+									<select name="dish[3][type]">
+										<option value="1">热菜</option>
+										<option value="2">凉菜</option>
+									</select>
+								</div>
+								<div class="dish_item">
+									<label for="">菜名</label> 
+									<input type="text" class="msg-input" value="" name="dish[4][name]"> 
+									<label for="" class="dish_price">价格</label>
+									<input type="text" class="msg-input" value="" name="dish[4][price]">
+									<label for="">种类</label> 
+									<select name="dish[4][type]">
+										<option value="1">热菜</option>
+										<option value="2">凉菜</option>
+									</select>
+								</div>
 							</form>
 						</div> 
 						<div class="oh z shadow"> 
