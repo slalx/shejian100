@@ -8,7 +8,7 @@ include '../db/db_open.php';
 
 //取得记录总数$rs，计算总页数用
 
-　$rs = mysql_query("select count(*) from dish;",$con);
+　$rs = mysql_query("select * from dish;",$con);
   $myrow = mysql_fetch_array($rs);
 　$numrows = $myrow[0];
 //计算总页数
