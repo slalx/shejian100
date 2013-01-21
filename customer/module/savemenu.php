@@ -13,13 +13,14 @@ include '../../db/db_open.php';
 	}*/
 
 foreach($_POST['dish'] as $post_key){ 
-    $query_string .= " ('".$post_key["name"]."', '".$post_key["price"]."'),"; 
+    $query_string .= " ('".$post_key['name']."', '".$post_key['price']."'),"; 
     print_r($post_key);
 } 
 //删除最后的逗号
 $query_string = substr_replace($query_string,"",-1);
+//合成sql语句
 $query_string = "insert into dish ('name', 'price') values ".$query_string; 
-
+//插入数据库
 echo "插入sql语句".$query_string;
 
 include '../../db/db_close.php';
