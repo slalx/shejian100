@@ -18,66 +18,22 @@
 							<form method="post" action="./module/savemenu.php" id="savemenuform"> 
 								<div class="dish_item">
 									<label for="">菜名</label> 
-									<input type="text" class="msg-input" value="" name="dish_name"> 
+									<input type="text" class="msg-input" value="" name="dish[0]['dish_name']"> 
 									<label for="" class="dish_price">价格</label>
-									<input type="text" class="msg-input" value="" name="dish_price">
+									<input type="text" class="msg-input" value="" name="dish[0]['dish_price']">
 									<label for="">种类</label> 
-									<select name="dish_type" name="dish_type">
+									<select name="dish_type" name="dish[0]['dish_type']">
 										<option value="1">热菜</option>
 										<option value="2">凉菜</option>
 									</select>
 								</div>
 								<div class="dish_item">
 									<label for="">菜名</label> 
-									<input type="text" class="msg-input" value="" name="dish_name"> 
+									<input type="text" class="msg-input" value="" name="dish[1]['dish_name']"> 
 									<label for="" class="dish_price">价格</label>
-									<input type="text" class="msg-input" value="" name="dish_price">
+									<input type="text" class="msg-input" value="" name="dish[1]['dish_price']">
 									<label for="">种类</label> 
-									<select name="dish_type" name="dish_type">
-										<option value="1">热菜</option>
-										<option value="2">凉菜</option>
-									</select>
-								</div>
-								<div class="dish_item">
-									<label for="">菜名</label> 
-									<input type="text" class="msg-input" value="" name="dish_name"> 
-									<label for="" class="dish_price">价格</label>
-									<input type="text" class="msg-input" value="" name="dish_price">
-									<label for="">种类</label> 
-									<select name="dish_type" name="dish_type">
-										<option value="1">热菜</option>
-										<option value="2">凉菜</option>
-									</select>
-								</div>
-								<div class="dish_item">
-									<label for="">菜名</label> 
-									<input type="text" class="msg-input" value="" name="dish_name"> 
-									<label for="" class="dish_price">价格</label>
-									<input type="text" class="msg-input" value="" name="dish_price">
-									<label for="">种类</label> 
-									<select name="dish_type" name="dish_type">
-										<option value="1">热菜</option>
-										<option value="2">凉菜</option>
-									</select>
-								</div>
-								<div class="dish_item">
-									<label for="">菜名</label> 
-									<input type="text" class="msg-input" value="" name="dish_name"> 
-									<label for="" class="dish_price">价格</label>
-									<input type="text" class="msg-input" value="" name="dish_price">
-									<label for="">种类</label> 
-									<select name="dish_type" name="dish_type">
-										<option value="1">热菜</option>
-										<option value="2">凉菜</option>
-									</select>
-								</div>
-								<div class="dish_item">
-									<label for="">菜名</label> 
-									<input type="text" class="msg-input" value="" name="dish_name"> 
-									<label for="" class="dish_price">价格</label>
-									<input type="text" class="msg-input" value="" name="dish_price">
-									<label for="">种类</label> 
-									<select name="dish_type" name="dish_type">
+									<select name="dish_type" name="dish[1]['dish_type']">
 										<option value="1">热菜</option>
 										<option value="2">凉菜</option>
 									</select>
