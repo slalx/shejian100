@@ -11,7 +11,7 @@ include '../../db/db_open.php';
 		//mysql_query($sql);
 		echo "插入第".$i."条记录";
 	}*/
-print_r($_POST['dish']);
+//print_r($_POST['dish']);
 
 /*foreach($_POST['dish'] as $post_key){ 
 	print_r($post_key);
@@ -19,8 +19,10 @@ print_r($_POST['dish']);
     $query_string .= " ('".$post_key['name']."', '".$post_key['price']."'),"; 
 } */
 
-for ($i=0;$i<count($_POST["dish"]);$i++){
-	$post_key = $_POST["dish"][$i];
+$dishes = $_POST['dish'];
+
+for ($i=0; $i<count($dishes); $i++){
+	$post_key = $dishes[$i];
 	print_r($post_key);
 	if ($post_key != ''){
 		$query_string .= " ('".$post_key['name']."', '".$post_key['price']."'),"; 
@@ -32,7 +34,7 @@ $query_string = substr_replace($query_string,"",-1);
 //合成sql语句
 $query_string = "insert into dish ('name', 'price') values ".$query_string; 
 //插入数据库
-echo "插入sql语句".$query_string;
+echo "插入sql语句*********".$query_string;
 
 include '../../db/db_close.php';
 ?>
