@@ -11,10 +11,11 @@ include '../../db/db_open.php';
 		//mysql_query($sql);
 		echo "插入第".$i."条记录";
 	}*/
-print_r($_POST['dish']);
+print_r($_POST['dish'].'<br>');
 
 foreach($_POST['dish'] as $post_key){ 
-	print_r($post_key);
+	print_r($post_key.'br');
+	echo $post_key['name']."<br>";
     $query_string .= " ('".$post_key['name']."', '".$post_key['price']."'),"; 
 } 
 //删除最后的逗号
