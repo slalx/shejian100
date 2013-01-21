@@ -13,7 +13,7 @@ include '../../db/db_open.php';
 	}*/
 
 foreach($_POST['dish'] as $post_key){ 
-    $query_string .= " ('".$post_key['dish_name']."', '".$post_key['dish_price']."'),"; 
+    $query_string .= " ('".$post_key['name']."', '".$post_key['price']."'),"; 
     print_r($post_key);
 } 
 //$query_string = substr_replace($query_string,"",-1);
