@@ -14,6 +14,7 @@ include '../../db/db_open.php';
 
 foreach($_POST['dish'] as $post_key){ 
     $query_string .= " ('".$post_key['dish_name']."', '".$post_key['dish_price']."'),"; 
+    print_r($post_key);
 } 
 $query_string = substr_replace($query_string,"",-1);
 $query_string = "INSERT INTO dish ('name', 'price') VALUES".$query_string; 
