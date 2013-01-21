@@ -13,10 +13,10 @@ include '../../db/db_open.php';
 	}*/
 
 foreach($_POST['dish'] as $post_key){ 
-    $query_string .= " ('".$post_key[dish_name]."', '".$post_key[dish_price]."'),"; 
+    $query_string .= " ('".$post_key['dish_name']."', '".$post_key['dish_price']."'),"; 
 } 
 $query_string = substr_replace($query_string,"",-1);
-$query_string = "INSERT INTO 'dish' ('name', 'price') VALUES".$query_string; 
+$query_string = "INSERT INTO dish ('name', 'price') VALUES".$query_string; 
 
 echo "插入sql语句".$query_string;
 
