@@ -4,17 +4,17 @@
         <div class="accountOp right"> 
             <span><a href="#">舌尖网</a></span> 
             <span class="none"><a href="#">帮助中心</a></span> 
-            <span><a onclick="return WXM.logout();" href="/cgi-bin/logout?t=wxm-logout&amp;lang=zh_CN">退出</a></span> 
+            <span><a  href="/customer/uc/exit.php">退出</a></span> 
         </div> 
         <div class="clr"></div> 
     </div> 
     <div class="navigator"> 
         <ul class="textLarge"> 
-            <li class="selected"><a href="#" > 首页</a> </li> 
-            <li><a href="#" > 菜单管理</a> </li> 
-            <li><a href="#" > 用户管理</a> </li> 
-            <li><a href="#" > 群发消息</a> </li> 
-            <li><a href="#" > 设置</a> </li> 
+            <li <?php if($_GET["module"]=='homemodule' || !$_GET["module"]){ ?>class="selected"<?php }?> ><a href="/customer/home.php" > 首页</a> </li> 
+            <li <?php if($_GET["module"]=='menumanager' || $_GET["module"]=='addmenu'){ ?>class="selected"<?php }?>><a href="/customer/home.php?module=menumanager" > 菜单管理</a> </li> 
+            <li <?php if($_GET["module"]=='usermanager'){ ?>class="selected"<?php }?>><a href="/customer/home.php?module=usermanager" > 用户管理</a> </li> 
+            <li <?php if($_GET["module"]=='sendmessages'){ ?>class="selected"<?php }?>><a href="/customer/home.php?module=sendmessages" > 群发消息</a> </li> 
+            <li <?php if($_GET["module"]=='usersetting'){ ?>class="selected"<?php }?>><a href="/customer/home.php?module=usersetting" > 设置</a> </li> 
         </ul> 
     </div> 
 </div>

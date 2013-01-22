@@ -1,0 +1,195 @@
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+input,
+form,
+ul,
+ol,
+li,
+dd,
+dt,
+dl {
+    padding: 0;
+    margin: 0;
+}
+body { font: 14px/1.5em "Microsoft YaHei",Verdana,Arial,Helvetica,sans-serif }
+input,
+textarea { outline: 0 }
+input:focus {
+    outline: 2px solid #ebc476;
+    -moz-outline-radius: 3px;
+}
+a { text-decoration: none }
+img { border: 0 }
+body { background-color: #f7f7f7 }
+.right { float: right }
+.left { float: left }
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: #0e1011;
+    opacity: .6;
+    filter: alpha(opacity=60);
+}
+.header {
+    padding: 20px 0 14px;
+    margin: 0;
+    margin-bottom: 36px;
+    box-shadow: 0 1px 3px #b3b3b3;
+    border-bottom: 1px solid #a1a1a1;
+    background-color: #fff;
+    text-align: left;
+    min-width: 1300px;
+}
+.header .headerContent {
+    width: 960px;
+    padding: 0;
+    margin: 0 auto;
+}
+.header .headerContent a {
+    margin-right: 16px;
+    margin-top: 27px;
+    color: #535da7;
+}
+.container {
+    width: 1300px;
+    margin: 0 auto;
+    position: relative;
+}
+.container .content {
+    min-height: 500px;
+    padding: 6px 0;
+    width: 960px;
+    border: 1px solid lightGrey;
+    box-shadow: 0 0 3px #DDD;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    margin: 0 auto;
+    background-color: white;
+}
+a { text-decoration: none }
+ul {
+    list-style-type: none;
+    font-size: 12px;
+}
+li { margin-bottom: 10px }
+h1 {
+    font-weight: normal;
+    font-size: 23px;
+}
+.left { float: left }
+.right { float: right }
+.clr {
+    clear: both;
+    overflow: hidden;
+}
+.btn {
+    border-left: 91a58c;
+    width: 153px;
+    height: 43px;
+    margin-top: 18px;
+    margin-right: 10px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 23px;
+    border-radius: 3px;
+    border: 1 solid #91a58c;
+    border-top: 1px solid #77b25b;
+    box-shadow: 0 1px 2px #b4b4b4;
+    border-bottom: 1px solid #739164;
+}
+
+.header .icon {
+    width: 350px;
+    height: 52px;
+    background: url(http://res.wx.qq.com/mpres/htmledition/images/login/logo.png) no-repeat 0 0;
+}
+
+.footer {
+    width: 960px;
+    margin: 0 auto;
+    font-size: 12px;
+    color: #999;
+    text-shadow: 0 1px 1px #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+.footer a { color: #4d5d2c }
+
+.msg-editer-wrapper{
+
+    margin: 0 auto;
+    width: 60%;
+}
+
+.msg-edit { padding: 0 20px 30px }
+.msg-edit-area {
+    margin-top: 30px;
+    margin-left: 376px;
+}
+
+.msg-editer {
+    background-color: #f8f8f8;
+    border: 1px solid #b8b8b8;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+    moz-border-radius: 5px;
+    moz-box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+    padding: 14px 0 20px 20px;
+    webkit-border-radius: 5px;
+    webkit-box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+}
+.msg-input,
+.cover-area,
+.msg-txta {
+    background-color: #fff;
+    border: 1px solid #d3d3d3;
+    color: #666;
+    max-width: 480px;
+    padding: 2px 8px;
+    width: 480px;
+    height: 26px;
+}
+.msg-input .msg-txta {
+    color: #666;
+    height: 60px;
+}
+.msg-editer label {
+    cursor: default;
+    padding-bottom: 4px;
+    padding-top: 10px;
+    display: block;
+
+}
+
+.msg-btn {
+    padding-top: 20px;
+    padding-bottom: 20px;   
+}
+
+.loginform{
+  width: 31%;
+  margin:35px 45px;  
+  float: right;
+}
+.loginform .msg-input{
+    width: 233px;
+
+}
+
+
+
+
+

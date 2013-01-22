@@ -1,3 +1,9 @@
+<?php  
+session_start();  
+if($_SESSION[username]==""){  
+    echo "<script>alert('请登录!');window.location.href='/index.php?module=login';</script>";  
+  }  
+?>  
 <html>
     <head>
         <meta charset="utf-8">
@@ -14,9 +20,9 @@
             }
         ?>
         
-        <?php include './include/header.php'; ?>
-        <?php include './module/'.$module.'.php'?>
-        <?php include './include/footer.php'; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'].'/customer/include/header.php'; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'].'/customer/module/'.$module.'.php'?>
+        <?php include $_SERVER['DOCUMENT_ROOT'].'/customer/include/footer.php'; ?>
     </body>
 </html>
 

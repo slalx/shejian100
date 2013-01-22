@@ -1,0 +1,561 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"fo",
+				"form	Tag"
+			],
+			[
+				"ma",
+				"margin"
+			],
+			[
+				"pa",
+				"padding-bottom"
+			],
+			[
+				"no",
+				"no-repeat"
+			],
+			[
+				"b",
+				"background"
+			],
+			[
+				"w",
+				"web"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"h",
+				"h2"
+			],
+			[
+				"we",
+				"weixinInteraction"
+			],
+			[
+				"p",
+				"position"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"d",
+				"descripe"
+			],
+			[
+				"in",
+				"inline"
+			],
+			[
+				"v",
+				"visibility"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"me",
+				"margin-left"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"f",
+				"font-size"
+			],
+			[
+				"i",
+				"info"
+			],
+			[
+				"cl",
+				"clear"
+			],
+			[
+				"r",
+				"rgb()"
+			],
+			[
+				"sp",
+				"span2"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"mi",
+				"min-width"
+			],
+			[
+				"c",
+				"center"
+			],
+			[
+				"Peo",
+				"People"
+			],
+			[
+				"lo",
+				"log"
+			],
+			[
+				"_b",
+				"_body"
+			],
+			[
+				"_t",
+				"_title"
+			],
+			[
+				"ti",
+				"title"
+			],
+			[
+				"_",
+				"_url"
+			],
+			[
+				"htt",
+				"http"
+			],
+			[
+				"ut",
+				"UTF-8"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "customer/module/savemenu.php",
+			"settings":
+			{
+				"buffer_size": 617,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "customer/module/addmenu.php",
+			"settings":
+			{
+				"buffer_size": 3365,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "db/db_open.php",
+			"settings":
+			{
+				"buffer_size": 1117,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "db/db_close.php",
+			"settings":
+			{
+				"buffer_size": 45,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "customer/module/menumanager.php",
+			"settings":
+			{
+				"buffer_size": 3700,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 67.0,
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/zhangshengli/Documents/git/shejian100/customer/module/addmenu.php",
+		"/Users/zhangshengli/Documents/git/shejian100/customer/menu.php",
+		"/Users/zhangshengli/Documents/git/shejian100/customer/module/homemodule.php",
+		"/Users/zhangshengli/Documents/git/shejian100/resource/common.css",
+		"/Users/zhangshengli/Documents/git/shejian100/customer/home.php",
+		"/Users/zhangshengli/Documents/git/shejian100/answer.php",
+		"/Users/zhangshengli/Documents/git/shejian100/db/db_close.php",
+		"/Users/zhangshengli/Documents/git/shejian100/index.php",
+		"/Users/zhangshengli/Documents/git/shejian100/db/db_open.php",
+		"/Users/zhangshengli/Documents/git/shejian100/customer/module/menumanager.php",
+		"/Users/zhangshengli/Documents/git/shejian100/customer/include/footer.php",
+		"/Users/zhangshengli/Documents/git/shejian100/customer/include/header.php",
+		"/Users/zhangshengli/Documents/git/Map/index.html",
+		"/Users/zhangshengli/Documents/git/chinarenid/chinarenjob/src/main/webapp/css/global.css",
+		"/Users/zhangshengli/Documents/develop/css/job/global.css",
+		"/Users/zhangshengli/Documents/develop/css/job/resume.html",
+		"/Users/zhangshengli/Documents/git/chinarenid/cc/css/card.css",
+		"/Users/zhangshengli/Documents/git/chinarenid/cc/css/n_id.css",
+		"/Users/zhangshengli/Documents/git/chinarenid/cc/css/id.css",
+		"/Users/zhangshengli/Documents/git/chinarenid/cc/html/_home.html",
+		"/Users/zhangshengli/Documents/develop/css/job/job.html",
+		"/Users/zhangshengli/Documents/develop/css/foundation/stylesheets/foundation.css",
+		"/Users/zhangshengli/Documents/develop/css/test/middle.html",
+		"/Users/zhangshengli/Documents/develop/css/ResponsiveAeon_complete/css/grid_12_col.css",
+		"/Users/zhangshengli/Documents/develop/css/ResponsiveAeon_complete/css/style.css",
+		"/Users/zhangshengli/Documents/develop/css/display.html",
+		"/Users/zhangshengli/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/zhangshengli/Downloads/map/test.html",
+		"/Users/zhangshengli/Documents/git/blogremote/_layouts/default.html",
+		"/Users/zhangshengli/Documents/git/twitter-mobile-resource/j-src/kola/Package.js",
+		"/Users/zhangshengli/Documents/git/backbone-fundamentals/practicals/modular-todo-app/js/views/app.js",
+		"/Users/zhangshengli/Documents/develop/node/demo/express_example/views/index.hbs.html",
+		"/Users/zhangshengli/Library/Application Support/Google/Chrome/Default/Extensions/iooicodkiihhpojmmeghjclgihfjdjhj/6.3337.321.633_0/js/__bookmarklet_to_inject__andClipOnLaunch.js",
+		"/Users/zhangshengli/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/zhangshengli/Documents/git/twitter-mobile-resource/j-src/galaxy/app/Application.js"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"msg-editer-wrapper",
+			"msg-editer",
+			"li",
+			"script",
+			"ul",
+			"svg",
+			"responseMsg",
+			"mobile",
+			"display",
+			"web",
+			"18",
+			"./",
+			"Todos",
+			"TodoList",
+			"TodoView",
+			"extend",
+			"css(\"left\")",
+			"img-clip",
+			"find(\"img\")",
+			"levenshteinDistance",
+			"getContent__find",
+			"getContent__buildHTMLForNode",
+			"getContent__computeDetailsForCandidateSecond",
+			"getContent__processCandidates",
+			"getContent__computePointsForCandidate",
+			"getContent__computePointsForCandidate__do",
+			"getContent__computePointsForCandidate",
+			"getContent__computeDetailsForCandidate",
+			"getContent__processCandidates",
+			"getContent__exploreNodeAndGetStuff",
+			"getContent__findInPage",
+			"getContent__find",
+			"get_content",
+			"_elements_visible",
+			"getContent__computePointsForCandidateThird",
+			"getContent__computePointsForCandidate__do",
+			"getContent__processCandidates",
+			"getContent__findInPage",
+			"getContent__exploreNodeAndGetStuff",
+			"getContent__findInPage",
+			"getContent__find",
+			"levenshteinDistance",
+			"home",
+			"jmcihdkdjjennecfblcapjdipcdpbngk",
+			"save__clip_content",
+			"__evernote_remote.clip",
+			"clipNote",
+			"save__clip_content",
+			"clip",
+			"to-extension--evernote-clip",
+			"_clipping_successful",
+			"save",
+			"JSONRpcClient",
+			"_loginFunction",
+			"_rpcClient",
+			"NoteStore",
+			"__readable_by_evernote.__evernote_bootstrap['server_main']",
+			"live.main",
+			"shard/s154/json",
+			"/shard/s154/json",
+			"to-content--evernote-clip-successful",
+			"_clipping_successful",
+			"clipNote",
+			"__evernote_remote.rpc__noteStore.NoteStoreExtra.clipNote",
+			"__readable_by_evernote.__evernote_remote.rpc__noteStore.NoteStoreExtra.clipNote",
+			"to-extension--evernote-clip",
+			"clip_to_evernote",
+			"menu_functions",
+			"sidebar_menu__clip_to_evernote",
+			"chrome-extension://iooicodkiihhpojmmeghjclgihfjdjhj",
+			"getContent__find",
+			"__readable_launch",
+			"grabArticle",
+			"utf"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"http://id.chinaren.com/zp/",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "customer/module/savemenu.php",
+					"settings":
+					{
+						"buffer_size": 617,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								466,
+								477
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "customer/module/addmenu.php",
+					"settings":
+					{
+						"buffer_size": 3365,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								728,
+								733
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "db/db_open.php",
+					"settings":
+					{
+						"buffer_size": 1117,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								339,
+								335
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "db/db_close.php",
+					"settings":
+					{
+						"buffer_size": 45,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								42,
+								42
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "customer/module/menumanager.php",
+					"settings":
+					{
+						"buffer_size": 3700,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								250,
+								250
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 6.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 229.0,
+	"status_bar_visible": true
+}
