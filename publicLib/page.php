@@ -14,7 +14,6 @@ class Page
         $this->pagesize = $pagesize;
         $this->querycondition = $querycondition;
         $this->querytable = $querytable;
-        echo "page的构造函数";
     }
     //执行查询
     public function sqlQueryResults(){
@@ -22,7 +21,7 @@ class Page
     	$pagesize = $this->pagesize;
     	$sqlcondition = $this->querycondition;
     	$querytable = $this->querytable;
-      echo "select * from $querytable $sqlcondition  order by id desc limit $offset,$pagesize;";
+
     	$menurs = mysql_query("select * from $querytable $sqlcondition  order by id desc limit $offset,$pagesize;");
       return $menurs;
     }
