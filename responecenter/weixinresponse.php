@@ -97,12 +97,12 @@ class wechatCallbackapiTest
         return $content;
     }
     //根据地理位置查询饭店列表
-    private function responseStores(Location_X,Location_Y){
-        return getStores(1,Location_X,Location_Y);
+    private function responseStores($Location_X,$Location_Y){
+        return getStores(1,$Location_X,$Location_Y);
     }
 
     //
-      //根据#号表示订餐完成
+    //根据#号表示订餐完成
     private function saveOrderInfor($infomation,$fromUsername){
     //#饭店编号#13:2*14:3#地址#手机号3#13:2 14:3#北京市海淀区#15901227752
         $infoarr = explode("#",$infomation);

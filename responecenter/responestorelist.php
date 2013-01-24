@@ -21,7 +21,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Store.php';
 * Location_Y 经度
 */
 
- function getStores($page,Location_X,Location_Y) {
+ function getStores($page,$Location_X,$Location_Y) {
 
     $storepage = new Page($page, 3, $sqlcondition, 'store');
     $storeresult = $storepage->sqlQueryResults();
@@ -33,23 +33,25 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Store.php';
     $itemTpl = "<item>
       			    <Title><![CDATA[%s          编号:%s]]></Title>
       			    <Description><![CDATA[%s]]></Description>
+                <Url><![CDATA[http://42.96.139.171/t5/menulist.php?restaurantid=%s]]></Url>
       			    </item>";
-
+    $j = 0;//记录需要显示给用户的个数          
     for($i = 0; $i < count($storelist); $i++) {
   		$storeobj = $storelist[$i];
       //如果存在经纬度才显示出来
       if($storeobj->lat && $storeobj->lon){
-      $distance = distance(Location_X, Location_Y, $storeobj->lat, $storeobj->lon, "K");
+      $distance = distance($Location_X, $Location_Y, $storeobj->lat, $storeobj->lon, "K");
       }
       //如果距离小于5公里，才会显示出来
       if($distance < 5){
-        $storesstr .= sprintf($itemTpl,$storeobj->name,$storeobj->id,$storeobj->address);
+        $storesstr .= sprintf($itemTpl,$storeobj->name,$storeobj->id,$storeobj->address,$storeobj->id);
+        $j++;
       }
   		
 	}
 
-	$storesstr = sprintf("<ArticleCount>3</ArticleCount>
-                             <Articles>%s</Articles>",$storesstr);
+	$storesstr = sprintf("<ArticleCount>%s</ArticleCount>
+                             <Articles>%s</Articles>", $j, $storesstr);
 
     return $storesstr;
  }
