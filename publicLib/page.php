@@ -29,13 +29,13 @@ class Page
     	//取得记录总数$rs,计算总页数用
     	$sqltype = $this->querycondition;
     	$querytable = $this->querytable;
+      $pagesize = $this->pagesize;
 		  $rsss = mysql_query("select count(*) from $querytable $sqltype");
   		$myrow = mysql_fetch_array($rsss);
   		$numrows = $myrow[0];
-  		
 		//计算总页数
-  		$pages = intval($numrows/$pagesize);
-  		if ($numrows%$pagesize){
+  		$pages = intval($numrows / $pagesize);
+  		if ($numrows % $pagesize){
 			$pages++;
   		}
   		return $pages;

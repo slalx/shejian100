@@ -211,7 +211,7 @@ textarea[placeholder].placeholder { color: #aaa }
     display: block;
 }
 .icon18 {
-    background: url('/mpres/htmledition/images/icon18.png') no-repeat scroll 0 0 transparent;
+    background: url('/resource/i/icon18.png') no-repeat scroll 0 0 transparent;
     width: 18px;
     height: 18px;
     display: block;

@@ -13,8 +13,8 @@
             <li <?php if($_GET["module"]=='homemodule' || !$_GET["module"]){ ?>class="selected"<?php }?> ><a href="/customer/home.php" > 首页</a> </li> 
             <li <?php if($_GET["module"]=='menumanager' || $_GET["module"]=='addmenu'){ ?>class="selected"<?php }?>><a href="/customer/home.php?module=menumanager" > 菜单管理</a> </li> 
             <li <?php if($_GET["module"]=='usermanager'){ ?>class="selected"<?php }?>><a href="/customer/home.php?module=usermanager" > 用户管理</a> </li> 
-            <li <?php if($_GET["module"]=='sendmessages'){ ?>class="selected"<?php }?>><a href="/customer/home.php?module=sendmessages" > 群发消息</a> </li> 
-            <li <?php if($_GET["module"]=='usersetting'){ ?>class="selected"<?php }?>><a href="/customer/home.php?module=usersetting" > 设置</a> </li> 
+            <li <?php if($_GET["module"]=='ordermanager'){ ?>class="selected"<?php }?>><a href="/customer/home.php?module=ordermanager" > 订单管理</a> </li> 
+            <li <?php if($_GET["module"]=='customersettting'){ ?>class="selected"<?php }?>><a href="/customer/home.php?module=customersettting" > 设置</a> </li> 
         </ul> 
     </div> 
 </div>
