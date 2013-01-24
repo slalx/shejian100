@@ -1,9 +1,9 @@
 <?php 
 
 
-DEFINE('DB_HOST','localhost');
+DEFINE('DB_HOST','42.96.139.171');
 DEFINE('DB_USER','root');
-DEFINE('DB_PASSWORD','');
+DEFINE('DB_PASSWORD','41d16801c7');
 DEFINE('DB_NAME','shejian100');
 
 

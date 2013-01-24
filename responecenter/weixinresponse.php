@@ -8,6 +8,8 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/page.php';
 
 include $_SERVER['DOCUMENT_ROOT'].'/responecenter/responemenulist.php';
 include $_SERVER['DOCUMENT_ROOT'].'/responecenter/responestorelist.php';
+//
+include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Order.php';
 //define your token
 define("TOKEN", "shejian");
 
@@ -28,7 +30,6 @@ class wechatCallbackapiTest
     {
 		//get post data, May be due to the different environments
 		$postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
-
       	//extract post data
 		if (!empty($postStr)){
                 
@@ -36,29 +37,44 @@ class wechatCallbackapiTest
                 
                 $fromUsername = $postObj->FromUserName;
                 $toUsername = $postObj->ToUserName;
-                $keyword = trim($postObj->Content);
                 $time = time();
+                $content = "";
                 $msgType = $postObj->MsgType;
+                if($msgType == "text"){
+                    $keyword = trim($postObj->Content);
+                }elseif ($msgType == "location"){
+                    $keyword = $postObj->Label;
+                }
                 $textTpl = "<xml>
                             <ToUserName><![CDATA[%s]]></ToUserName>
                             <FromUserName><![CDATA[%s]]></FromUserName>
                             <CreateTime>%s</CreateTime>
                              <MsgType><![CDATA[%s]]></MsgType>
-                             <Content><![CDATA[]]></Content>
-                             <ArticleCount>3</ArticleCount>
-                             <Articles>%s</Articles>
+                             <Content><![CDATA[%s]]></Content>
+                             %s
                              <FuncFlag>0</FuncFlag>
                              </xml>";           
 				if(!empty( $keyword ))
                 {
-                    if($msgType=="text"){
-                        $contentStr = $this->responseMenus();
-                    }elseif ($msgType=="location") {
-                        $contentStr = $this->responseStores();
+                    
+                    if($msgType == "text"){
+                        //默认仅仅处理饭店的id
+                        $msgType = "news";
+                        $articlesStr = $this->responseMenus($keyword,$fromUsername);
+                        //如果含有#号，则认为提交的信息为订单信息
+                        if(strpos($keyword,'#') !== false){
+                            $content = $articlesStr;
+                            $articlesStr = '';
+                            $msgType = "text";
+                        }
+                    }elseif ($msgType == "location") {
+                        //提交的地理信息，帮您搜寻您旁边的饭店
+                        $msgType = "news";
+                        $articlesStr = $this->responseStores($postObj->Location_X,$postObj->Location_Y);
                     }
-              		$msgType = "news";
+              		
                 	//$contentStr = "欢迎来到舌尖网,马上为您预订".$keyword;
-                	$resultStr = sprintf($textTpl, $toUsername, $fromUsername, $time, $msgType, $contentStr);
+                	$resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType,$content,$articlesStr);
                 	echo $resultStr;
                 }else{
                 	echo "Input something...";
@@ -69,13 +85,37 @@ class wechatCallbackapiTest
         	exit;
         }
     }
-	
-    private function responseMenus(){
-        return getMenus(1);
+	//根据饭店id查询菜单或者保存订单信息
+    private function responseMenus($keyword,$fromUsername){
+        $content ='';
+
+        if(strpos($keyword,'#') === false){
+            $content =  getMenus(1,$keyword);
+        }else{
+            $content = $this->saveOrderInfor($keyword,$fromUsername);
+        }
+        return $content;
     }
-    private function responseStores(){
-        return getStores(1);
+    //根据地理位置查询饭店列表
+    private function responseStores(Location_X,Location_Y){
+        return getStores(1,Location_X,Location_Y);
     }
+
+    //
+      //根据#号表示订餐完成
+    private function saveOrderInfor($infomation,$fromUsername){
+    //#饭店编号#13:2*14:3#地址#手机号3#13:2 14:3#北京市海淀区#15901227752
+        $infoarr = explode("#",$infomation);
+        $restaurantid = $infoarr[0];
+        $ordercount = $infoarr[1];
+        $address = $infoarr[2];
+        $telepone = $infoarr[3];
+        
+        $order = new Order($fromUsername,$restaurantid ,$ordercount,$address,$telepone);
+        $order->save();
+        return "订餐成功，预计一个小时送到";     
+    }
+
 
 	private function checkSignature()
 	{
