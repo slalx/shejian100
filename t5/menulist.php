@@ -33,7 +33,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/page.php';
      $menupage = new Page($page, 100, $sqlcondition, 'dish');
      $menuresult= $menupage->sqlQueryResults();
 
-     $itemTpl = "<li ><span class=\"menucount\">1</span><span class=\"menuname\" onclick=\"liclick();\">%s          </span><span class=\"minus\" onclick=\"minusClick();\">-</span><span class=\"price\">%s</span></li>";
+     $itemTpl = "<li ><span class=\"menucount\" id=\"countel_%s\">0</span><span class=\"menuname\" onclick=\"liclick(%s);\">%s          </span><span class=\"minus\" id=\"minus_%s\" onclick=\"minusClick(%s);\">-</span><span class=\"price\">%s</span></li>";
      $count = 0;
 
       if ($menuresult != false){
@@ -41,7 +41,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/page.php';
           $id = $menurow["id"];
           $name = $menurow["name"];
           $price = $menurow["price"];
-          $menusstr .= sprintf($itemTpl, $name, $price);
+          $menusstr .= sprintf($itemTpl, $id, $id, $name, $id, $id, $price);
           //$count ++;
         }
       }
@@ -143,13 +143,24 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
     </div>
   </body>
   <script type="text/javascript">
-    function liclick(){
-      //console.log('ddd');
-      //alert('ddd');
+    function liclick(id){
+      var countobj = document.getElementById('countel_'+id);
+      var minusobj = document.getElementById('minus_'+id);
+        countobj.style.visibility = 'visible';
+        countobj.innerHTML = parseInt(countobj.innerHTML)+1;
+        minusobj.style.visibility = 'visible';
     }
-    function minusClick(){
-      //console.log('aaa');
-      //alert('aaa');
+    function minusClick(id){
+      var countobj = document.getElementById('countel_'+id);
+      var minusobj = document.getElementById('minus_'+id);
+      var currentcount = countobj.innerHTML;
+      var nowcount = parseInt(currentcount)-1;
+      if(nowcount>0){
+        countobj.innerHTML = nowcount;
+      }else{
+        countobj.style.visibility = 'hidden';
+        minusobj.style.visibility = 'hidden';
+      }
     }
   </script>
 </html>
