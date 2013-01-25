@@ -158,6 +158,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
       if(nowcount>0){
         countobj.innerHTML = nowcount;
       }else{
+        countobj.innerHTML = nowcount;
         countobj.style.visibility = 'hidden';
         minusobj.style.visibility = 'hidden';
       }
