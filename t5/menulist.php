@@ -33,7 +33,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/page.php';
      $menupage = new Page($page, 100, $sqlcondition, 'dish');
      $menuresult= $menupage->sqlQueryResults();
 
-     $itemTpl = "<li><span class=\"menucount\">1</span>%s          <span class=\"minus\">-</span><span class=\"price\">%s</span></li>";
+     $itemTpl = "<li ><span class=\"menucount\">1</span><span class=\"menuname\" onclick=\"liclick();\">%s          </span><span class=\"minus\" onclick=\"minusClick();\">-</span><span class=\"price\">%s</span></li>";
      $count = 0;
 
       if ($menuresult != false){
@@ -94,6 +94,9 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
     background-image: -moz-linear-gradient(bottom,#4d910c 3%,#69b310 97%,#fff 100%);
     background-image: -webkit-linear-gradient(bottom,#4d910c 3%,#69b310 97%,#fff 100%);
 }
+.menutypeblock span{
+  display: inline-block;
+}
 .price,.minus{
     float: right;
 }
@@ -101,13 +104,11 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
   font-size: 36px;
   width: 24px;
   height: 16px;
-  background: 
-  red;
-  color: 
-  white;
+  background: red;
   border-radius: 65px;
   padding-left: 11px;
   padding-bottom: 27px;
+  visibility: hidden;
 }
 .menutypeblock li{
     height: 44px;
@@ -121,6 +122,9 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
 }
 .submitbtn{
   float: right;
+}
+.menuname{
+  width: 90%;
 }
 </style>
   <body class="">
@@ -136,6 +140,16 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
     <?= $liststr ?>
     </div>
   </body>
+  <script type="text/javascript">
+    function liclick(){
+      //console.log('ddd');
+      alert('ddd');
+    }
+    function minusClick(){
+      //console.log('aaa');
+      alert('aaa');
+    }
+  </script>
 </html>
 
 
