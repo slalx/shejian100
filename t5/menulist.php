@@ -126,7 +126,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
   float: right;
 }
 .menuname{
-  width: 90%;
+  width: 50%;
 }
 </style>
   <body class="">
