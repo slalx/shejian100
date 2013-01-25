@@ -23,6 +23,10 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/page.php';
     $page = intval($_GET['page']);
   }
 
+  $fromuser = 'noname';
+    if (isset($_GET['fromuser'])){
+    $fromuser = intval($_GET['fromuser']);
+  }
 
   //根据饭店的id查找菜单
   function getMenus($page,$sqlwhere){
@@ -133,13 +137,16 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
     <div class="container">
       <div class="header">
       <button data-gid="0" class="btnGrayS">0</button>
-      <button data-gid="0" class="btnGrayS submitbtn">提交</button>
+      <button data-gid="0" class="btnGrayS submitbtn" onclick="submitorder();">提交</button>
     </div>
     <div class="storeInfo">
       <div><?= $name ?></div>
       <div><?= $storedesc ?></div>
     </div>
-    <?= $liststr ?>
+    <div id="menulistcontent">
+      <?= $liststr ?>
+    </div>
+
     </div>
   </body>
   <script type="text/javascript">
@@ -162,6 +169,22 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
         countobj.style.visibility = 'hidden';
         minusobj.style.visibility = 'hidden';
       }
+    }
+
+    function submitorder(){
+      var menucontent = document.getElementById('menulistcontent');
+      var lis = document.getElementsByTagName('li');
+      var orderstr='';
+      for(var i=0,l=lis.length; i<l; i++){
+        var countobj = lis[i];
+        var mid = countobj.firstElementChild.getAttribute('id').substr(8);
+        var mcount = countobj.firstElementChild.innerHTML;
+        if(parseInt(mcount)>0){
+          orderstr=orderstr+mid+':'+mcount+'*'
+        }
+      }
+      
+      window.location.href = 'restaurantid='+'<?= $restaurantid?>'+'&ordercount='+orderstr+"&fromuser="+'<?= $fromuser?>';
     }
   </script>
 </html>
