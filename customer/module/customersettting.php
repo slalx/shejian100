@@ -12,9 +12,9 @@
 			<div> 密码至少8位，采用密码加数字的形式</div> 
 			<div id="settingArea" class="settingArea"> 
 				<div class="userinfoArea left"> 
-					<div style="padding:15px 0;"> 旧密码: <input type="password" value="" class="bindUserInput" name="binduser" id="binduser"> </div>
-					<div style="padding:15px 0;"> 新密码: <input type="password" value="" class="bindUserInput" name="binduser" id="binduser"> </div>  
-					<button id="saveSetting" class="btnGreen">保存</button> 
+					<div style="padding:15px 0;"> 旧密码: <input type="password" value="" class="bindUserInput" name="old_password" id="old_passwordid"> </div>
+					<div style="padding:15px 0;"> 新密码: <input type="password" value="" class="bindUserInput" name="new_password" id="new_passwordid"> </div>  
+					<button id="saveSetting" class="btnGreen" onclick="submitform();">保存</button> 
 				</div> 
 				<div class="clr"></div> 
 			</div> 
@@ -29,3 +29,21 @@
 		<div class="clr"></div> 
 	</div>
 </div>
+<script>
+
+function submitform(){
+	var old_password = document.getElementById('old_passwordid').value;
+	var new_password = document.getElementById('new_passwordid').value;
+	$.ajax({
+	  type: "post",
+	  url: "/customer/uc/editpassword.php",
+	  data: { old_password: old_password, new_password: new_password },
+	  dataType: 'json',
+	  success:function(data){
+	  		alert(data.statusText);
+	  }
+	})
+}
+
+
+</script>

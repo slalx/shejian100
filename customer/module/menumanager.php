@@ -76,7 +76,13 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
 			<h2>菜单管理</h2> 
 		</div> 
 		<div class="content"> 
-			<div class="cLine"> 
+			<div class="cLine">
+				<div class="left"> 
+					<div id="allGroup" data-gid="0" class="selectArea left">
+						<button id="putIntoGroupAll" class="btnGrayS left"><a class="icon18C iconAdd" href="/customer/home.php?module=addmenu">添加新菜</a></button>
+					</div> 
+					<div class="clr"></div> 
+				</div> 
 				<div class="pageNavigator right"> 
 					<span> <a href="<?= $prevpageurl ?>" class="prePage <?= $prevclass?>"> 上一页</a> </span> 
 					<span class="pageNum">&nbsp;&nbsp;<?= $page ?>&nbsp;/&nbsp;<?= $pages ?>&nbsp;&nbsp;</span> 
@@ -94,9 +100,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
 			<ul id="listContainer">
 			<?php
 				if ($menurs != false){
-					$i=0;
 					while($menurow = mysql_fetch_array($menurs)){
-						$i++;
 						$name=$menurow["name"];
 						$price=$menurow["price"];
 					
@@ -120,16 +124,48 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
 			<div class="catalogList"> 
 				<ul> 
 					<li <?php if(!$_GET['type']){ ?>class="selected "<?php }?> > <a href="/customer/home.php?module=menumanager">全部</a> </li> 
-					<li <?php if($_GET['type']=='1'){ ?>class="selected "<?php }?> > <a href="/customer/home.php?module=menumanager&type=1">热菜</a> </li> 
-					<li <?php if($_GET['type']=='2'){ ?>class="selected "<?php }?> > <a href="/customer/home.php?module=menumanager&type=2">凉菜</a> </li> 
-					<li id="groupAdd" class="group groupAdd"><a class="icon18C iconAdd" href="/customer/home.php?module=addmenu">添加新菜</a></li>
+					<?php 
+						  $restaurantid = $_COOKIE["sj_uid"];
+						  $typeresult = mysql_query("select * from menutype where restaurantid=$restaurantid;");
+						  if ($typeresult != false){
+							while($row = mysql_fetch_array($typeresult)){
+								$id=$row["id"];
+								$name=$row["name"];
+					?>
+					<li <?php if($_GET['type']==$id){ ?>class="selected "<?php }?> > <a href="/customer/home.php?module=menumanager&type=<?= $id?>"><?= $name?></a> </li> 
+					<?php
+							}
+						   }
+					?>
+					<li id="groupEdit" style="display:none;"><span><input class="groupInput" type="text" onblur="saveType();" id="groupEditValue"></span></li> 
+					<li id="groupAdd" class="group groupAdd"><a class="icon18C iconAdd" href="javascript:void(0);" onclick="document.getElementById('groupEdit').style.display=''";>添加分类</a></li>
 				</ul> 
 			</div> 
 		</div> 
 		<div class="clr"></div>
 	</div>
 </div>
-
+<script type="text/javascript">
+	function saveType(){
+		var typeobj = document.getElementById('groupEditValue');
+		var type = typeobj.value;
+		typeobj.style.display = "none";
+		$.ajax({
+			  type: "post",
+			  url: "/customer/module/menumanager/saveType.php",
+			  data: { menutype: type},
+			  dataType: 'json',
+			  success:function(data){
+			  	if(data.status == 1){
+			  		alert(data.statusText);
+			  		window.location.reload();
+			  	}else if (data.status == 0){
+			  		alert(data.statusText);
+			  	}
+			  }
+		})
+	}
+</script>
 <?php
 include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
 ?>

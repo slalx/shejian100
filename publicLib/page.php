@@ -21,7 +21,9 @@ class Page
     	$pagesize = $this->pagesize;
     	$sqlcondition = $this->querycondition;
     	$querytable = $this->querytable;
+
     	$menurs = mysql_query("select * from $querytable $sqlcondition  order by id desc limit $offset,$pagesize;");
+
       return $menurs;
     }
     //计算总页数

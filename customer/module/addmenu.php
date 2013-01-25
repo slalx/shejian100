@@ -3,7 +3,22 @@
 		padding-bottom: 23px;
 	}
 </style>
+<?php
+include $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
 
+  $restaurantid = $_COOKIE["sj_uid"];
+  $typeresult = mysql_query("select * from menutype where restaurantid=$restaurantid;");
+
+  $optTpl = "<option value=\"%s\">%s</option>";
+  if ($typeresult != false){
+	while($row = mysql_fetch_array($typeresult)){
+		$id=$row["id"];
+		$name=$row["name"];
+		$optstr .= sprintf($optTpl, $id, $name);
+	}
+	//echo $optstr;
+  }			
+?>
 
 <div id="main" class="container">
     <div class="containerBox boxIndex"> 
@@ -23,8 +38,7 @@
 									<input type="text" class="msg-input" value="" name="dish[0][price]">
 									<label for="">种类</label> 
 									<select name="dish[0][type]">
-										<option value="1">热菜</option>
-										<option value="2">凉菜</option>
+										<?= $optstr ?>
 									</select>
 								</div>
 								<div class="dish_item">
@@ -34,8 +48,7 @@
 									<input type="text" class="msg-input" value="" name="dish[1][price]">
 									<label for="">种类</label> 
 									<select name="dish[1][type]">
-										<option value="1">热菜</option>
-										<option value="2">凉菜</option>
+										<?= $optstr ?>
 									</select>
 								</div>
 								<div class="dish_item">
@@ -45,8 +58,7 @@
 									<input type="text" class="msg-input" value="" name="dish[2][price]">
 									<label for="">种类</label> 
 									<select name="dish[2][type]">
-										<option value="1">热菜</option>
-										<option value="2">凉菜</option>
+										<?= $optstr ?>
 									</select>
 								</div>
 								<div class="dish_item">
@@ -56,8 +68,7 @@
 									<input type="text" class="msg-input" value="" name="dish[3][price]">
 									<label for="">种类</label> 
 									<select name="dish[3][type]">
-										<option value="1">热菜</option>
-										<option value="2">凉菜</option>
+										<?= $optstr ?>
 									</select>
 								</div>
 								<div class="dish_item">
@@ -67,8 +78,7 @@
 									<input type="text" class="msg-input" value="" name="dish[4][price]">
 									<label for="">种类</label> 
 									<select name="dish[4][type]">
-										<option value="1">热菜</option>
-										<option value="2">凉菜</option>
+										<?= $optstr ?>
 									</select>
 								</div>
 							</form>
@@ -89,7 +99,9 @@
 		<div class="clr"></div>
 	</div>
 </div>
-
+<?php
+	
+?>
 
 
 
