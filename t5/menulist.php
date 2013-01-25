@@ -117,8 +117,10 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
     border-bottom: 1px solid #d3d3d3;
 }
 .menucount{
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 30px;
+  padding-left: 9px;
+  visibility: hidden;
 }
 .submitbtn{
   float: right;
@@ -143,11 +145,11 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
   <script type="text/javascript">
     function liclick(){
       //console.log('ddd');
-      alert('ddd');
+      //alert('ddd');
     }
     function minusClick(){
       //console.log('aaa');
-      alert('aaa');
+      //alert('aaa');
     }
   </script>
 </html>
