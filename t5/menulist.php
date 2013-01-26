@@ -37,14 +37,14 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/page.php';
      $menupage = new Page($page, 100, $sqlcondition, 'dish');
      $menuresult= $menupage->sqlQueryResults();
 
-     $itemTpl = "<li ><span class=\"menucount\" id=\"countel_%s\">0</span><span class=\"menuname\" onclick=\"liclick(%s);\">%s          </span><span class=\"minus\" id=\"minus_%s\" onclick=\"minusClick(%s);\">-</span><span class=\"price\">%s</span></li>";
+     $itemTpl = "<li ><span class=\"menucount\" id=\"countel_%s\">0</span><span class=\"menuname\" onclick=\"liclick(%s);\">%s          </span><span class=\"minus\" id=\"minus_%s\" onclick=\"minusClick(%s);\">-</span><span class=\"price\">%s元</span></li>";
      $count = 0;
 
       if ($menuresult != false){
         while($menurow = mysql_fetch_array($menuresult)){
           $id = $menurow["id"];
           $name = $menurow["name"];
-          $price = $menurow["price"];
+          $price = intval($menurow["price"]);
           $menusstr .= sprintf($itemTpl, $id, $id, $name, $id, $id, $price);
           //$count ++;
         }
@@ -90,8 +90,10 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
 <style type="text/css">
 .container{
   background-color: #FFF;
-  width: 98.5%;
-  margin: 0 10px;
+  width: 100%;
+}
+h3 {
+  padding-left: 10px;
 }
 .menutypeblock .typenavigation{
     height: 36px;
@@ -121,11 +123,12 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
     line-height: 44px;
     font-size: 22px;
     border-bottom: 1px solid #d3d3d3;
+    color: #484848;
 }
 .menucount{
   width: 24px;
   height: 30px;
-  padding-left: 9px;
+
   visibility: hidden;
 }
 .submitbtn{
@@ -140,16 +143,27 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
 .storeInfo span{
   margin-left: 10px;
 }
-.storeInfo div{
-  margin-top: 10px;
+.storeaddandname{
+  padding-top: 10px;
+}
+.storedesc{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.storeInfo .address{
+  padding-right: 10px;
+}
+#hasorder{
+  padding-top: 10px;
+  padding-right: 10px;
 }
 </style>
   <body class="">
     <div class="container">
       <div class="storeInfo">
         <div style="display:none;" id="hasorder"><span>0</span><span class="right"><button data-gid="0" class="btnGrayS submitbtn" onclick="submitorder();">下一步</button></span></div>
-        <div><span><?= $name ?></span><span class="right">地址：<?= $address ?></span></div>
-        <div><span><?= $storedesc ?></span></div>
+        <div class="storeaddandname"><span><?= $name ?></span><span class="address right">地址：<?= $address ?></span></div>
+        <div class="storedesc"><span><?= $storedesc ?></span></div>
       </div>
       <div id="menulistcontent">
         <?= $liststr ?>
