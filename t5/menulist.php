@@ -120,11 +120,12 @@ h3 {
   text-align: center;
   color: white;
   line-height: 32px;
+  margin-right: 5px;
 }
 .menutypeblock li{
     height: 44px;
     line-height: 44px;
-    font-size: 22px;
+    font-size: 15px;
     border-bottom: 1px solid #d3d3d3;
     color: #484848;
 }
