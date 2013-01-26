@@ -21,7 +21,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Store.php';
 * Location_Y 经度
 */
 
- function getStores($page,$Location_X,$Location_Y) {
+ function getStores($page,$Location_X,$Location_Y,$fromUsername) {
 
     $storepage = new Page($page, 3, $sqlcondition, 'store');
     $storeresult = $storepage->sqlQueryResults();
@@ -33,7 +33,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Store.php';
     $itemTpl = "<item>
       			    <Title><![CDATA[%s          编号:%s]]></Title>
       			    <Description><![CDATA[%s]]></Description>
-                <Url><![CDATA[http://42.96.139.171/t5/menulist.php?restaurantid=%s]]></Url>
+                <Url><![CDATA[http://42.96.139.171/t5/menulist.php?restaurantid=%s&fromuser=$fromUsername]]></Url>
       			    </item>";
     $j = 0;//记录需要显示给用户的个数          
     for($i = 0; $i < count($storelist); $i++) {

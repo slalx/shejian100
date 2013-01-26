@@ -70,7 +70,7 @@ class wechatCallbackapiTest
                     }elseif ($msgType == "location") {
                         //提交的地理信息，帮您搜寻您旁边的饭店
                         $msgType = "news";
-                        $articlesStr = $this->responseStores($postObj->Location_X,$postObj->Location_Y);
+                        $articlesStr = $this->responseStores($postObj->Location_X,$postObj->Location_Y,$fromUsername);
                     }
               		
                 	//$contentStr = "欢迎来到舌尖网,马上为您预订".$keyword;
@@ -97,8 +97,8 @@ class wechatCallbackapiTest
         return $content;
     }
     //根据地理位置查询饭店列表
-    private function responseStores($Location_X,$Location_Y){
-        return getStores(1,$Location_X,$Location_Y);
+    private function responseStores($Location_X,$Location_Y,$fromUsername){
+        return getStores(1,$Location_X,$Location_Y,$fromUsername);
     }
 
     //
