@@ -135,7 +135,13 @@ h3 {
   height: 30px;
   visibility: hidden;
   text-align: center;
-  color: #ff9800;
+  color: 
+  #fff;
+  background: 
+  #5ba607;
+  line-height: 30px;
+  border-radius: 3px;
+  margin: 0 3px;
 }
 .submitbtn{
 
@@ -246,6 +252,18 @@ h3 {
       }
       
       window.location.href = '/t5/orderform.php?restaurantid='+'<?= $restaurantid?>'+'&ordercount='+orderstr+"&fromuser="+'<?= $fromuser?>';
+    }
+
+    window.document.onscroll = function(){
+      var wd= document.body;
+      var hasorder = document.getElementById('hasorder');
+      var doffsettop = parseInt(wd.scollTop);
+      console.log(wd.scollTop);
+      if(doffsettop > 0){
+          hasorder.style.position="fixed";
+      }else{
+        hasorder.style.position="static";
+      }
     }
   </script>
 </html>
