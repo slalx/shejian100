@@ -171,7 +171,8 @@ h3 {
   height: 40px;
   width: 100%;
   position: fixed;
-  background: white;
+background: #f1f1f1;
+border: 1px solid #d3d3d3;
 }
 .totalcount{
   background: red;
