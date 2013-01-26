@@ -79,6 +79,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/page.php';
       $name = $row["name"];
       $storedesc = $row["storedesc"];
       $address = $row["address"];
+      $telephone = $row["telephone"];
     }
   } 
 
@@ -176,13 +177,16 @@ h3 {
   text-align: center;
   line-height: 30px;
 }
+.price{
+  margin-right: 5px;
+}
 </style>
   <body class="">
     <div class="container">
       <div class="storeInfo">
         <div style="display:none;" id="hasorder"><span class="totalcount">0</span><span class="right"><button data-gid="0" class="btnGrayS submitbtn" onclick="submitorder();">下一步</button></span></div>
         <div class="storeaddandname"><span><?= $name ?></span><span class="address right">地址：<?= $address ?></span></div>
-        <div class="storedesc"><span><?= $storedesc ?></span></div>
+        <div class="storedesc"><span><?= $storedesc ?></span><span class="address right"><a class="btnGrayS" href="tel:<?= $telephone ?>">拨打电话</a></span></div>
       </div>
       <div id="menulistcontent">
         <?= $liststr ?>
