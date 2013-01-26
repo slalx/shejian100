@@ -26,7 +26,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Store.php';
     $storepage = new Page($page, 3, $sqlcondition, 'store');
     $storeresult = $storepage->sqlQueryResults();
 
-    $store = new Store('','','');
+    $store = new Store('','','','','');
     $storelist = $store->getStoreList($storeresult);
 
     $storesstr = '';
@@ -62,6 +62,11 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Store.php';
   根据纬度和经度算出两点之间的距离
 */
 function distance($lat1, $lon1, $lat2, $lon2, $unit) {
+
+  $lat1 = doubleval($lat1);
+  $lon1 = doubleval($lon1);
+  $lat2 = doubleval($lat2);
+  $lon2 = doubleval($lon2);
 
   $theta = $lon1 - $lon2;
   $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));

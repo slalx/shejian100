@@ -1,6 +1,6 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'].'/publicLib/page.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/publicLib/page.php';
 
 class Order
 {
