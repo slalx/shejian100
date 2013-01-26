@@ -25,7 +25,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/page.php';
 
   $fromuser = 'noname';
     if (isset($_GET['fromuser'])){
-    $fromuser = intval($_GET['fromuser']);
+    $fromuser = $_GET['fromuser'];
   }
 
   //根据饭店的id查找菜单
@@ -78,6 +78,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/page.php';
       $id = $row["id"];
       $name = $row["name"];
       $storedesc = $row["storedesc"];
+      $address = $row["address"];
     }
   } 
 
@@ -89,7 +90,8 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
 <style type="text/css">
 .container{
   background-color: #FFF;
-  width: 90.41%;
+  width: 98.5%;
+  margin: 0 10px;
 }
 .menutypeblock .typenavigation{
     height: 36px;
@@ -127,47 +129,65 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
   visibility: hidden;
 }
 .submitbtn{
-  float: right;
+
 }
 .menuname{
   width: 50%;
 }
+.storeInfo{
+  color: #8c8c8c;
+}
+.storeInfo span{
+  margin-left: 10px;
+}
+.storeInfo div{
+  margin-top: 10px;
+}
 </style>
   <body class="">
     <div class="container">
-      <div class="header">
-      <button data-gid="0" class="btnGrayS">0</button>
-      <button data-gid="0" class="btnGrayS submitbtn" onclick="submitorder();">提交</button>
-    </div>
-    <div class="storeInfo">
-      <div><?= $name ?></div>
-      <div><?= $storedesc ?></div>
-    </div>
-    <div id="menulistcontent">
-      <?= $liststr ?>
-    </div>
-
+      <div class="storeInfo">
+        <div style="display:none;" id="hasorder"><span>0</span><span class="right"><button data-gid="0" class="btnGrayS submitbtn" onclick="submitorder();">下一步</button></span></div>
+        <div><span><?= $name ?></span><span class="right">地址：<?= $address ?></span></div>
+        <div><span><?= $storedesc ?></span></div>
+      </div>
+      <div id="menulistcontent">
+        <?= $liststr ?>
+      </div>
     </div>
   </body>
   <script type="text/javascript">
     function liclick(id){
       var countobj = document.getElementById('countel_'+id);
       var minusobj = document.getElementById('minus_'+id);
+      var hasorder = document.getElementById('hasorder');
+      var spancount = hasorder.firstElementChild;
         countobj.style.visibility = 'visible';
         countobj.innerHTML = parseInt(countobj.innerHTML)+1;
+        spancount.innerHTML = parseInt(spancount.innerHTML)+1;
         minusobj.style.visibility = 'visible';
+        hasorder.style.display = '';
     }
     function minusClick(id){
       var countobj = document.getElementById('countel_'+id);
       var minusobj = document.getElementById('minus_'+id);
+      var hasorder = document.getElementById('hasorder');
       var currentcount = countobj.innerHTML;
       var nowcount = parseInt(currentcount)-1;
+      var totalnowcount = parseInt(hasorder.firstElementChild.innerHTML)-1;
+      if(totalnowcount > 0){
+        hasorder.firstElementChild.innerHTML = totalnowcount;
+      }else{
+        hasorder.style.display = 'none';
+        hasorder.firstElementChild.innerHTML  = 0;
+      }
       if(nowcount>0){
         countobj.innerHTML = nowcount;
       }else{
         countobj.innerHTML = nowcount;
         countobj.style.visibility = 'hidden';
         minusobj.style.visibility = 'hidden';
+        //hasorder.style.display = 'none';
       }
     }
 
