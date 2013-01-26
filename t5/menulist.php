@@ -255,15 +255,18 @@ h3 {
     }
 
     window.document.onscroll = function(){
-      var wd= document.body;
-      var hasorder = document.getElementById('hasorder');
-      var doffsettop = parseInt(wd.scollTop);
-      console.log(wd.scollTop);
-      if(doffsettop > 0){
-          hasorder.style.position="fixed";
-      }else{
-        hasorder.style.position="static";
-      }
+      setTimeout(function(){      
+            var wd= document.body;
+            var hasorder = document.getElementById('hasorder');
+            var doffsettop = parseInt(wd.scollTop);
+            console.log(wd.scollTop);
+            if(doffsettop > 0){
+                hasorder.style.position="fixed";
+            }else{
+              hasorder.style.position="static";
+            }
+    },0);
+
     }
   </script>
 </html>
