@@ -204,7 +204,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
         }
       }
       
-      window.location.href = 'restaurantid='+'<?= $restaurantid?>'+'&ordercount='+orderstr+"&fromuser="+'<?= $fromuser?>';
+      window.location.href = '/t5/orderform.php?restaurantid='+'<?= $restaurantid?>'+'&ordercount='+orderstr+"&fromuser="+'<?= $fromuser?>';
     }
   </script>
 </html>
