@@ -256,10 +256,10 @@ h3 {
 
     window.document.onscroll = function(){
       setTimeout(function(){      
-            var wd= document.body;
+            var db= document.body;
             var hasorder = document.getElementById('hasorder');
-            var doffsettop = parseInt(wd.scollTop);
-            console.log(wd.scollTop);
+            var doffsettop = parseInt(db.scrollTop);
+            console.log(doffsettop);
             if(doffsettop > 0){
                 hasorder.style.position="fixed";
             }else{
