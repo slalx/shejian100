@@ -157,11 +157,24 @@ h3 {
   padding-top: 10px;
   padding-right: 10px;
 }
+.totalcount{
+  background: red;
+  color: white;
+  font-size: 25px;
+  -webkit-border-radius:3px;
+  -moz-border-radius:3px;
+  border-radius: 3px;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  text-align: center;
+}
 </style>
   <body class="">
     <div class="container">
       <div class="storeInfo">
-        <div style="display:none;" id="hasorder"><span>0</span><span class="right"><button data-gid="0" class="btnGrayS submitbtn" onclick="submitorder();">下一步</button></span></div>
+        <div style="display:none;" id="hasorder"><span class="totalcount">0</span><span class="right"><button data-gid="0" class="btnGrayS submitbtn" onclick="submitorder();">下一步</button></span></div>
         <div class="storeaddandname"><span><?= $name ?></span><span class="address right">地址：<?= $address ?></span></div>
         <div class="storedesc"><span><?= $storedesc ?></span></div>
       </div>
