@@ -162,6 +162,10 @@ h3 {
 #hasorder{
   padding-top: 10px;
   padding-right: 10px;
+  height: 40px;
+  width: 100%;
+  position: fixed;
+  background: white;
 }
 .totalcount{
   background: red;
