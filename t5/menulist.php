@@ -111,12 +111,15 @@ h3 {
 .minus{
   font-size: 36px;
   width: 24px;
-  height: 16px;
+  height: 32px;
   background: red;
-  border-radius: 65px;
-  padding-left: 11px;
-  padding-bottom: 27px;
+  border-radius: 3px;
   visibility: hidden;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+  color: white;
+  line-height: 32px;
 }
 .menutypeblock li{
     height: 44px;
@@ -128,8 +131,9 @@ h3 {
 .menucount{
   width: 24px;
   height: 30px;
-
   visibility: hidden;
+  text-align: center;
+  color: #ff9800;
 }
 .submitbtn{
 
@@ -169,6 +173,7 @@ h3 {
   height: 30px;
   vertical-align: middle;
   text-align: center;
+  line-height: 30px;
 }
 </style>
   <body class="">
