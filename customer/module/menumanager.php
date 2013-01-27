@@ -102,11 +102,11 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
 				if ($menurs != false){
 					while($menurow = mysql_fetch_array($menurs)){
 						$name=$menurow["name"];
-						$price=$menurow["price"];
+						$price=intval($menurow["price"]);
 						$mid = $menurow["id"];
 					
 			?> 
-				<li class="listItem buddyRichInfoC"> <div class="left"> <input class="chooseFriend" type="checkbox" value="<?= $mid ?>"> </div>  <a target="_blank" href="#" class="msgSender f16 c-l b left" data-fakeid="983031980"><?php echo $name;?> </a> <span class="remarkName left" data-fakeid="983031980"></span> <div class="right"> <button class="msgSenderRemark right btnGrayS" data-fakeid="983031980" onclick="showEditDialog(<?php echo "'$mid'".",'$name'".",'$price'";?>);">修改</button> <button data-gid="0" data-fid="983031980" class="putIntoGroup btnGrayS right"><?php echo $price;?> </button>  <div class="clr"></div> </div> <div class="clr"></div> </li> 
+				<li class="listItem buddyRichInfoC"> <div class="left"> <input class="chooseFriend" type="checkbox" value="<?= $mid ?>"> </div>  <a target="_blank" href="#" class="msgSender f16 c-l b left" data-fakeid="983031980"><?php echo $name;?> </a> <span class="remarkName left" data-fakeid="983031980"></span> <div class="right"> <button class="msgSenderRemark right btnGrayS" data-fakeid="983031980" onclick="showEditDialog(<?php echo "'$mid'".",'$name'".",'$price'";?>);">修改</button> <button data-gid="0" data-fid="983031980" class="putIntoGroup btnGrayS right"><?php echo $price;?>￥</button>  <div class="clr"></div> </div> <div class="clr"></div> </li> 
 			<?php
 					}
 				}	
@@ -215,10 +215,28 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
 			title:'修改菜单',
 			content:content,
 			confirm:function(){
-
+				saveEdit(id);
 			},
 			cancel:function(){}
 		});
+	}
+	function saveEdit(id){
+		var name = document.getElementById('nameInput').value;
+		var price = document.getElementById('priceInput').value;
+			$.ajax({
+			  type: "post",
+			  url: "/customer/module/menumanager/editMenu.php",
+			  data: { id: id,name:name,price:price},
+			  dataType: 'json',
+			  success:function(data){
+			  	if(data.status == 1){
+			  		alert(data.statusText);
+			  		window.location.reload();
+			  	}else if (data.status == 0){
+			  		alert(data.statusText);
+			  	}
+			  }
+			})
 	}
 </script>
 <?php
