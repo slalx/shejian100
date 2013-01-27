@@ -49,6 +49,28 @@ class Order
       return $totalOrdersCount;
     }
     //
+    //保存订单
+    public function delete($id){
+      //合成sql语句
+      $query_string = "delete from orderform where id=$id;"; 
+
+      $r = mysql_query($query_string);
+      if (!$r){
+        die('插入Error: ' . mysql_error());
+      } 
+      return $r;
+    }
+    //更新订单状态
+    public function updateStatus($id,$status){
+      //合成sql语句
+      $query_string = "update orderform set status=$status where id=$id;"; 
+
+      $r = mysql_query($query_string);
+      if (!$r){
+        die('插入Error: ' . mysql_error());
+      } 
+      return $r;
+    }
 }
 
 ?>

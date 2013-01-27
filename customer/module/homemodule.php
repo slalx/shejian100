@@ -2,11 +2,15 @@
 <div id="main" class="container">
     <div class="containerBox boxIndex"> 
         <div class="mainPanel"> 
-            <h2 class="h2">欢迎你，舌尖网</h2> 
+            <h2 class="h2">欢迎你，<?= $_SESSION["username"] ?></h2> 
             <div class="todoList"> <h3 class="">最新订单</h3> </div> 
             <div id="wxChartsFans" class="wxCharts">
                 <div class="highcharts-container" id="highcharts-0" style="position: relative; overflow: hidden; width: 660px; height: 300px; text-align: left; line-height: normal; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif; font-size: 12px; ">
-                    
+                    <?php
+                        if ($_GET['direct'] == 'reg'){
+                    ?>
+                    <a href="" style="color:red;">还没有添加菜单，抓紧去添加菜单吧！！！</a>
+                    <?php } ?>
                 </div>
             </div> 
         </div> 
