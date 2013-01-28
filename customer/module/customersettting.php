@@ -22,7 +22,8 @@
 		<div class="sideBar"> 
 			<div class="catalogList"> 
 				<ul> 
-					<li class="selected"> <a href="/cgi-bin/userinfopage?t=wxm-setting&amp;lang=zh_CN">修改密码</a> </li> 
+					<li class="selected"> <a href="/customer/home.php?module=customersettting">修改密码</a> </li> 
+					<li class=""> <a href="/customer/home.php?module=editstorecover">修改饭店封面</a> </li>
 				</ul> 
 			</div> 
 		</div> 
