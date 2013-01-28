@@ -33,6 +33,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Store.php';
     $itemTpl = "<item>
       			    <Title><![CDATA[%s          编号:%s]]></Title>
       			    <Description><![CDATA[%s]]></Description>
+                 <PicUrl><![CDATA[%s]]></PicUrl>
                 <Url><![CDATA[http://42.96.139.171/t5/menulist.php?restaurantid=%s&fromuser=$fromUsername]]></Url>
       			    </item>";
     $j = 0;//记录需要显示给用户的个数          
@@ -44,7 +45,9 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Store.php';
       }
       //如果距离小于5公里，才会显示出来
       if($distance < 3){
-        $storesstr .= sprintf($itemTpl,$storeobj->name,$storeobj->id,$storeobj->address,$storeobj->id);
+        $picid = $storeobj->id;
+        $picurl = "http://42.96.139.171/customer/module/customersetting/upload/$picid.png";
+        $storesstr .= sprintf($itemTpl,$storeobj->name,$storeobj->id,$storeobj->address,$picurl,$storeobj->id);
         $j++;
       }
   		
