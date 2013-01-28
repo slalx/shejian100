@@ -43,7 +43,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Store.php';
       $distance = distance($Location_X, $Location_Y, $storeobj->lat, $storeobj->lon, "K");
       }
       //如果距离小于5公里，才会显示出来
-      if($distance < 50){
+      if($distance < 3){
         $storesstr .= sprintf($itemTpl,$storeobj->name,$storeobj->id,$storeobj->address,$storeobj->id);
         $j++;
       }

@@ -5,15 +5,17 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
 
  $urltype = '';
  $sqltype = '';
+$restaurantid = $_COOKIE["sj_uid"];
   //菜系类别
   if (isset($_GET['type'])){
 	$urltype = '&type='.intval($_GET['type']);
-	$sqltype = 'where type='.$_GET['type'];
+	$sqltype = " and type=".$_GET['type'];
   }
-
+ 
+ $sqltype = "where restaurantid='$restaurantid'".$sqltype;
 
 //设置每一页显示的记录数
-  $pagesize = 3; 
+  $pagesize = 10; 
 
 //取得记录总数$rs,计算总页数用
 	$rsss = mysql_query("select count(*) from dish $sqltype");
@@ -38,6 +40,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
   $offset = $pagesize*($page - 1);
 //读取指定记录数
   //mysql_query("SET NAMES utf8"); 
+
   $menurs = mysql_query("select * from dish  $sqltype order by id desc limit $offset,$pagesize;");
 
   //计算上一页，下一页
@@ -129,7 +132,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
 				<ul> 
 					<li <?php if(!$_GET['type']){ ?>class="selected "<?php }?> > <a href="/customer/home.php?module=menumanager">全部</a> </li> 
 					<?php 
-						  $restaurantid = $_COOKIE["sj_uid"];
+						  
 						  $typeresult = mysql_query("select * from menutype where restaurantid=$restaurantid;");
 						  if ($typeresult != false){
 							while($row = mysql_fetch_array($typeresult)){

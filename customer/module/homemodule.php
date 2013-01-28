@@ -9,7 +9,7 @@
                     <?php
                         if ($_GET['direct'] == 'reg'){
                     ?>
-                    <a href="" style="color:red;">还没有添加菜单，抓紧去添加菜单吧！！！</a>
+                    <a href="/customer/home.php?module=menumanager" style="color:red;">还没有添加菜单，抓紧去添加菜单吧！！！</a>
                     <?php } ?>
                 </div>
             </div> 
