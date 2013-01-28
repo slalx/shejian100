@@ -39,10 +39,11 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Menu.php';
       for($i = 0; $i < count($storelist); $i++) {
           $storeobj = $storelist[$i];
           //列出前
-          $storesstr .= sprintf($itemTpl,$storeobj->name,$storeobj->id,$storeobj->address,$storeobj->id);  
+          $storesstr .= sprintf($itemTpl,$storeobj->name,$storeobj->id,$storeobj->address,$storeobj->id); 
+          $j++; 
       }
       if(!$storesstr){
-        $storesstr = "你要找的餐馆目前还没有入驻，我们会尽快帮您联系";
+        $storesstr = "你要找的餐馆目前还没有入驻，我们会尽快帮您联系@";
       }else{
         $storesstr = sprintf("<ArticleCount>%s</ArticleCount>
                                  <Articles>%s</Articles>", $j, $storesstr);      
