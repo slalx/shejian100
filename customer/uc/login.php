@@ -3,11 +3,11 @@
 		<form method="post" id="storeform">
 		<div>
 			<label for="" class="block">用户名</label> 
-			<input type="text" class="msg-input" id="owner_username" value="" required>
+			<input type="text" class="msg-input" id="owner_username" value="" data-message="登陆名不能为空且长度不能超过10个字母或数字"  data-regex="^[1-9a-zA-Z]{1,10}$">
 		</div> 
 		<div>
 			<label for="" class="block">密码</label> 
-			<input type="password" class="msg-input" id="owner_password" value="" required>
+			<input type="password" class="msg-input" id="owner_password" value="" data-message="密码不能为空且至少为6位字符"  data-regex="^[\w\d]{6,}$">
 		</div>
 		</form>   
 	</div> 
@@ -25,6 +25,11 @@
 <script>
 
 function submitform(){
+
+ 	if(!ValidateForm.validateForm('storeform')){
+ 		return;
+ 	}
+
 	var usernameval = document.getElementById('owner_username').value;
 	var passwordval = document.getElementById('owner_password').value;
 	$.ajax({
@@ -43,6 +48,5 @@ function submitform(){
 	  }
 	})
 }
-
-
 </script>
+<script type="text/javascript" src="/resource/js/validateform.js"></script>

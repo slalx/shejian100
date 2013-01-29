@@ -21,7 +21,7 @@ var ValidateForm = {
 	 	var messagetip = document.getElementById('messagetip');
 	 	messagetip.firstChild.innerHTML = errmsg;
 	 	messagetip.style.display="block";
-	 	window.setTimeout(validateForm.hideTip,3000);
+	 	window.setTimeout(ValidateForm.hideTip,3000);
 	 },
 	 hideTip: function hideTip(){
 	 	document.getElementById('messagetip').style.display="none";
