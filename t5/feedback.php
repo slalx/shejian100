@@ -49,7 +49,7 @@
   border:none;
 }
 </style>
-  <body class="">
+  <body class="" >
     <div class="container">
       <h3 style="color:green">订餐已经完成，一小时后给您送达</h3>
       <div>来评价下我们的订餐服务吧</div>

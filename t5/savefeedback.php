@@ -12,7 +12,7 @@ $feedBack = new FeedBack($fromuserid,$restaurantid ,$feedbackcontent);
         $feedBack->save();
 
 $obj->status = 1;
-$obj->statusText = '保存成功';
+$obj->statusText = '谢谢您的反馈，我们会非常珍惜您的意见';
 
 echo json_encode($obj);
 
