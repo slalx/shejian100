@@ -15,7 +15,7 @@
 		</div>
 		<div>
 			<label for="" class="block">登陆名</label> 
-			<input type="text" class="msg-input" name="store_username" id="store_usernameid" data-message="登陆名不能为空且长度不能超过10个字母或数字" value="" data-regex="^[1-9a-zA-Z]{1,10}$">
+			<input type="text" class="msg-input" name="store_username" id="store_usernameid" data-message="登陆名不能为空且长度不能超过10个字母或数字" value="" data-regex="^[0-9a-zA-Z]{1,10}$">
 		</div>
 		<div>
 			<label for="" class="block">密码</label> 

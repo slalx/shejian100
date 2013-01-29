@@ -166,13 +166,13 @@ h3 {
   padding-right: 10px;
 }
 #hasorder{
-  padding-top: 10px;
+  padding-top: 3px;
   padding-right: 10px;
-  height: 40px;
+  height: 33px;
   width: 100%;
   position: fixed;
-background: #f1f1f1;
-border: 1px solid #d3d3d3;
+  background: #f1f1f1;
+  border: 1px solid #d3d3d3;
 }
 .totalcount{
   background: red;
@@ -195,7 +195,7 @@ border: 1px solid #d3d3d3;
   <body class="">
     <div class="container">
       <div class="storeInfo">
-        <div style="display:none;" id="hasorder"><span class="totalcount">0</span><span class="right"><button data-gid="0" class="btnGrayS submitbtn" onclick="submitorder();">下一步</button></span></div>
+        <div style="position:fixed;opacity:0;" id="hasorder"><span class="totalcount">0</span><span class="right"><button data-gid="0" class="btnGrayS submitbtn" onclick="submitorder();">下一步</button></span></div>
         <div class="storeaddandname"><span><?= $name ?></span><span class="address right">地址：<?= $address ?></span></div>
         <div class="storedesc"><span><?= $storedesc ?></span><span class="address right"><a class="btnGrayS" href="tel:<?= $telephone ?>">拨打电话</a></span></div>
       </div>
@@ -214,7 +214,7 @@ border: 1px solid #d3d3d3;
         countobj.innerHTML = parseInt(countobj.innerHTML)+1;
         spancount.innerHTML = parseInt(spancount.innerHTML)+1;
         minusobj.style.visibility = 'visible';
-        hasorder.style.display = '';
+        hasorder.style.opacity = 1;
     }
     function minusClick(id){
       var countobj = document.getElementById('countel_'+id);
@@ -226,7 +226,7 @@ border: 1px solid #d3d3d3;
       if(totalnowcount > 0){
         hasorder.firstElementChild.innerHTML = totalnowcount;
       }else{
-        hasorder.style.display = 'none';
+        hasorder.style.opacity = 0;
         hasorder.firstElementChild.innerHTML  = 0;
       }
       if(nowcount>0){
@@ -235,7 +235,7 @@ border: 1px solid #d3d3d3;
         countobj.innerHTML = nowcount;
         countobj.style.visibility = 'hidden';
         minusobj.style.visibility = 'hidden';
-        //hasorder.style.display = 'none';
+       // hasorder.style.opacity = 0;
       }
     }
 
@@ -255,7 +255,7 @@ border: 1px solid #d3d3d3;
       window.location.href = '/t5/orderform.php?restaurantid='+'<?= $restaurantid?>'+'&ordercount='+orderstr+"&fromuser="+'<?= $fromuser?>';
     }
 
-    window.document.onscroll = function(){
+    /*window.document.onscroll = function(){
       setTimeout(function(){      
             var db= document.body;
             var hasorder = document.getElementById('hasorder');
@@ -267,8 +267,7 @@ border: 1px solid #d3d3d3;
               hasorder.style.position="static";
             }
     },0);
-
-    }
+    }*/
   </script>
 </html>
 

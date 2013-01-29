@@ -6,10 +6,11 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Order.php';
 
  $urltype = '';
  $sqltype = '';
+ $restaurantid = $_COOKIE["sj_uid"];
   //请求条件
   if (isset($_GET['status'])){
 	$urltype = '&status='.intval($_GET['status']);
-	$sqltype = 'where status='.$_GET['status'];
+	$sqltype = "where restaurantid='$restaurantid' and status=".$_GET['status'];
   }
 
 
@@ -26,12 +27,12 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Order.php';
   $orderobj = new Order('','','','','');
 
 //取得记录总数$rs,计算总页数用
-  $pages = $orderobj->getTotalOrdersCount($page,3,$sqltype);
+  $pages = $orderobj->getTotalOrdersCount($page,10,$sqltype);
 
 
 //读取指定记录数
 
-  $result = $orderobj->getOrdersByDate($page,3,$sqltype);
+  $result = $orderobj->getOrdersByDate($page,10,$sqltype);
 
   //计算上一页，下一页
   $first=1;

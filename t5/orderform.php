@@ -5,6 +5,7 @@
     <meta http-equiv="content-type" content="text/html;charset=utf8">
     <meta name="viewport" content="width=device-width,user-scalable=no" />
     <link rel="stylesheet" type="text/css" href="/resource/common.css">
+    <link rel="stylesheet" type="text/css" href="/resource/css/errortip.css">
     <title>提交订单</title> 
   </head>
   <?php
@@ -28,7 +29,8 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
   } 
 
 
-
+  //totalcount
+  $totalcount =0;
   //查找菜单信息
   $listTpl = "<li><span>%s</span><span class=\"right\">%s份</span></li>";
   if($ordercount){
@@ -38,6 +40,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
         $menuid = explode(":",$order);
         $menuid = $menuid[0];
         $menucount = $menuid[1];
+        $totalcount = $totalcount+$menucount;
         $typeresult = mysql_query("select * from dish where restaurantid=$restaurantid and id=$menuid;");
         if ($typeresult != false){
           while($row = mysql_fetch_array($typeresult)){
@@ -104,13 +107,13 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
     <div class="container">
       <h3>订单信息</h3>
       <ul class="orderInfo">
-        <li class="firstli">合计：4份<span class="right">￥50</span></li>
+        <li class="firstli">合计：<?= $totalcount ?>份<span class="right">￥50</span></li>
         <?= $liststr ?>
       </ul>
       <h3>送餐地址</h3>
-      <ul class="userinfo">
-        <li><span>地址</span><input type="text" value="<?= $address ?>" id="addressid"></li>
-        <li><span>电话</span><input type="text" value="<?= $telephone ?>" id="telephoneid"></li>
+      <ul class="userinfo" id="userinfoform">
+        <li><span>地址</span><input class="msg-input" type="text" value="<?= $address ?>" id="addressid" data-message="地址不能为空且长度不能超过100字" data-regex="^[\u4e00-\u9fa50-9a-zA-Z]{1,100}$"></li>
+        <li><span>电话</span><input class="msg-input" type="text" value="<?= $telephone ?>" id="telephoneid" data-message="手机号不能为空且为11位数字" data-regex="^[0-9]{11,11}$"></li>
       </ul>
       <input type="hidden" value="<?= $restaurantid ?>" id="restaurantid">
       <input type="hidden" value="<?= $ordercount ?>" id="ordercountid">
@@ -118,9 +121,13 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
 
       <button onclick="submitform();" class="saveorderformbtn">确认下单</button>
     </div>
+    <div class="tips" style="none" id="messagetip"><div class="tipContent err"></div></div>
   </body>
 <script type="text/javascript">
   function submitform(){
+    if(!ValidateForm.validateForm('userinfoform')){
+      return;
+    }
     var restaurantid = document.getElementById('restaurantid').value;
     var ordercountid = document.getElementById('ordercountid').value;
     var fromuserid = document.getElementById('fromuserid').value;
@@ -133,13 +140,14 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
       dataType: 'json',
       success:function(data){
         alert(data.statusText);
-        window.location.href="/t5/feedback.php?feedbackcontent="+restaurantid+"&fromuserid="+fromuserid;
+        window.location.href="/t5/feedback.php?restaurantid="+restaurantid+"&fromuserid="+fromuserid;
       }
     })
   }
 
 </script>
   <script src="/resource/js/jQuery.js"></script>
+  <script src="/resource/js/validateform.js"></script>
 </html>
 
 

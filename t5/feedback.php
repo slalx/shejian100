@@ -5,6 +5,7 @@
     <meta http-equiv="content-type" content="text/html;charset=utf8">
     <meta name="viewport" content="width=device-width,user-scalable=no" />
     <link rel="stylesheet" type="text/css" href="/resource/common.css">
+    <link rel="stylesheet" type="text/css" href="/resource/css/errortip.css">
     <title>提交订单</title> 
   </head>
   <?php
@@ -53,17 +54,21 @@
     <div class="container">
       <h3 style="color:green">订餐已经完成，一小时后给您送达</h3>
       <div>来评价下我们的订餐服务吧</div>
-      <div>
-        <textarea id="feedbackcontent"></textarea>
+      <div id="feedbackform">
+        <textarea id="feedbackcontent" class="msg-input" data-message="反馈不能为空且为10-140个字" data-regex="^.{10,140}$"></textarea>
       </div>
       <input type="hidden" value="<?= $restaurantid ?>" id="restaurantid">
       <input type="hidden" value="<?= $fromuser ?>" id="fromuserid">
 
-      <button onclick="submitform();" class="saveorderformbtn">确认下单</button>
+      <button onclick="submitform();" class="saveorderformbtn">提交反馈</button>
     </div>
+    <div class="tips" style="none" id="messagetip"><div class="tipContent err"></div></div>
   </body>
 <script type="text/javascript">
   function submitform(){
+    if(!ValidateForm.validateForm('feedbackform')){
+      return;
+    }
     var restaurantid = document.getElementById('restaurantid').value;
     var feedbackcontent = document.getElementById('feedbackcontent').value;
     var fromuserid = document.getElementById('fromuserid').value;
@@ -80,6 +85,7 @@
 
 </script>
   <script src="/resource/js/jQuery.js"></script>
+  <script src="/resource/js/validateform.js"></script>
 </html>
 
 
