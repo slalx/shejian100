@@ -50,7 +50,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
   }
 
 //查找用户的信息
-$userresult = mysql_query("select * from usersinfo where username='$fromuser';");
+$userresult = mysql_query("select * from orderform where id='$fromuser' order by id desc;");
 if ($userresult != false){
     $row = mysql_fetch_array($userresult);
     $address = $row["address"];
@@ -97,6 +97,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
     width: 100%;
     margin-top: 10px;
     height: 45px;
+    margin-bottom: 10px;
 }
 </style>
   <body class="">
