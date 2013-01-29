@@ -29,13 +29,12 @@ if (empty($_FILES) === false) {
     $new_name = $_COOKIE["sj_uid"].".".$file_ext;
     //将文件移动到存储目录下
     if(move_uploaded_file($_FILES["file"]["tmp_name"],"$file_path".$new_name)){
-        echo "文件上传成功！";
+        Header("Location:/customer/home.php?module=editstorecover&upload=succ");
     }else{
-        echo "文件上传失败！";
+        Header("Location:/customer/home.php?module=editstorecover&upload=error");
     };
     //向数据表写入文件存储信息以便管理
     //*********** 代码略 ***********//
-    
     exit;
 } else {
     echo "无正确的文件上传";

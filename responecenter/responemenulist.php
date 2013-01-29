@@ -2,7 +2,7 @@
 include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Menu.php';
 
   //根据饭店的id查找菜单
-  function getMenus($page,$keyword){
+  function getMenus($page,$keyword,$fromUsername){
 
      /*$sqlcondition = "where restaurantid = $keyword";
 	   $menupage = new Page($page, 10, $sqlcondition, 'dish');

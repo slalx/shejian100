@@ -64,7 +64,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
 <style type="text/css">
   .container{
     margin: 0 10px;
-    width: 98.5%;
+    width: 94%;
   }
   ul{
     background: white;

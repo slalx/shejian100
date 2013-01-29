@@ -91,7 +91,7 @@ class wechatCallbackapiTest
         $content ='';
 
         if(strpos($keyword,'#') === false){
-            $content =  getMenus(1,$keyword);
+            $content =  getMenus(1,$keyword,$fromUsername);
         }else{
             $content = $this->saveOrderInfor($keyword,$fromUsername);
         }
