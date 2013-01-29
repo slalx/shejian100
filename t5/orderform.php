@@ -133,6 +133,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
       dataType: 'json',
       success:function(data){
         alert(data.statusText);
+        window.location.href="/t5/feedback.php?feedbackcontent="+restaurantid+"&fromuserid="+fromuserid;
       }
     })
   }
