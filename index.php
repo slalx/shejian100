@@ -26,8 +26,8 @@
 				<?php include $_SERVER['DOCUMENT_ROOT'].'/customer/uc/'.$module.'.php'; ?>
 			</div>
 		</div>
+		<div class="tips" style="none" id="messagetip"><div class="tipContent err"></div></div>
 		<?php include $_SERVER['DOCUMENT_ROOT'].'/customer/include/footer.php'; ?>
-		<script src="/resource/js/jQuery.js"></script>
 		<script src="/resource/js/cookie.js"></script>
 	</body>
 </html>

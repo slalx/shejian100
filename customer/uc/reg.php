@@ -3,35 +3,35 @@
 		<form action="/customer/uc/savereg.php" method="post" id="storeform">
 		<div>
 			<label for="" class="block">店名</label> 
-			<input type="text" class="msg-input" name="store_name" id="store_nameid" value="" required>
+			<input type="text" class="msg-input" name="store_name" id="store_nameid" data-message="店名不能为空且长度不能超过20字" value="" data-regex="^[\u4e00-\u9fa5]{1,20}$">
 		</div>
 		<div>
 			<label for="" class="block">地址</label> 
-			<input type="text" class="msg-input" name="store_address" id="store_addressid" value="" required>
+			<input type="text" class="msg-input" name="store_address" id="store_addressid" data-message="地址不能为空且长度不能超过100字" value="" data-regex="^[\u4e00-\u9fa5]{1,100}$">
 		</div>  
 		<div>
 			<label for="" class="block">老板姓名</label> 
-			<input type="text" class="msg-input" name="store_ownername" id="store_ownernameid" value="" required>
+			<input type="text" class="msg-input" name="store_ownername" id="store_ownernameid" data-message="老板姓名不能为空且长度不能超过20字" value="" data-regex="^[\u4e00-\u9fa5]{1,20}$">
 		</div>
 		<div>
 			<label for="" class="block">登陆名</label> 
-			<input type="text" class="msg-input" name="store_username" id="store_usernameid" value="" required>
+			<input type="text" class="msg-input" name="store_username" id="store_usernameid" data-message="登陆名不能为空且长度不能超过10个字母或数字" value="" data-regex="^[1-9a-zA-Z]{1,10}$">
 		</div>
 		<div>
 			<label for="" class="block">密码</label> 
-			<input type="password" class="msg-input" name="store_upassword" id="store_upasswordid" value="" required>
+			<input type="password" class="msg-input" name="store_upassword" id="store_upasswordid" data-message="密码不能为空且至少为6位字符" value="" data-regex="^[\w\d]{6,}$">
 		</div>
 		<div>
 			<label for="" class="block">手机号</label> 
-			<input type="tel" class="msg-input" name="store_mobilephone" id="store_mobilephoneid" value="" required>
+			<input type="tel" class="msg-input" name="store_mobilephone" id="store_mobilephoneid" value="" data-message="手机号不能为空且为11位数字" data-regex="^[0-9]{11,11}$">
 		</div>
 		<div>
 			<label for="" class="block">座机号</label> 
-			<input type="tel" class="msg-input" name="store_telephone" id="store_telephoneid" value="" required>
+			<input type="tel" class="msg-input" name="store_telephone" id="store_telephoneid" value="" data-message="座机号不能为空且为7-11位数字" data-regex="^[0-9]{7,11}$">
 		</div>
 		<div>
 			<label for="" class="block">说明</label> 
-			<textarea class="msg-input" style="height:70px;" id="store_descid" name="store_desc" required></textarea>
+			<textarea class="msg-input" style="height:70px;" id="store_descid" name="store_desc" data-message="说明不能为空且为10-140个字" data-regex="^.{10,140}$"></textarea>
 		</div> 
 		<input type="hidden" class="msg-input" name="store_latitude" id="store_latitudeid" value=""> 
 		<input type="hidden" class="msg-input" name="store_longitude" id="store_longitudeid" value=""> 
@@ -66,7 +66,13 @@
  	return document.getElementById(id).value;
  }
 
+
  function submitform(){
+
+ 	if(!ValidateForm.validateForm('storeform')){
+ 		return;
+ 	}
+
 	var store_name = GetV('store_nameid');
 	var store_address = GetV('store_addressid');
 	var store_ownername = GetV('store_ownernameid');
@@ -110,4 +116,4 @@
 
 
 </script>
-
+<script type="text/javascript" src="/resource/js/validateform.js"></script>

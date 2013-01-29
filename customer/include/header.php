@@ -1,6 +1,6 @@
 <div id="header" class="header"> 
     <div class="logoArea"> 
-        <a class="logo left block" href="/"> <img src="http://res.wx.qq.com/mpres/zh_CN/htmledition/images/logo1191e9.png" alt="微信公众平台"> </a> 
+        <a class="logo left block" href="/"> <img src="/resource/i/logoshejian.png" alt="舌尖商家平台"> </a> 
         <div class="accountOp right"> 
             <span><a href="#"><?= $_SESSION["username"] ?></a></span> 
             <span class="none"><a href="#">帮助中心</a></span> 

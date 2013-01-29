@@ -114,7 +114,7 @@ h1 {
 .header .icon {
     width: 350px;
     height: 52px;
-    background: url(http://res.wx.qq.com/mpres/htmledition/images/login/logo.png) no-repeat 0 0;
+    background: url(/resource/i/logoshejian.png) no-repeat 0 0;
 }
 
 .footer {
@@ -188,6 +188,33 @@ h1 {
     width: 233px;
 
 }
+
+.tips {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.tips .tipContent {
+    background-color: #68af02;
+    width: 250px;
+    margin: 0 auto;
+    color: #fff;
+    padding: 5px 30px;
+    border-radius: 0 0 2px 2px;
+    -moz-border-radius: 0 0 2px 2px;
+    -webkit-border-radius: 0 0 2px 2px;
+    text-align: center;
+    text-shadow: 0 -1px -1px #333;
+    border-top: 0;
+}
+.tips .suc {
+    background-color: #68af02;
+    border: 1px solid #5a851d;
+}
+.tips .err { background-color: #eaa000 }
 
 
 
