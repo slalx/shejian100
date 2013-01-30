@@ -14,7 +14,7 @@ $order = new Order($fromuserid,$restaurantid ,$ordercountid,$addressid,$telephon
         $order->save();
 
 $obj->status = 1;
-$obj->statusText = '保存成功';
+$obj->statusText = '订单提交成功';
 
 echo json_encode($obj);
 
