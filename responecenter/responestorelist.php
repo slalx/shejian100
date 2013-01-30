@@ -22,8 +22,8 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Store.php';
 */
 
  function getStores($page,$Location_X,$Location_Y,$fromUsername) {
-
-    $storepage = new Page($page, 3, $sqlcondition, 'store');
+    //100000000是为了查询整个表
+    $storepage = new Page($page, 3, 1000000000, 'store');
     $storeresult = $storepage->sqlQueryResults();
 
     $store = new Store('','','','','');
@@ -43,8 +43,8 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Store.php';
       if($storeobj->lat && $storeobj->lon){
       $distance = distance($Location_X, $Location_Y, $storeobj->lat, $storeobj->lon, "K");
       }
-      //如果距离小于5公里，才会显示出来
-      if($distance < 3){
+      //如果距离小于3公里，才会显示出来
+      if($distance < 3 && $storeobj->lat && $storeobj->lon){
         $picid = $storeobj->id;
         $picurl = "http://42.96.139.171/customer/module/customersetting/upload/$picid.png";
         $storesstr .= sprintf($itemTpl,$storeobj->name,$storeobj->id,$storeobj->address,$picurl,$storeobj->id);
