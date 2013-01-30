@@ -51,7 +51,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Store.php';
       }
   	}
     if(!$storesstr){
-      $storesstr = "你周边没有餐馆目前入驻，我们会尽快帮您联系@";
+      $storesstr = "你周边目前没有餐馆入驻，我们会尽快帮您联系@";
     }else{
   	  $storesstr = sprintf("<ArticleCount>%s</ArticleCount>
                                <Articles>%s</Articles>", $j, $storesstr);
