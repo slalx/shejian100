@@ -155,8 +155,10 @@ h3 {
 .storeInfo span{
   margin-left: 10px;
 }
-.storeaddandname{
+.storename{
   padding-top: 10px;
+  font-size: 22px;
+  color: black;
 }
 .storedesc{
   padding-top: 10px;
@@ -196,7 +198,8 @@ h3 {
     <div class="container">
       <div class="storeInfo">
         <div style="position:fixed;opacity:0;" id="hasorder"><span class="totalcount">0</span><span class="right"><button data-gid="0" class="btnGrayS submitbtn" onclick="submitorder();">下一步</button></span></div>
-        <div class="storeaddandname"><span><?= $name ?></span><span class="address right">地址：<?= $address ?></span></div>
+        <div class="storename"><span><?= $name ?></span></div>
+        <div class="storeaddress"><span>地址：<?= $address ?></span></div>
         <div class="storedesc"><span><?= $storedesc ?></span><span class="address right"><a class="btnGrayS" href="tel:<?= $telephone ?>">拨打电话</a></span></div>
       </div>
       <div id="menulistcontent">
