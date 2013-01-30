@@ -23,7 +23,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Store.php';
 
  function getStores($page,$Location_X,$Location_Y,$fromUsername) {
     //100000000是为了查询整个表
-    $storepage = new Page($page, 3, 1000000000, 'store');
+    $storepage = new Page($page, 1000000000,'' , 'store');
     $storeresult = $storepage->sqlQueryResults();
 
     $store = new Store('','','','','');
