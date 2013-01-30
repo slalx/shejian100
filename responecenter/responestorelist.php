@@ -29,7 +29,6 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Store.php';
     $store = new Store('','','','','');
     $storelist = $store->getStoreList($storeresult);
 
-    $storesstr = '';
     $itemTpl = "<item>
       			    <Title><![CDATA[%s          编号:%s]]></Title>
       			    <Description><![CDATA[%s]]></Description>
@@ -41,7 +40,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Store.php';
   		$storeobj = $storelist[$i];
       //如果存在经纬度才显示出来
       if($storeobj->lat && $storeobj->lon){
-      $distance = distance($Location_X, $Location_Y, $storeobj->lat, $storeobj->lon, "K");
+        $distance = distance($Location_X, $Location_Y, $storeobj->lat, $storeobj->lon, "K");
       }
       //如果距离小于3公里，才会显示出来
       if($distance < 3 && $storeobj->lat && $storeobj->lon){
@@ -50,11 +49,13 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Store.php';
         $storesstr .= sprintf($itemTpl,$storeobj->name,$storeobj->id,$storeobj->address,$picurl,$storeobj->id);
         $j++;
       }
-  		
-	}
-
-	$storesstr = sprintf("<ArticleCount>%s</ArticleCount>
-                             <Articles>%s</Articles>", $j, $storesstr);
+  	}
+    if(!$storesstr){
+      $storesstr = "你周边没有餐馆目前入驻，我们会尽快帮您联系@";
+    }else{
+  	  $storesstr = sprintf("<ArticleCount>%s</ArticleCount>
+                               <Articles>%s</Articles>", $j, $storesstr);
+    }
 
     return $storesstr;
  }
