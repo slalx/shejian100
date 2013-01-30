@@ -46,7 +46,34 @@ class UsersInfo
       $totalOrdersCount = $orderpage->calToltalPages();
       return $totalOrdersCount;
     }
-    //
+    //根据三方账号进行更新用户信息
+    public function updateInfo($thirdpassport){
+      //合成sql语句
+      $username = $this->username;
+      $address = $this->address;
+      $telephone = $this->telephone;
+      $query_string = "update usersinfo set username='$username',address='$address',telephone='$telephone' where thirdpassport='$thirdpassport';"; 
+
+      $r = mysql_query($query_string);
+      if (!$r){
+        die('插入Error: ' . mysql_error());
+      } 
+      return $r; 
+    }
+    //根据三方账号查询单个用户信息
+    public function getOneInfo($thirdpassport){
+      //合成sql语句
+      $username = $this->username;
+      $address = $this->address;
+      $telephone = $this->telephone;
+      $query_string = "select * from usersinfo where thirdpassport='$thirdpassport';"; 
+
+      $r = mysql_query($query_string);
+      if (!$r){
+        die('插入Error: ' . mysql_error());
+      } 
+      return $r; 
+    }
 }
 
 ?>

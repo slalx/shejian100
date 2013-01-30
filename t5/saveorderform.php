@@ -3,6 +3,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 include $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
 include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Order.php';
+include $_SERVER['DOCUMENT_ROOT'].'/publicLib/UsersInfo.php';
 
 $restaurantid = $_POST['restaurantid'];
 $ordercountid = $_POST['ordercountid'];
@@ -11,6 +12,7 @@ $addressid = $_POST['addressid'];
 $telephoneid = $_POST['telephoneid'];
 $chusername = $_POST['chusername'];
 
+//提交订单
 $order = new Order($fromuserid,$restaurantid ,$ordercountid,$addressid,$telephoneid,$chusername);
         $order->save();
 

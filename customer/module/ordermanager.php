@@ -24,7 +24,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Order.php';
     $page = 1;
   }
 
-  $orderobj = new Order('','','','','');
+  $orderobj = new Order('','','','','','');
 
 //取得记录总数$rs,计算总页数用
   $pages = $orderobj->getTotalOrdersCount($page,10,$sqltype);
@@ -155,7 +155,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Order.php';
 						<a href="javascript:;" onclick="sendDish(2,<?= $id ?>);" class="icon18 iconEdit" data-fakeid="13073955" title="送餐"></a>  
 						<a href="javascript:;" onclick="sendDish(0,<?= $id ?>);" class="icon18 iconDelete" target="_blank" idx="9472736" title="删除"></a> 
 						<a href="javascript:;" onclick="sendDish(3,<?= $id ?>);" class="star icon18 iconUnstar " idx="9472736" starred="0" title="标记无效"></a> 
-						<a href="javascript:;" data-id="9472736" data-tofakeid="13073955" class="icon18 iconReply" title="回复"></a> 
+						<a href="javascript:;" data-id="9472736" data-tofakeid="13073955" class="icon18 iconReply" title="回复" style="display:none;"></a> 
 					</div> 
 					<div class="opt msgTime right"> <?= $createtime ?></div> 
 					<a class="msgSender left" href="#" target="_blank" data-fakeid="13073955"><?= $userid ?></a>
