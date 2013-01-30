@@ -62,9 +62,9 @@ class wechatCallbackapiTest
                         $msgType = "news";
                         $articlesStr = $this->responseMenus($keyword,$fromUsername);
                         //如果含有#号，则认为提交的信息为订单信息
-                        //如果返回的信息含有！【感叹号】，则认为没有找到要查找的餐馆
+                        //如果返回的信息含有@，则认为没有找到要查找的餐馆
                         if(strpos($keyword,'#') !== false || strpos($articlesStr,'@') !== false){
-                            $content = $keyword/*$articlesStr*/;
+                            $content = $articlesStr;
                             $articlesStr = '';
                             $msgType = "text";
                         }

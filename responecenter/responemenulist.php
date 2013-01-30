@@ -46,7 +46,12 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Menu.php';
           $j++; 
       }
       if(!$storesstr){
-        $storesstr = "你要找的餐馆目前还没有入驻，我们会尽快帮您联系@";
+        //这种情况默认为是第一次关注的时候
+        if($keyword=='Hello2BizUser'){
+          $storesstr = "谢谢您成为舌尖网会员，您可以1.发送地理位置来搜索您周边边的餐馆;2.输入您要查找的餐馆名称。等搜出结果以后，点击餐馆就可以订餐了!!!@";
+        }else{//已输入文字，就认为是输入的餐馆的名称进行查找
+          $storesstr = "你要找的餐馆目前还没有入驻，我们会尽快帮您联系@";
+        }
       }else{
         $storesstr = sprintf("<ArticleCount>%s</ArticleCount>
                                  <Articles>%s</Articles>", $j, $storesstr);      
