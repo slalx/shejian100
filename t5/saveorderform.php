@@ -9,8 +9,9 @@ $ordercountid = $_POST['ordercountid'];
 $fromuserid = $_POST['fromuserid'];
 $addressid = $_POST['addressid'];
 $telephoneid = $_POST['telephoneid'];
+$chusername = $_POST['chusername'];
 
-$order = new Order($fromuserid,$restaurantid ,$ordercountid,$addressid,$telephoneid);
+$order = new Order($fromuserid,$restaurantid ,$ordercountid,$addressid,$telephoneid,$chusername);
         $order->save();
 
 $obj->status = 1;

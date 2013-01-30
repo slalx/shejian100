@@ -10,14 +10,16 @@ class Order
   var $address;//送餐地址
   var $telephone;//用户手机号
   var $createtime;//订单创建时间
+  var $chusername;//订单用户姓名
 
 	 //定义一个构造方法初始化赋值
-    function __construct($userid, $restaurantid, $orderinfo,$address,$telephone) {
+    function __construct($userid, $restaurantid, $orderinfo,$address,$telephone,$chusername) {
         $this->userid = $userid;
         $this->restaurantid = $restaurantid;
         $this->orderinfo = $orderinfo;
         $this->address = $address;
         $this->telephone = $telephone;
+        $this->chusername = $chusername;
     }
     //保存订单
     public function save(){
@@ -27,9 +29,10 @@ class Order
       $orderinfo = $this->orderinfo;
       $address = $this->address;
       $telephone = $this->telephone;
+      $chusername = $this->chusername;
 
-      $rowvalues = "('$userid','$restaurantid','$orderinfo','$address','$telephone')";
-      $query_string = "insert into orderform(userid,restaurantid,orderinfo,address,telephone) values ".$rowvalues.";"; 
+      $rowvalues = "('$userid','$restaurantid','$orderinfo','$address','$telephone','$chusername')";
+      $query_string = "insert into orderform(userid,restaurantid,orderinfo,address,telephone,chusername) values ".$rowvalues.";"; 
       //插入数据库
       $r = mysql_query($query_string);
       if (!$r){

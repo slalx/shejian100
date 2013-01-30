@@ -64,6 +64,7 @@ if ($userresult != false){
     $row = mysql_fetch_array($userresult);
     $address = $row["address"];
     $telephone = $row["telephone"];
+    $chusername = $row["chusername"];
     //$liststr.= sprintf($listTpl, $name);       
 }
  
@@ -120,6 +121,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
       <ul class="userinfo" id="userinfoform">
         <li><span>地址</span><input class="msg-input" type="text" value="<?= $address ?>" id="addressid" data-message="地址不能为空且长度不能超过100字" data-regex="^[\u4e00-\u9fa50-9a-zA-Z]{1,100}$"></li>
         <li><span>电话</span><input class="msg-input" type="text" value="<?= $telephone ?>" id="telephoneid" data-message="手机号不能为空且为11位数字" data-regex="^[0-9]{11,11}$"></li>
+        <li><span>姓名</span><input class="msg-input" type="text" value="<?= $chusername ?>" id="chusernameid" data-message="姓名不能为空且长度不能超过20字" data-regex="^[\u4e00-\u9fa5]{1,20}$"></li>
       </ul>
       <input type="hidden" value="<?= $restaurantid ?>" id="restaurantid">
       <input type="hidden" value="<?= $ordercount ?>" id="ordercountid">
@@ -139,10 +141,11 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
     var fromuserid = document.getElementById('fromuserid').value;
     var addressid = document.getElementById('addressid').value;
     var telephoneid = document.getElementById('telephoneid').value;
+    var chusername = document.getElementById('chusernameid').value;
     $.ajax({
       type: "post",
       url: "/t5/saveorderform.php",
-      data: { ordercountid: ordercountid, restaurantid: restaurantid,fromuserid:fromuserid,addressid:addressid,telephoneid:telephoneid},
+      data: { ordercountid: ordercountid, restaurantid: restaurantid,fromuserid:fromuserid,addressid:addressid,telephoneid:telephoneid,chusername:chusername},
       dataType: 'json',
       success:function(data){
         alert(data.statusText);

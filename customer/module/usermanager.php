@@ -23,12 +23,12 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/UsersInfo.php';
   $orderobj = new UsersInfo('','','','','');
 
 //取得记录总数$rs,计算总页数用
-  $pages = $orderobj->getTotalOrdersCount($page,3,$sqltype);
+  $pages = $orderobj->getTotalOrdersCount($page,10,$sqltype);
 
 
 //读取指定记录数
 
-  $result = $orderobj->getOrdersByDate($page,3,$sqltype);
+  $result = $orderobj->getOrdersByDate($page,10,$sqltype);
 
   //计算上一页，下一页
   $first=1;
@@ -63,7 +63,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/UsersInfo.php';
 <div id="main" class="container">
     <div class="containerBox boxIndex"> 
 		<div class="boxHeader"> 
-			<h2>菜单管理</h2> 
+			<h2>用户管理</h2> 
 		</div> 
 		<div class="content"> 
 			<div class="cLine"> 
