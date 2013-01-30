@@ -7,7 +7,7 @@
 		</div>
 		<div>
 			<label for="" class="block">地址</label> 
-			<input type="text" class="msg-input" name="store_address" id="store_addressid" data-message="地址不能为空且长度不能超过100字" value="" data-regex="^[\u4e00-\u9fa5]{1,100}$">
+			<input type="text" class="msg-input" name="store_address" id="store_addressid" data-message="地址不能为空且长度不能超过100字" value="" data-regex="^[\u4e00-\u9fa50-9a-zA-Z]{1,100}$">
 		</div>  
 		<div>
 			<label for="" class="block">老板姓名</label> 

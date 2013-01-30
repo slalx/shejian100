@@ -31,20 +31,26 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
 
   //totalcount
   $totalcount =0;
+  $totalprice=0;
   //查找菜单信息
   $listTpl = "<li><span>%s</span><span class=\"right\">%s份</span></li>";
   if($ordercount){
      $orderarr = explode("*",$ordercount);
+     //
+     //var_dump($orderarr);
      for($i=0; $i <count($orderarr); $i++){
-        $order = $orderarr[$i];
-        $menuid = explode(":",$order);
-        $menuid = $menuid[0];
-        $menucount = $menuid[1];
+        $order = $orderarr[$i];//
+        $orderobj = explode(":",$order);
+        $menuid = $orderobj[0];//菜的id
+        $menucount = $orderobj[1];//定的数量
+
         $totalcount = $totalcount+$menucount;
         $typeresult = mysql_query("select * from dish where restaurantid=$restaurantid and id=$menuid;");
         if ($typeresult != false){
           while($row = mysql_fetch_array($typeresult)){
             $name = $row["name"];
+            $menuprice = intval($row["price"]);
+            $totalprice = $menuprice*intval($menucount) + $totalprice;
             $liststr.= sprintf($listTpl, $name,$menucount);     
 
           }
@@ -107,7 +113,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
     <div class="container">
       <h3>订单信息</h3>
       <ul class="orderInfo">
-        <li class="firstli">合计：<?= $totalcount ?>份<span class="right">￥50</span></li>
+        <li class="firstli">合计：<?= $totalcount ?>份<span class="right">￥<?= $totalprice?></span></li>
         <?= $liststr ?>
       </ul>
       <h3>送餐地址</h3>

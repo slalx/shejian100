@@ -27,7 +27,21 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
 		</div> 
 		<div class="content"> 
 			<div class="z oh msg-edit"> 
-				<div class="msg-edit-area" id="msgEditArea" style="margin-top: 31px; "> 
+				<div class="msg-edit-area" id="msgEditArea" style="margin-top: 31px; ">
+					<div style="color:red;"> 
+						<?php 
+							if (isset($_GET['flag'])){
+								$flag=$_GET['flag'];
+								if ($flag=='1') {
+									echo "菜名不能为空";
+								}elseif ($flag=='2') {
+									echo "菜价不能为空";
+								}
+
+							}
+						?>
+						
+					</div> 
 					<div class="rel msg-editer-wrapper"> 
 						<div class="msg-editer">
 							<form method="post" action="./module/savemenu.php" id="savemenuform"> 
