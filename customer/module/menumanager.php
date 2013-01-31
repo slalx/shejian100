@@ -82,7 +82,7 @@ $restaurantid = $_COOKIE["sj_uid"];
 			<div class="cLine">
 				<div class="left"> 
 					<div id="allGroup" data-gid="0" class="selectArea left">
-						<button id="putIntoGroupAll" class="btnGrayS left"><a class="icon18C iconAdd" href="/customer/home.php?module=addmenu">添加新菜</a></button>
+						<button id="putIntoGroupAll" class="btnGrayS left" onclick="openhref('/customer/home.php?module=addmenu');">添加新菜</button>
 					</div> 
 					<div class="clr"></div> 
 				</div> 
@@ -90,13 +90,13 @@ $restaurantid = $_COOKIE["sj_uid"];
 					<span> <a href="<?= $prevpageurl ?>" class="prePage <?= $prevclass?>"> 上一页</a> </span> 
 					<span class="pageNum">&nbsp;&nbsp;<?= $page ?>&nbsp;/&nbsp;<?= $pages ?>&nbsp;&nbsp;</span> 
 					<span> <a href="<?= $nextpageurl ?>" class="nextPage <?= $nextclass?>"> 下一页</a> </span> 
-					<span class="go none" style="display:none;"> <input data-baseurl="/cgi-bin/contactmanagepage?t=wxm-friend&amp;lang=zh_CN&amp;type=0&amp;keyword=&amp;groupid=0&amp;pagesize=10"  class="pageIdxInput" type="text"> <button data-baseurl="/cgi-bin/contactmanagepage?t=wxm-friend&amp;lang=zh_CN&amp;type=0&amp;keyword=&amp;groupid=0&amp;pagesize=10" onclick="WXM.Plugins.pageJump(this, event, 1);" class="btnGrayS">跳转</button> </span> 
+					<span class="go none" style="display:none;"> <input data-baseurl="#"  class="pageIdxInput" type="text"> <button data-baseurl="#"  class="btnGrayS">跳转</button> </span> 
 				</div> 
 				<div class="clr"></div> 
 			</div> 
 			<div class="listTitle"> 
 				<div class="left title msg">
-					<input type="checkbox" id="selectAll">账号
+					<input type="checkbox" id="selectAll">全选
 				</div> 
 				<div class="right title opt">操作</div> 
 			</div> 
@@ -117,7 +117,7 @@ $restaurantid = $_COOKIE["sj_uid"];
 			</ul> 
 			<div class="cLine">
 			<div id="allGroup" data-gid="0" class="selectArea left">
-						<button id="putIntoGroupAll" class="btnGrayS left"><a class="" href="javascript:;" onclick="deleteMenus();"><span class="icon18C iconDel" style="width:6px;height:17px;display:inline-block;"></span>删除菜单</a></button>
+						<button id="putIntoGroupAll" class="btnGrayS left" onclick="deleteMenus();">删除菜单</button>
 					</div>  
 				<div class="pageNavigator right"> 
 					<span> <a href="<?= $prevpageurl ?>" class="prePage <?= $prevclass?>"> 上一页</a> </span> 
@@ -207,6 +207,9 @@ $restaurantid = $_COOKIE["sj_uid"];
 			alert('请选择要删除的菜单');
 		}
 	}
+	function openhref(href){
+		location.href = href;
+	};
 </script>
 <script type="text/javascript" src="/resource/js/simpledialog.js"></script>
 <script type="text/javascript">
