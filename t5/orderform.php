@@ -158,8 +158,9 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
   }
 
 </script>
-  <script src="/resource/js/jQuery.js"></script>
-  <script src="/resource/js/validateform.js"></script>
+<?php 
+include_once $_SERVER['DOCUMENT_ROOT'].'/customer/include/jsinclude.php';
+?>
 </html>
 
 

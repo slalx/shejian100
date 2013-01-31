@@ -1,10 +1,10 @@
-<!DOCTYPE html>
 <?php  
 session_start();  
 if($_SESSION[username]==""){  
     echo "<script>alert('请登录!');window.location.href='/index.php?module=login';</script>";  
   }  
-?>  
+?>
+<!DOCTYPE html>  
 <html lang="zh-CN">
     <head>
         <meta charset="utf-8">

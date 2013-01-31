@@ -8,4 +8,6 @@
         <div>Copyright&nbsp;© 2012-2013 shejian. All Rights Reserved.</div> 
     </div> 
 </div>
-<script src="/resource/js/jQuery.js"></script>
+<?php 
+include_once $_SERVER['DOCUMENT_ROOT'].'/customer/include/jsinclude.php';
+?>

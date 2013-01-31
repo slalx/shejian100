@@ -12,8 +12,8 @@
 			<div> 密码至少8位，采用密码加数字的形式</div> 
 			<div id="settingArea" class="settingArea"> 
 				<div class="userinfoArea left"> 
-					<div style="padding:15px 0;"> 旧密码: <input type="password" value="" class="bindUserInput" name="old_password" id="old_passwordid"> </div>
-					<div style="padding:15px 0;"> 新密码: <input type="password" value="" class="bindUserInput" name="new_password" id="new_passwordid"> </div>  
+					<div style="padding:15px 0;"> 旧密码: <input type="password" value="" class="bindUserInput msg-input" name="old_password" id="old_passwordid" data-message="密码不能为空且至少为6位字符" value="" data-regex="^[\w\d]{6,}$"> </div>
+					<div style="padding:15px 0;"> 新密码: <input type="password" value="" class="bindUserInput msg-input" name="new_password" id="new_passwordid" data-message="密码不能为空且至少为6位字符" value="" data-regex="^[\w\d]{6,}$"> </div>  
 					<button id="saveSetting" class="btnGreen" onclick="submitform();">保存</button> 
 				</div> 
 				<div class="clr"></div> 
@@ -30,9 +30,13 @@
 		<div class="clr"></div> 
 	</div>
 </div>
+<div class="tips" style="none" id="messagetip"><div class="tipContent err"></div></div>
 <script>
 
 function submitform(){
+	if(!ValidateForm.validateForm('userinfoform')){
+      return;
+    }
 	var old_password = document.getElementById('old_passwordid').value;
 	var new_password = document.getElementById('new_passwordid').value;
 	$.ajax({
