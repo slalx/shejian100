@@ -72,6 +72,7 @@ class wechatCallbackapiTest
                         //提交的地理信息，帮您搜寻您旁边的饭店
                         $msgType = "news";
                         $articlesStr = $this->responseStores($postObj->Location_X,$postObj->Location_Y,$fromUsername);
+                        
                     }
               		
                 	//$contentStr = "欢迎来到舌尖网,马上为您预订".$keyword;

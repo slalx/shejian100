@@ -35,9 +35,7 @@ class Order
       $query_string = "insert into orderform(userid,restaurantid,orderinfo,address,telephone,chusername) values ".$rowvalues.";"; 
       //插入数据库
       $r = mysql_query($query_string);
-      if (!$r){
-        die('插入Error: ' . mysql_error());
-      } 
+      return $r; 
     }
     //根据日期查询订单
     public function getOrdersByDate($page,$pagesize,$sqlcondition){

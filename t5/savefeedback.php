@@ -9,10 +9,16 @@ $feedbackcontent = $_POST['feedbackcontent'];
 $fromuserid = $_POST['fromuserid'];
 
 $feedBack = new FeedBack($fromuserid,$restaurantid ,$feedbackcontent);
-        $feedBack->save();
+        
+if($feedBack->save()){
+	$obj->status = 1;
+	$obj->statusText = '谢谢您的反馈，我们会非常珍惜您的意见';
+}else{
+	$obj->status = 0;
+	$obj->statusText = '服务器端发生错误，请稍后再试';	
+}
 
-$obj->status = 1;
-$obj->statusText = '谢谢您的反馈，我们会非常珍惜您的意见';
+
 
 echo json_encode($obj);
 

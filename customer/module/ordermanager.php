@@ -10,10 +10,10 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Order.php';
   //请求条件
   if (isset($_GET['status'])){
 	$urltype = '&status='.intval($_GET['status']);
-	$sqltype = "where restaurantid='$restaurantid' and status=".$_GET['status'];
+	$sqltype = " and status=".$_GET['status'];
   }
 
-
+  $sqltype = "where restaurantid='$restaurantid'".$sqltype;
 
 
   //现在是第几页
@@ -112,6 +112,13 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Order.php';
 	border-bottom: 1px dotted #f1f1f1;
 	padding: 0 10px;
 }
+.msgSender{
+	width: 50px;
+	text-align: center;
+}
+.msgSender img{
+	margin-bottom: 10px;
+}
 </style>
 
 <div id="main" class="container">
@@ -139,40 +146,48 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Order.php';
 					while($row = mysql_fetch_array($result)){
 						$i++;
 						$id = $row["id"];
-						$userid=$row["userid"];
+						$userid=$row["userid"];//
+						$chusername=$row["chusername"];//
 						$address=$row["address"];
 						$telephone = $row["telephone"];
 						$createtime = $row["createtime"];
 						$orderform = $row["orderinfo"];
+						$statusorder = $row["status"];
 						$ordermenuliststr = getorderliststr($orderform);
+
+						//状态的判断
+						if($statusorder == 1){
+							$statusordertext =  "未送餐";
+							$fontcolor = 'black';
+							$styledisplay = '';
+						}elseif ($statusorder==3) {
+							$statusordertext =  "已删除";
+							$fontcolor = 'red';
+							$styledisplay = 'none';
+						}elseif ($statusorder==2) {
+							$statusordertext = "已送餐";
+							$fontcolor = 'green';
+							$styledisplay = 'none';
+						}
 			?>  
 			<li class="msgListItem buddyRichInfoC " id="orderListItem<?= $id ?>" data-id="<?= $id ?>"> 
-				<a target="_blank" href="#" class="msgSender left"> 
-					<img height="48" width="48" src="http://res.wx.qq.com/mpres/htmledition/images/favicon125122.ico" data-fakeid="13073955" class="avatar left"> 
+				<a target="_blank" href="javascript:;" class="msgSender left" style="color:<?= $fontcolor ?>"> 
+					<img height="48" width="48" src="http://res.wx.qq.com/mpres/htmledition/images/favicon125122.ico" data-fakeid="13073955" class="avatar left">
+					<?= $statusordertext ?>
 				</a> 
 				<div class="wxMsgArea"> 
 					<div class="opt oper right"> 
-						<a href="javascript:;" onclick="sendDish(2,<?= $id ?>);" class="icon18 iconEdit" data-fakeid="13073955" title="送餐"></a>  
-						<a href="javascript:;" onclick="sendDish(0,<?= $id ?>);" class="icon18 iconDelete" target="_blank" idx="9472736" title="删除"></a> 
-						<a href="javascript:;" onclick="sendDish(3,<?= $id ?>);" class="star icon18 iconUnstar " idx="9472736" starred="0" title="标记无效"></a> 
+						<a href="javascript:;" onclick="sendDish(2,<?= $id ?>);" class="icon18 iconEdit" data-fakeid="13073955" title="送餐" style="display:<?=$styledisplay?>"></a>  
+						<a href="javascript:;" onclick="sendDish(3,<?= $id ?>);" class="icon18 iconDelete" target="_blank" idx="9472736" title="删除"></a> 
+						<a href="javascript:;" onclick="sendDish(3,<?= $id ?>);" class="star icon18 iconUnstar " idx="9472736" starred="0" title="标记无效" style="display:none;"></a> 
 						<a href="javascript:;" data-id="9472736" data-tofakeid="13073955" class="icon18 iconReply" title="回复" style="display:none;"></a> 
 					</div> 
 					<div class="opt msgTime right"> <?= $createtime ?></div> 
-					<a class="msgSender left" href="#" target="_blank" data-fakeid="13073955"><?= $userid ?></a>
+					<a class="msgSender left" href="#" target="_blank" ><?= $chusername ?></a>
 					<span class="remarkName left" data-fakeid="13073955"></span> 
-					<div class="wxMsg clr">地址:&nbsp;<?= $address ?>&nbsp;&nbsp;&nbsp;&nbsp;手机号:&nbsp;<?= $telephone ?><br><ul><?= $ordermenuliststr ?></ul> </div> 
+					<div class="wxMsg clr">地址:&nbsp;<?= $address ?><br>手机号:&nbsp;<?= $telephone ?><br><ul><?= $ordermenuliststr ?></ul> </div> 
 				</div> 
 				<div class="clr"></div> 
-				<div id="quickReplyBox9472736" class="quickReplyBox"> 
-					<div class="cLine c-b">快速回复:</div> 
-					<div class="cLine"> 
-						<textarea class="quickReplyTxt"></textarea> 
-					</div> 
-					<div class="cLine"> 
-						<button class="btnGreenS quickReplyOK">发送</button> 
-						<a class="quickReplyPickup" href="javascript:;">收起</a> 
-					</div> 
-				</div> 
 			</li> 
 			<?php
 					}
@@ -193,8 +208,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Order.php';
 				<li class="<?php if(!isset($_GET['status'])){ echo "selected";} ?>"> <a href="/customer/home.php?module=ordermanager">全部订单</a> </li> 
 				<li class="<?php if($_GET['status']==='1'){ echo "selected";} ?> subCatalogList"> <a href="/customer/home.php?module=ordermanager&status=1">未送餐订单</a> </li> 
 				<li class="<?php if($_GET['status']==='2'){ echo "selected";} ?> subCatalogList"> <a href="/customer/home.php?module=ordermanager&status=2">已送餐订单</a> </li>
-				<li class="<?php if($_GET['status']==='0'){ echo "selected";} ?> subCatalogList"> <a href="/customer/home.php?module=ordermanager&status=0">已删除订单</a> </li> 
-				<li class="<?php if($_GET['status']==='3'){ echo "selected";} ?> subCatalogList"> <a href="/customer/home.php?module=ordermanager&status=3">已作废订单</a> </li> 
+				<li class="<?php if($_GET['status']==='3'){ echo "selected";} ?> subCatalogList"> <a href="/customer/home.php?module=ordermanager&status=3">已删除订单</a> </li> 
 				<!--<li class=" subCatalogList "> <a href="#">前天</a> </li> 
 				<li class=" subCatalogList "> <a href="#">更早消息</a> </li> 
 				<li class=" "> <a href="#">星标消息</a> </li> -->
@@ -215,7 +229,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Order.php';
 			  success:function(data){
 			  	if(data.status == 1){
 			  		alert(data.statusText);
-			  		//window.location.reload();
+			  		window.location.reload();
 			  	}else if (data.status == 0){
 			  		alert(data.statusText);
 			  	}

@@ -148,8 +148,12 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
       data: { ordercountid: ordercountid, restaurantid: restaurantid,fromuserid:fromuserid,addressid:addressid,telephoneid:telephoneid,chusername:chusername},
       dataType: 'json',
       success:function(data){
-        alert(data.statusText);
-        window.location.href="/t5/feedback.php?restaurantid="+restaurantid+"&fromuserid="+fromuserid;
+        if(data.status==1){
+          alert(data.statusText);
+          window.location.href="/t5/feedback.php?restaurantid="+restaurantid+"&fromuserid="+fromuserid;
+        }else{
+          alert(data.statusText);
+        }
       }
     })
   }

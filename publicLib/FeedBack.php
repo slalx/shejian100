@@ -26,9 +26,7 @@ class FeedBack
       $query_string = "insert into feedback(userid,restaurantid,feedback) values ".$rowvalues.";"; 
       //插入数据库
       $r = mysql_query($query_string);
-      if (!$r){
-        die('插入Error: ' . mysql_error());
-      } 
+      return $r;
     }
 
 }

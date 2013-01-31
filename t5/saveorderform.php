@@ -14,10 +14,16 @@ $chusername = $_POST['chusername'];
 
 //提交订单
 $order = new Order($fromuserid,$restaurantid ,$ordercountid,$addressid,$telephoneid,$chusername);
-        $order->save();
+        
+if($order->save()){
+	$obj->status = 1;
+	$obj->statusText = '订单提交成功';
+}else{
+	$obj->status = 0;
+	$obj->statusText = '服务器端发生错误，请稍后再试';	
+}
 
-$obj->status = 1;
-$obj->statusText = '订单提交成功';
+
 
 echo json_encode($obj);
 

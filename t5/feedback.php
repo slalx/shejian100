@@ -78,7 +78,11 @@
       data: { feedbackcontent: feedbackcontent, restaurantid: restaurantid,fromuserid:fromuserid},
       dataType: 'json',
       success:function(data){
-        alert(data.statusText);
+        if(data.status==1){
+          alert(data.statusText);
+        }else{
+          alert(data.statusText);
+        }
       }
     })
   }
