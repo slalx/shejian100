@@ -1,8 +1,7 @@
 
-<!doctype html>
-<html>
+<html lang="zh-CN">
   <head>
-    <meta http-equiv="content-type" content="text/html;charset=utf8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no" />
     <link rel="stylesheet" type="text/css" href="/resource/common.css">
     <title>商户合作平台登录</title> 
