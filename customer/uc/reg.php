@@ -1,3 +1,9 @@
+<style type="text/css">
+	body, html,#allmap {width: 100%;height: 100%;overflow: hidden;hidden;margin:0;}
+	#l-map{height:100%;width:78%;float:left;border-right:2px solid #bcbcbc;}
+	#r-result{height:100%;width:20%;float:left;}
+</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
 <div class="rel msg-editer-wrapper"> 
 	<div class="msg-editer">
 		<form action="/customer/uc/savereg.php" method="post" id="storeform">
@@ -8,6 +14,7 @@
 		<div>
 			<label for="" class="block">地址</label> 
 			<input type="text" class="msg-input" name="store_address" id="store_addressid" data-message="地址不能为空且长度不能超过100字" value="" data-regex="^[\u4e00-\u9fa50-9a-zA-Z]{1,100}$">
+			<a href="javascript:void(0);" onclick="showMapDialog(this);">标注</a>
 		</div>  
 		<div>
 			<label for="" class="block">老板姓名</label> 
@@ -33,8 +40,8 @@
 			<label for="" class="block">说明</label> 
 			<textarea class="msg-input" style="height:70px;" id="store_descid" name="store_desc" data-message="说明不能为空且为10-140个字" data-regex="^.{10,140}$"></textarea>
 		</div> 
-		<input type="hidden" class="msg-input" name="store_latitude" id="store_latitudeid" value=""> 
-		<input type="hidden" class="msg-input" name="store_longitude" id="store_longitudeid" value=""> 
+		<input type="hidden" class="msg-input" name="store_latitude" id="store_latitudeid" value="" data-message="请标注地图" data-regex="^.+$"> 
+		<input type="hidden" class="msg-input" name="store_longitude" id="store_longitudeid" value="" data-message="请标注地图" data-regex="^.+$"> 
 		</form>   
 	</div> 
 	<p class="tc msg-btn"> 
@@ -49,18 +56,19 @@
 </div>
 
 <script type="text/javascript">
-	if (navigator && navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-        	function(position){
-        		document.getElementById('store_latitudeid').value=position.coords.latitude;
-        		document.getElementById('store_longitudeid').value=position.coords.longitude;
-        		
-        	},
-        	function(err){
-        		alert('获取地理位置失败，错误代码：'+err.code);
-        	} 
-        );
-    }
+
+if (navigator && navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+    	function(position){
+    		document.getElementById('store_latitudeid').value=position.coords.latitude;
+    		document.getElementById('store_longitudeid').value=position.coords.longitude;
+    		
+    	},
+    	function(err){
+    		alert('获取地理位置失败，错误代码：'+err.code);
+    	} 
+    );
+}
 
  function GetV(id){
  	return document.getElementById(id).value;
@@ -114,6 +122,39 @@
 	})
 }   
 
+function createMap(){
+	var lng = document.getElementById('store_longitudeid');
+	var lat = document.getElementById('store_latitudeid');
+
+	var map = new BMap.Map("dialogContent");
+		map.centerAndZoom(new BMap.Point(116.404, 39.915), 14);
+		map.addEventListener("click",function(e){
+			var marker1 = new BMap.Marker(new BMap.Point(e.point.lng, e.point.lat));  // 创建标注
+			map.addOverlay(marker1); 
+			if(!document.getElementById('store_latitudeid').value) {
+				lng.value = e.point.lng;
+				lat.value = e.point.lat;
+			}    
+	});
+}
+function showMapDialog(obj){
+	var sd = new SimpleDialog({
+		title:'标注地图',
+		content:"",
+		width:'600px',
+		height:'400px',
+		confirm:function(){
+			//saveEdit(id);
+			obj.innerHTML = '已标注';
+		},
+		aftershow:function(){
+			createMap();
+		},
+		cancel:function(){}
+	});	
+}
+
 
 </script>
 <script type="text/javascript" src="/resource/js/validateform.js"></script>
+<script type="text/javascript" src="/resource/js/simpledialog.js"></script>

@@ -25,6 +25,9 @@ SimpleDialog.prototype = {
 		this.eles.dialogOK.onclick = function(){self.confirm();};
 		this.eles.dialogClose.onclick = function(){self.close();};
 		this.eles.dialogCancle.onclick = function(){self.cancel();};
+		if(this.opt.aftershow){
+			this.opt.aftershow();
+		}
 	},
 	append:function(){
 		var div = document.createElement('div');
@@ -33,12 +36,14 @@ SimpleDialog.prototype = {
 	},
 	tpl :function(){
 		var title = this.opt.title,
-		content = this.opt.content;
+		content = this.opt.content,
+		width = this.opt.width || '342px',
+		height = this.opt.height || '';
 		var template = '<div class="dialogBox" id="dialogBoxC" style="display: none; ">'+ 
 							'<div class="background"></div>'+ 
-							'<div id="dialogBox" class="dialog" style="width: 342px; top: 49px; ">'+ 
+							'<div id="dialogBox" class="dialog" style="width: '+width+'; top: 49px; ">'+ 
 								'<div id="dialogTitle" class="title">'+title+'</div>'+ 
-								'<div id="dialogContent" class="content" style="width: auto; ">'+ 
+								'<div id="dialogContent" class="content" style="width: auto;height:'+height+' ">'+ 
 									content+
 								'</div>'+ 
 								'<div class="operation">'+  
