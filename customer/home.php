@@ -4,7 +4,7 @@ if($_SESSION[username]==""){
     echo "<script>alert('请登录!');window.location.href='/index.php?module=login';</script>";  
   }  
 ?>  
-<html>
+<html lang="zh-CN">
     <head>
         <meta charset="utf-8">
         <title>客户中心</title>

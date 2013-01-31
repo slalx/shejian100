@@ -1,8 +1,4 @@
-<style type="text/css">
-	body, html,#allmap {width: 100%;height: 100%;overflow: hidden;hidden;margin:0;}
-	#l-map{height:100%;width:78%;float:left;border-right:2px solid #bcbcbc;}
-	#r-result{height:100%;width:20%;float:left;}
-</style>
+
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
 <div class="rel msg-editer-wrapper"> 
 	<div class="msg-editer">
