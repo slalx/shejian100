@@ -1,7 +1,7 @@
 <!doctype html>
-<html>
+<html lang="zh-CN">
 	<head>
-		<meta http-equiv="content-type" content="text/html;charset=utf8">
+		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="/resource/common.css">
 		<link rel="stylesheet" type="text/css" href="/resource/css/login.css">
 		<title>商户合作平台登录</title> 

@@ -53,7 +53,7 @@
   <body class="" >
     <div class="container">
       <h3 style="color:green">订餐已经完成，一小时后给您送达</h3>
-      <div style="color:red">评价有积分，积分换大餐！！！</div>
+      <div style="color:red">评价有积分，积分换大餐!!!</div>
       <div>快来评价下我们的订餐服务吧</div>
       <div id="feedbackform">
         <textarea id="feedbackcontent" class="msg-input" data-message="反馈不能为空且为10-140个字" data-regex="^.{10,140}$"></textarea>
