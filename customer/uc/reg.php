@@ -124,6 +124,7 @@ function createMap(){
 
 	var map = new BMap.Map("dialogContent");
 		map.centerAndZoom(new BMap.Point(116.404, 39.915), 14);
+		map.addControl(new BMap.NavigationControl()); 
 		map.addEventListener("click",function(e){
 			var marker1 = new BMap.Marker(new BMap.Point(e.point.lng, e.point.lat));  // 创建标注
 			map.addOverlay(marker1); 
