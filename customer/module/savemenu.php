@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: text/html; charset=utf-8');
 include $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
 
 $dishes = $_POST['dish'];
@@ -8,12 +9,19 @@ for ($i=0; $i<count($dishes); $i++){
 	//目前restaurantid,和userid是同一个，是一对一的关系
 	if ($row != ''){
 		if ($row["name"] != '' && $row["price"] != '') {
+			if(!preg_match("/^\d+$/",$row["price"])){
+				Header("Location:/customer/home.php?module=addmenu&flag=4");
+				exit();
+			}
 			$query_string .= " ('".$row["name"]."', ".$row["price"].", ".$row["type"].", ".$_COOKIE[sj_uid].", ".$_COOKIE[sj_uid]."),"; 
 		}elseif ($row["name"] == '' && $row["price"] != '') {
 			Header("Location:/customer/home.php?module=addmenu&flag=1");
 			exit();
 		}elseif ($row["name"] != '' && $row["price"] == '') {
 			Header("Location:/customer/home.php?module=addmenu&flag=2");
+			exit();
+		}elseif ($row["name"] == '' && $row["price"] == '' && $i==0) {
+			Header("Location:/customer/home.php?module=addmenu&flag=3");
 			exit();
 		}
 		

@@ -8,6 +8,7 @@
         <div>Copyright&nbsp;© 2012-2013 shejian. All Rights Reserved.</div> 
     </div> 
 </div>
+<div class="tips" style="none" id="messagetip"><div class="tipContent err"></div></div>
 <?php 
 include_once $_SERVER['DOCUMENT_ROOT'].'/customer/include/jsinclude.php';
 ?>

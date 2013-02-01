@@ -46,7 +46,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Order.php';
   $prevclass = '';
   $nextclass = '';
 
-  if($pages == 1){
+  if($pages == 1  || $pages == 0){
    	$prevpageurl='javascript:void(0);';
   	$nextpageurl='javascript:void(0)'; 	
   	$prevclass = 'textDisable';
@@ -61,7 +61,9 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Order.php';
   	}
   }
 
-
+  if($pages == 0){
+  	$page = 0;
+  }
 
 
   function getorderliststr($ordercount){
@@ -160,14 +162,17 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Order.php';
 							$statusordertext =  "未送餐";
 							$fontcolor = 'black';
 							$styledisplay = '';
+							$deleteDisplay = '';
 						}elseif ($statusorder==3) {
 							$statusordertext =  "已删除";
 							$fontcolor = 'red';
 							$styledisplay = 'none';
+							$deleteDisplay = 'none';
 						}elseif ($statusorder==2) {
 							$statusordertext = "已送餐";
 							$fontcolor = 'green';
 							$styledisplay = 'none';
+							$deleteDisplay = '';
 						}
 			?>  
 			<li class="msgListItem buddyRichInfoC " id="orderListItem<?= $id ?>" data-id="<?= $id ?>"> 
@@ -178,7 +183,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Order.php';
 				<div class="wxMsgArea"> 
 					<div class="opt oper right"> 
 						<a href="javascript:;" onclick="sendDish(2,<?= $id ?>);" class="icon18 iconEdit" data-fakeid="13073955" title="送餐" style="display:<?=$styledisplay?>"></a>  
-						<a href="javascript:;" onclick="sendDish(3,<?= $id ?>);" class="icon18 iconDelete" target="_blank" idx="9472736" title="删除"></a> 
+						<a href="javascript:;" onclick="sendDish(3,<?= $id ?>);" class="icon18 iconDelete" target="_blank" idx="9472736" title="删除" style="display:<?=$deleteDisplay?>"></a> 
 						<a href="javascript:;" onclick="sendDish(3,<?= $id ?>);" class="star icon18 iconUnstar " idx="9472736" starred="0" title="标记无效" style="display:none;"></a> 
 						<a href="javascript:;" data-id="9472736" data-tofakeid="13073955" class="icon18 iconReply" title="回复" style="display:none;"></a> 
 					</div> 

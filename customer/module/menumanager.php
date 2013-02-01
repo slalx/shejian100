@@ -55,19 +55,23 @@ $restaurantid = $_COOKIE["sj_uid"];
   $prevclass = '';
   $nextclass = '';
 
-  if($pages == 1){
+  if($pages == 1 || $pages == 0){
    	$prevpageurl='javascript:void(0);';
   	$nextpageurl='javascript:void(0)'; 	
   	$prevclass = 'textDisable';
   	$nextclass = 'textDisable';
   }else{
-  	if ($page == 1) {
+  	if ($page == 1 ) {
   		$prevpageurl='javascript:void(0);';
   		$prevclass = 'textDisable';
   	}elseif ($page == $pages) {
   		$nextpageurl='javascript:void(0)'; 	
   		$nextclass = 'textDisable';
   	}
+  }
+
+  if($pages == 0){
+  	$page = 0;
   }
 
 ?>
@@ -96,7 +100,7 @@ $restaurantid = $_COOKIE["sj_uid"];
 			</div> 
 			<div class="listTitle"> 
 				<div class="left title msg">
-					<input type="checkbox" id="selectAll">全选
+					<input type="checkbox" id="selectAll" onclick="toggleSelect(this);">全选
 				</div> 
 				<div class="right title opt">操作</div> 
 			</div> 
@@ -210,6 +214,28 @@ $restaurantid = $_COOKIE["sj_uid"];
 	function openhref(href){
 		location.href = href;
 	};
+	function toggleSelect(obj){
+		var lic = document.getElementById('listContainer');
+		if(obj.selected){
+			selectAll(lic,false);
+		}else{
+			selectAll(lic,true);
+		}
+	}
+	function selectAll(listContainer ,selected){
+		var inputs = listContainer.getElementsByTagName('input');
+		for(var i=0,l=inputs.length;i<l;i++){
+			var input = inputs[i];
+			if(input.getAttribute('type')=='checkbox')
+			{
+				if(input.checked){
+					input.checked=false;
+				}else{
+					input.checked=true;
+				}
+			}
+		}
+	}
 </script>
 <script type="text/javascript" src="/resource/js/simpledialog.js"></script>
 <script type="text/javascript">

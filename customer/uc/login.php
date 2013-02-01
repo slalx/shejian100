@@ -40,7 +40,7 @@ function submitform(){
 	  success:function(data){
 	  	if(data.status == 1){
 	  		Cookie.set('sj_uid',data.uid,'never',"/", document.domain);
-	  		alert(data.statusText);
+	  		//alert(data.statusText);
 	  		window.location.href="/customer/home.php";
 	  	}else if (data.status == 0){
 	  		alert(data.statusText);

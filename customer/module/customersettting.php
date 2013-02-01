@@ -30,7 +30,7 @@
 		<div class="clr"></div> 
 	</div>
 </div>
-<div class="tips" style="none" id="messagetip"><div class="tipContent err"></div></div>
+
 <script>
 
 function submitform(){

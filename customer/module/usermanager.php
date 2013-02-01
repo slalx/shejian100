@@ -59,7 +59,7 @@ $rsss = mysql_query("select distinct count(chusername) from orderform $sqltype")
   $prevclass = '';
   $nextclass = '';
 
-  if($pages == 1){
+  if($pages == 1 || $pages == 0){
    	$prevpageurl='javascript:void(0);';
   	$nextpageurl='javascript:void(0)'; 	
   	$prevclass = 'textDisable';
@@ -74,6 +74,9 @@ $rsss = mysql_query("select distinct count(chusername) from orderform $sqltype")
   	}
   }
 
+  if($pages == 0){
+  	$page = 0;
+  }
 ?>
 
 

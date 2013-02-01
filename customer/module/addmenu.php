@@ -36,6 +36,10 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
 									echo "菜名不能为空";
 								}elseif ($flag=='2') {
 									echo "菜价不能为空";
+								}elseif ($flag=='3') {
+									echo "菜名和菜价都不能为空";
+								}elseif ($flag=='4') {
+									echo "菜价只能为数字";
 								}
 
 							}
@@ -49,7 +53,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
 									<label for="">菜名</label> 
 									<input type="text" class="msg-input" value="" name="dish[0][name]"> 
 									<label for="" class="dish_price">价格</label>
-									<input type="text" class="msg-input" value="" name="dish[0][price]">
+									<input type="text" class="msg-input" value="" name="dish[0][price]">￥
 									<label for="">种类</label> 
 									<select name="dish[0][type]">
 										<?= $optstr ?>
@@ -59,7 +63,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
 									<label for="">菜名</label> 
 									<input type="text" class="msg-input" value="" name="dish[1][name]"> 
 									<label for="" class="dish_price">价格</label>
-									<input type="text" class="msg-input" value="" name="dish[1][price]">
+									<input type="text" class="msg-input" value="" name="dish[1][price]">￥
 									<label for="">种类</label> 
 									<select name="dish[1][type]">
 										<?= $optstr ?>
@@ -69,7 +73,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
 									<label for="">菜名</label> 
 									<input type="text" class="msg-input" value="" name="dish[2][name]"> 
 									<label for="" class="dish_price">价格</label>
-									<input type="text" class="msg-input" value="" name="dish[2][price]">
+									<input type="text" class="msg-input" value="" name="dish[2][price]">￥
 									<label for="">种类</label> 
 									<select name="dish[2][type]">
 										<?= $optstr ?>
@@ -79,7 +83,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
 									<label for="">菜名</label> 
 									<input type="text" class="msg-input" value="" name="dish[3][name]"> 
 									<label for="" class="dish_price">价格</label>
-									<input type="text" class="msg-input" value="" name="dish[3][price]">
+									<input type="text" class="msg-input" value="" name="dish[3][price]">￥
 									<label for="">种类</label> 
 									<select name="dish[3][type]">
 										<?= $optstr ?>
@@ -89,7 +93,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
 									<label for="">菜名</label> 
 									<input type="text" class="msg-input" value="" name="dish[4][name]"> 
 									<label for="" class="dish_price">价格</label>
-									<input type="text" class="msg-input" value="" name="dish[4][price]">
+									<input type="text" class="msg-input" value="" name="dish[4][price]">￥
 									<label for="">种类</label> 
 									<select name="dish[4][type]">
 										<?= $optstr ?>
