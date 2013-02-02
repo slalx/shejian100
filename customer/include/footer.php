@@ -9,6 +9,8 @@
     </div> 
 </div>
 <div class="tips" style="none" id="messagetip"><div class="tipContent err"></div></div>
+<div class="tips" style="none" id="messagetipsuc"><div class="tipContent suc"></div></div>
 <?php 
 include_once $_SERVER['DOCUMENT_ROOT'].'/customer/include/jsinclude.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
 ?>

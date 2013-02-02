@@ -25,9 +25,6 @@ SimpleDialog.prototype = {
 		this.eles.dialogOK.onclick = function(){self.confirm();};
 		this.eles.dialogClose.onclick = function(){self.close();};
 		this.eles.dialogCancle.onclick = function(){self.cancel();};
-		if(this.opt.aftershow){
-			this.opt.aftershow();
-		}
 	},
 	append:function(){
 		var div = document.createElement('div');
@@ -38,10 +35,11 @@ SimpleDialog.prototype = {
 		var title = this.opt.title,
 		content = this.opt.content,
 		width = this.opt.width || '342px',
-		height = this.opt.height || '';
+		height = this.opt.height || '',
+		top = this.opt.top || '49px';
 		var template = '<div class="dialogBox" id="dialogBoxC" style="display: none; ">'+ 
 							'<div class="background"></div>'+ 
-							'<div id="dialogBox" class="dialog" style="width: '+width+'; top: 49px; ">'+ 
+							'<div id="dialogBox" class="dialog" style="width: '+width+'; '+top+'; ">'+ 
 								'<div id="dialogTitle" class="title">'+title+'</div>'+ 
 								'<div id="dialogContent" class="content" style="width: auto;height:'+height+' ">'+ 
 									content+
@@ -79,5 +77,8 @@ SimpleDialog.prototype = {
 	},
 	show:function(){
 		this.eles.dialogBoxC.style.display = 'block';
+		if(this.opt.aftershow){
+			this.opt.aftershow();
+		}
 	}
 }

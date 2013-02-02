@@ -1,9 +1,27 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
 
+$restaurantid = $_COOKIE["sj_uid"];
+
+$query_string = "select * from store where id='$restaurantid'"; 
+//插入数据库
+$result = mysql_query($query_string);
+$storerow = mysql_fetch_array($result);
+if($storerow){
+    $name = $storerow[name];
+    $ownername = $storerow[ownername];
+    $coverimage = $storerow[coverimage];
+}
+
+?>
+<script>
+    document.getElementById('storenameid').innerHTML='<?= $name ?>';
+</script>
 <div id="main" class="container">
     <div class="containerBox boxIndex"> 
         <div class="mainPanel"> 
-            <h2 class="h2">欢迎你，<?= $_SESSION["username"] ?></h2> 
-            <div class="todoList"> <h3 class="">最新订单</h3> </div> 
+            <h2 class="h2">欢迎你，<?= $ownername ?></h2> 
+            <div class="todoList"> <h3 class="">店铺动态</h3> </div> 
             <div id="wxChartsFans" class="wxCharts">
                 <div class="highcharts-container" id="highcharts-0" style="position: relative; overflow: hidden; width: 660px; height: 300px; text-align: left; line-height: normal; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif; font-size: 12px; ">
                     <?php
@@ -21,7 +39,7 @@
             </div> 
             <div class="extInfo"> 
                 <h3>新功能推荐</h3> 
-                <p>商家广场 <a href="#">详情&gt;&gt;</a></p> 
+                <p style="display:none;">商家广场 <a href="#">详情&gt;&gt;</a></p> 
             </div> 
         </div> 
     </div>

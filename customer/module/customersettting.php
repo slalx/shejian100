@@ -14,7 +14,7 @@
 				<div class="userinfoArea left"> 
 					<div style="padding:15px 0;"> 旧密码: <input type="password" value="" class="bindUserInput msg-input" name="old_password" id="old_passwordid" data-message="密码不能为空且至少为6位字符" value="" data-regex="^[\w\d]{6,}$"> </div>
 					<div style="padding:15px 0;"> 新密码: <input type="password" value="" class="bindUserInput msg-input" name="new_password" id="new_passwordid" data-message="密码不能为空且至少为6位字符" value="" data-regex="^[\w\d]{6,}$"> </div>  
-					<button id="saveSetting" class="btnGreen" onclick="submitform();">保存</button> 
+					<button id="saveSetting" class="btnGreen" onclick="submitform(this);">保存</button> 
 				</div> 
 				<div class="clr"></div> 
 			</div> 
@@ -24,6 +24,7 @@
 				<ul> 
 					<li class="<?php if($_GET['module']==='customersettting'){ echo "selected";} ?>"> <a href="/customer/home.php?module=customersettting">修改密码</a> </li> 
 					<li class="<?php if($_GET['module']==='editstorecover'){ echo "selected";} ?>"> <a href="/customer/home.php?module=editstorecover">修改饭店封面</a> </li>
+					<li class="<?php if($_GET['module']==='editstoreinfo'){ echo "selected";} ?>"> <a href="/customer/home.php?module=editstoreinfo">修改饭店信息</a> </li>
 				</ul> 
 			</div> 
 		</div> 
@@ -33,19 +34,26 @@
 
 <script>
 
-function submitform(){
+function submitform(obj){
 	if(!ValidateForm.validateForm('userinfoform')){
       return;
     }
 	var old_password = document.getElementById('old_passwordid').value;
 	var new_password = document.getElementById('new_passwordid').value;
+	addClass(obj,'btnDisable');
 	$.ajax({
 	  type: "post",
 	  url: "/customer/uc/editpassword.php",
 	  data: { old_password: old_password, new_password: new_password },
 	  dataType: 'json',
 	  success:function(data){
-	  		alert(data.statusText);
+	  	if(data.status==0){
+	  		ValidateForm.showTip(data.statusText);
+	  	}else{
+	  		MessageTip.showTip(data.statusText);
+	  	}
+
+	  		removeClass(obj,'btnDisable');
 	  }
 	})
 }

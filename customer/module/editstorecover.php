@@ -39,6 +39,7 @@
 				<ul> 
 					<li class="<?php if($_GET['module']=='customersettting'){ echo "selected";} ?>"> <a href="/customer/home.php?module=customersettting">修改密码</a> </li> 
 					<li class="<?php if($_GET['module']=='editstorecover'){ echo "selected";} ?>"> <a href="/customer/home.php?module=editstorecover">修改饭店封面</a> </li>
+					<li class="<?php if($_GET['module']==='editstoreinfo'){ echo "selected";} ?>"> <a href="/customer/home.php?module=editstoreinfo">修改饭店信息</a> </li>
 				</ul> 
 			</div> 
 		</div> 

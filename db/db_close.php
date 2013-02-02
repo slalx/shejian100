@@ -1,3 +1,5 @@
 <?php
-mysql_close($con);
+if($con){
+	mysql_close($con);
+}
 ?>

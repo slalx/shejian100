@@ -4,36 +4,48 @@
 	<div class="msg-editer">
 		<form action="/customer/uc/savereg.php" method="post" id="storeform">
 		<div>
-			<label for="" class="block">店名</label> 
-			<input type="text" class="msg-input" name="store_name" id="store_nameid" data-message="店名不能为空且长度不能超过20字" value="" data-regex="^[\u4e00-\u9fa5]{1,20}$">
+			<label for="" class="block">账号<span style="color:red">&nbsp;&nbsp;*</span></label> 
+			<input type="text" class="msg-input" name="store_username" id="store_usernameid" data-message="登陆名不能为空且长度不能超过18个字母或数字" value="" data-regex="^[0-9a-zA-Z]{1,18}$">
 		</div>
 		<div>
-			<label for="" class="block">地址</label> 
-			<input type="text" class="msg-input" name="store_address" id="store_addressid" data-message="地址不能为空且长度不能超过100字" value="" data-regex="^[\u4e00-\u9fa50-9a-zA-Z]{1,100}$">
-			<a href="javascript:void(0);" onclick="showMapDialog(this);">标注</a>
-		</div>  
-		<div>
-			<label for="" class="block">老板姓名</label> 
-			<input type="text" class="msg-input" name="store_ownername" id="store_ownernameid" data-message="老板姓名不能为空且长度不能超过20字" value="" data-regex="^[\u4e00-\u9fa5]{1,20}$">
-		</div>
-		<div>
-			<label for="" class="block">登陆名</label> 
-			<input type="text" class="msg-input" name="store_username" id="store_usernameid" data-message="登陆名不能为空且长度不能超过10个字母或数字" value="" data-regex="^[0-9a-zA-Z]{1,10}$">
-		</div>
-		<div>
-			<label for="" class="block">密码</label> 
+			<label for="" class="block">密码<span style="color:red">&nbsp;&nbsp;*</span></label> 
 			<input type="password" class="msg-input" name="store_upassword" id="store_upasswordid" data-message="密码不能为空且至少为6位字符" value="" data-regex="^[\w\d]{6,}$">
 		</div>
 		<div>
-			<label for="" class="block">手机号</label> 
+			<label for="" class="block">店名<span style="color:red">&nbsp;&nbsp;*</span></label> 
+			<input type="text" class="msg-input" name="store_name" id="store_nameid" data-message="店名不能为空且长度不能超过20字" value="" data-regex="^[\u4e00-\u9fa5]{1,20}$">
+		</div>
+		<div>
+			<label for="" class="block">地址<span style="color:red">&nbsp;&nbsp;*</span></label>
+			<div style="margin-bottom:10px;">
+			    <select id="selProvance" onChange="chgProvinces('selProvance','selCity','selArea')">
+			        <option></option>
+			    </select>
+			    <select id="selCity" onChange="chgCitys('selCity','selArea')">
+			        <option></option>
+			    </select>
+			    <select id="selArea">
+			        <option></option>
+			    </select>
+			    <a href="javascript:void(0);" onclick="showMapDialog(this);">在地图上标注</a>
+		    </div>
+    		<input type="text" class="msg-input" name="store_address" id="store_addressid" data-message="地址不能为空且长度不能超过100字" value="" data-regex="^[\u4e00-\u9fa50-9a-zA-Z]{1,100}$">
+			
+		</div>  
+		<div>
+			<label for="" class="block">老板姓名<span style="color:red">&nbsp;&nbsp;*</span></label> 
+			<input type="text" class="msg-input" name="store_ownername" id="store_ownernameid" data-message="老板姓名不能为空且长度不能超过20字" value="" data-regex="^[\u4e00-\u9fa5]{1,20}$">
+		</div>
+		<div>
+			<label for="" class="block">手机号<span style="color:red">&nbsp;&nbsp;*</span></label> 
 			<input type="tel" class="msg-input" name="store_mobilephone" id="store_mobilephoneid" value="" data-message="手机号不能为空且为11位数字" data-regex="^[0-9]{11,11}$">
 		</div>
 		<div>
 			<label for="" class="block">座机号</label> 
-			<input type="tel" class="msg-input" name="store_telephone" id="store_telephoneid" value="" data-message="座机号不能为空且为7-11位数字" data-regex="^[0-9]{7,11}$">
+			<input type="tel" class="msg-input" name="store_telephone" id="store_telephoneid" value="" data-message="座机号应为7-12位数字" data-regex="^[0-9\-]{0,13}$">
 		</div>
 		<div>
-			<label for="" class="block">说明</label> 
+			<label for="" class="block">说明<span style="color:red">&nbsp;&nbsp;*</span></label> 
 			<textarea class="msg-input" style="height:70px;" id="store_descid" name="store_desc" data-message="说明不能为空且为10-140个字" data-regex="^.{10,140}$"></textarea>
 		</div> 
 		<input type="hidden" class="msg-input" name="store_latitude" id="store_latitudeid" value="" data-message="请标注地图" data-regex="^.+$"> 
@@ -41,7 +53,7 @@
 		</form>   
 	</div> 
 	<p class="tc msg-btn"> 
-		<a href="javascript:;" id="save" class="btnGreen" onclick="submitform();">完成</a> 
+		<a href="javascript:;" id="save" class="btnGreen" onclick="submitform(this);">完成</a> 
 	</p>
 	<div class="oh z shadow"> 
 		<span class="left ls"></span>
@@ -66,19 +78,25 @@ if (navigator && navigator.geolocation) {
     );
 }
 
+document.body.onload = function(){
+	loadData('selProvance', 'selCity', 'selArea');
+};
+
  function GetV(id){
  	return document.getElementById(id).value;
  }
 
 
- function submitform(){
+ function submitform(obj){
 
  	if(!ValidateForm.validateForm('storeform')){
  		return;
  	}
+ 	//获得省市区的字符串组合
+	var provinceandcitystr = getSelectedValue('selProvance')+getSelectedValue('selCity')+getSelectedValue('selArea');
 
 	var store_name = GetV('store_nameid');
-	var store_address = GetV('store_addressid');
+	var store_address = provinceandcitystr+GetV('store_addressid');
 	var store_ownername = GetV('store_ownernameid');
 	var store_username = GetV('store_usernameid');
 	var store_upassword = GetV('store_upasswordid');
@@ -100,7 +118,7 @@ if (navigator && navigator.geolocation) {
 		store_latitude: store_latitude,
 		store_longitude: store_longitude
 	}
-
+	addClass(obj,'btnDisable');
 	$.ajax({
 	  type: "post",
 	  url: "/customer/uc/savereg.php",
@@ -109,11 +127,12 @@ if (navigator && navigator.geolocation) {
 	  success:function(data){
 	  	if(data.status == 1){
 	  		Cookie.set('sj_uid',data.uid,'never',"/", document.domain);
-	  		alert(data.statusText);
+	  		//alert(data.statusText);
 	  		window.location.href="/customer/home.php?direct=reg";
 	  	}else if (data.status == 0){
-	  		alert(data.statusText);
+	  		ValidateForm.showTip(data.statusText);
 	  	}
+	  	removeClass(obj,'btnDisable');
 	  }
 	})
 }   
@@ -122,10 +141,14 @@ function createMap(){
 	var lng = document.getElementById('store_longitudeid');
 	var lat = document.getElementById('store_latitudeid');
 
+	var provinceandcitystr = getSelectedValue('selProvance')+getSelectedValue('selCity')+getSelectedValue('selArea');
+	dialogContent.innerHTML = '';
 	var map = new BMap.Map("dialogContent");
-		map.centerAndZoom(new BMap.Point(116.404, 39.915), 14);
-		map.addControl(new BMap.NavigationControl()); 
+		map.centerAndZoom(provinceandcitystr);
+		map.addControl(new BMap.NavigationControl());
+		map.addControl(new BMap.NavigationControl({anchor: BMAP_ANCHOR_BOTTOM_RIGHT, type: BMAP_NAVIGATION_CONTROL_ZOOM}));   
 		map.addEventListener("click",function(e){
+			map.clearOverlays();
 			var marker1 = new BMap.Marker(new BMap.Point(e.point.lng, e.point.lat));  // 创建标注
 			map.addOverlay(marker1); 
 			if(!document.getElementById('store_latitudeid').value) {
@@ -134,12 +157,18 @@ function createMap(){
 			}    
 	});
 }
+function getSelectedValue(selectid){
+	var sel=document.getElementById(selectid);
+	var selvalue= sel.options[sel.options.selectedIndex].text;
+	return selvalue;
+}
 function showMapDialog(obj){
 	var sd = new SimpleDialog({
 		title:'标注地图',
 		content:"",
 		width:'600px',
 		height:'400px',
+		top:'5px',
 		confirm:function(){
 			//saveEdit(id);
 			obj.innerHTML = '已标注';
@@ -153,5 +182,5 @@ function showMapDialog(obj){
 
 
 </script>
-<script type="text/javascript" src="/resource/js/validateform.js"></script>
 <script type="text/javascript" src="/resource/js/simpledialog.js"></script>
+<script type="text/javascript" src="/resource/js/provinceandcity.js"></script>

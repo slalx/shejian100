@@ -12,7 +12,7 @@
 		</form>   
 	</div> 
 	<p class="tc msg-btn"> 
-		<a href="javascript:;" id="save" class="btnGreen" onclick="submitform();">登陆</a> 
+		<a href="javascript:;" id="save" class="btnGreen" onclick="submitform(this);">登陆</a> 
 	</p>
 	<div class="oh z shadow"> 
 		<span class="left ls"></span>
@@ -24,7 +24,7 @@
 <script type="text/javascript" src="/resource/js/cookie.js"></script>
 <script>
 
-function submitform(){
+function submitform(obj){
 
  	if(!ValidateForm.validateForm('storeform')){
  		return;
@@ -32,6 +32,7 @@ function submitform(){
 
 	var usernameval = document.getElementById('owner_username').value;
 	var passwordval = document.getElementById('owner_password').value;
+	addClass(obj,'btnDisable');
 	$.ajax({
 	  type: "post",
 	  url: "/customer/uc/certification.php",
@@ -39,14 +40,16 @@ function submitform(){
 	  dataType: 'json',
 	  success:function(data){
 	  	if(data.status == 1){
+	  		data = data.data;
 	  		Cookie.set('sj_uid',data.uid,'never',"/", document.domain);
+	  		Cookie.set('sj_chuname',data.chuname,'never',"/", document.domain);
 	  		//alert(data.statusText);
 	  		window.location.href="/customer/home.php";
 	  	}else if (data.status == 0){
 	  		alert(data.statusText);
 	  	}
+	  	removeClass(obj,'btnDisable');
 	  }
 	})
 }
 </script>
-<script type="text/javascript" src="/resource/js/validateform.js"></script>

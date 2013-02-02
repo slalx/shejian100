@@ -7,9 +7,9 @@
     <title>商户合作平台登录</title> 
   </head>
   <?php
-include $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
-include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Menu.php';
-include $_SERVER['DOCUMENT_ROOT'].'/publicLib/page.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/publicLib/Menu.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/publicLib/page.php';
 
   //饭馆名称
   $restaurantid = -1;

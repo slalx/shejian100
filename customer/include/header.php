@@ -2,7 +2,7 @@
     <div class="logoArea"> 
         <a class="logo left block" href="/"> <img src="/resource/i/logoshejian.png" alt="舌尖商家平台"> </a> 
         <div class="accountOp right"> 
-            <span><a href="#"><?= $_SESSION["username"] ?></a></span> 
+            <span><a href="/customer/home.php" id="storenameid"><?= $name ?></a></span> 
             <span class="none"><a href="#">帮助中心</a></span> 
             <span><a  href="/customer/uc/exit.php">退出</a></span> 
         </div> 

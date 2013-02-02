@@ -1,8 +1,8 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 
-include $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
-include $_SERVER['DOCUMENT_ROOT'].'/publicLib/FeedBack.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/publicLib/FeedBack.php';
 
 $restaurantid = $_POST['restaurantid'];
 $feedbackcontent = $_POST['feedbackcontent'];
@@ -22,5 +22,5 @@ if($feedBack->save()){
 
 echo json_encode($obj);
 
-include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
 ?>

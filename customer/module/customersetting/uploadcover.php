@@ -1,7 +1,10 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
+include $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
 //文件存储路径
 $file_path=$_SERVER['DOCUMENT_ROOT'].'/customer/module/customersetting/upload/';
+
+$restaurantid = $_COOKIE["sj_uid"];
 //664权限为文件属主和属组用户可读和写，其他用户只读。
 if(is_dir($file_path)!=TRUE) mkdir($file_path,0664) ;
 //定义允许上传的文件扩展名
@@ -29,7 +32,14 @@ if (empty($_FILES) === false) {
     $new_name = $_COOKIE["sj_uid"].".".$file_ext;
     //将文件移动到存储目录下
     if(move_uploaded_file($_FILES["file"]["tmp_name"],"$file_path".$new_name)){
-        Header("Location:/customer/home.php?module=editstorecover&upload=succ");
+        $query_string = "update store set coverimage=1 where id= $restaurantid"; 
+        //更新数据库
+        $r = mysql_query($query_string);
+        if($r){
+            Header("Location:/customer/home.php?module=editstorecover&upload=succ");
+        }else{
+            Header("Location:/customer/home.php?module=editstorecover&upload=error");
+        }
     }else{
         Header("Location:/customer/home.php?module=editstorecover&upload=error");
     };

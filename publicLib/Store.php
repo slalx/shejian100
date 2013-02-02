@@ -33,6 +33,16 @@ class Store
         return $storelist;
       }
     }
+    public function getOneStoreById($storeid){
+      //合成sql语句
+      $query_string = "select * from store where id='$storeid';"; 
+
+      $r = mysql_query($query_string);
+      if (!$r){
+        die('插入Error: ' . mysql_error());
+      } 
+      return $r; 
+    }      
 }
 
 ?>

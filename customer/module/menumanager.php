@@ -138,10 +138,12 @@ $restaurantid = $_COOKIE["sj_uid"];
 					<?php 
 						  
 						  $typeresult = mysql_query("select * from menutype where restaurantid=$restaurantid;");
+						  $typei = 0;
 						  if ($typeresult != false){
 							while($row = mysql_fetch_array($typeresult)){
 								$id=$row["id"];
 								$name=$row["name"];
+								$typei++;
 					?>
 					<li <?php if($_GET['type']==$id){ ?>class="selected "<?php }?> > <a href="/customer/home.php?module=menumanager&type=<?= $id?>"><?= $name?></a> </li> 
 					<?php
@@ -200,7 +202,7 @@ $restaurantid = $_COOKIE["sj_uid"];
 			  dataType: 'json',
 			  success:function(data){
 			  	if(data.status == 1){
-			  		alert(data.statusText);
+			  		//alert(data.statusText);
 			  		window.location.reload();
 			  	}else if (data.status == 0){
 			  		alert(data.statusText);
@@ -212,7 +214,11 @@ $restaurantid = $_COOKIE["sj_uid"];
 		}
 	}
 	function openhref(href){
-		location.href = href;
+		if(<?= $typei?> == 0){
+			alert('请先添加分类');
+		}else{
+			location.href = href;
+		}
 	};
 	function toggleSelect(obj){
 		var lic = document.getElementById('listContainer');

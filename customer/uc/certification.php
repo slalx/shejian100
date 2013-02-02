@@ -22,7 +22,8 @@ if ($numrows == 1){
     //$_SESSION[] = $row[];
 
     $obj->status = 1;
-    $obj->uid = $row[id];
+    //$obj->uid = $row[id];
+    $obj->data=array("uid"=>$row[id],"chuname"=>$row[ownername]);
     $obj->statusText = '登陆成功';
 }else{
 	$obj->status = 0;

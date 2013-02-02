@@ -32,7 +32,7 @@ if ($numrows == 1){
             $obj->statusText = '服务器出现错误';
         }
     }else{
-            $obj->status = 2;
+            $obj->status = 0;
             $obj->uid = $row[id];
             $obj->statusText = '旧密码错误';
     }
