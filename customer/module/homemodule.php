@@ -12,10 +12,13 @@ if($storerow){
     $ownername = $storerow[ownername];
     $coverimage = $storerow[coverimage];
 }
-$tasklist = "新功能推荐";
+$tasktitle = "新功能推荐";
+$tasklists = '<p ><a href="#" style="color:red;display:none;">商家广场 &gt;&gt;</a></p>';
 if($coverimage==0){
-    $tasklist = "继续装修店铺";
-}    
+    $tasktitle = "装修店铺";
+    $tasklists = $tasklists.'<p ><a href="/customer/home.php?module=editstorecover" style="color:red;">上传店铺封面 &gt;&gt;</a><br>&nbsp;&nbsp;有封面的店铺才能展示给食客</p>';
+    $tasklists.='<p ><a href="/customer/home.php?module=menumanager" style="color:red;">管理菜单 &gt;&gt;</a><br>&nbsp;&nbsp;随时可以修改你店里的菜单</p>' ;
+} 
 ?>
 <script>
     document.getElementById('storenameid').innerHTML='<?= $name ?>';
@@ -37,12 +40,12 @@ if($coverimage==0){
         </div> 
         <div class="extendPanel"> 
             <div class="extInfo"> 
-                <h3>系统公告</h3> 
-                <p>如果你在使用过程中有任何疑问或者建议，请加我们的公众号进行咨询反馈：shejian_100<br>联系邮箱：<a href="mailto:shejian100@163.com">shejian100@163.com</a></a><br></span></p> 
+                <h3><?= $tasktitle ?></h3> 
+                <?= $tasklists ?>
             </div> 
             <div class="extInfo"> 
-                <h3>新功能推荐</h3> 
-                <p style="display:none;">商家广场 <a href="#">详情&gt;&gt;</a></p> 
+                <h3>系统公告</h3> 
+                <p>如果你在使用过程中有任何疑问或者建议，请联系我们进行咨询反馈<br>微信号：shejian_100<br>联系邮箱：<a href="mailto:shejian100@163.com">shejian100@163.com</a></a><br></span></p> 
             </div> 
         </div> 
     </div>

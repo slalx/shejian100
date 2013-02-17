@@ -3,7 +3,7 @@
 		<form method="post" id="storeform">
 		<div>
 			<label for="" class="block">用户名</label> 
-			<input type="text" class="msg-input" id="owner_username" value="" data-message="登陆名不能为空且长度不能超过10个字母或数字"  data-regex="^[1-9a-zA-Z]{1,10}$">
+			<input type="text" class="msg-input" id="owner_username" value="" data-message="登陆名不能为空且长度不能超过18个字母或数字"  data-regex="^[0-9a-zA-Z]{1,18}$">
 		</div> 
 		<div>
 			<label for="" class="block">密码</label> 

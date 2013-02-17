@@ -22,7 +22,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Menu.php';
       $menusstr = sprintf("<ArticleCount>%s</ArticleCount>
                              <Articles>%s</Articles>",$count,$menusstr);*/
 
-      $sqlcondition = "where name like '%$keyword%'";
+      $sqlcondition = "where coverimage=1 and name like '%$keyword%'";
       $storepage = new Page($page, 10, $sqlcondition, 'store');
       $storeresult = $storepage->sqlQueryResults();
 
