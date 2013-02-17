@@ -12,7 +12,10 @@ if($storerow){
     $ownername = $storerow[ownername];
     $coverimage = $storerow[coverimage];
 }
-
+$tasklist = "新功能推荐";
+if($coverimage==0){
+    $tasklist = "继续装修店铺";
+}    
 ?>
 <script>
     document.getElementById('storenameid').innerHTML='<?= $name ?>';

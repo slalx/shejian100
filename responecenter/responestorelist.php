@@ -30,7 +30,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Store.php';
     $storelist = $store->getStoreList($storeresult);
 
     $itemTpl = "<item>
-      			    <Title><![CDATA[%s          编号:%s]]></Title>
+      			    <Title><![CDATA[%s]]></Title>
       			    <Description><![CDATA[%s]]></Description>
                  <PicUrl><![CDATA[%s]]></PicUrl>
                 <Url><![CDATA[http://42.96.139.171/t5/menulist.php?restaurantid=%s&fromuser=$fromUsername]]></Url>
@@ -46,7 +46,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Store.php';
       if($distance < 3 && $storeobj->lat && $storeobj->lon){
         $picid = $storeobj->id;
         $picurl = "http://42.96.139.171/customer/module/customersetting/upload/$picid.png";
-        $storesstr .= sprintf($itemTpl,$storeobj->name,$storeobj->id,$storeobj->address,$picurl,$storeobj->id);
+        $storesstr .= sprintf($itemTpl,$storeobj->name,$storeobj->address,$picurl,$storeobj->id);
         $j++;
       }
   	}
