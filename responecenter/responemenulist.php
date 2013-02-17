@@ -23,7 +23,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Menu.php';
                              <Articles>%s</Articles>",$count,$menusstr);*/
 
       $sqlcondition = "where coverimage=1 and name like '%$keyword%'";
-      $storepage = new Page($page, 10, $sqlcondition, 'store');
+      $storepage = new Page($page, 1000000000, $sqlcondition, 'store');
       $storeresult = $storepage->sqlQueryResults();
 
       $store = new Store('','','','','');
