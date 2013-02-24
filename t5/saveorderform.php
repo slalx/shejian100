@@ -14,7 +14,7 @@ date_default_timezone_set("Asia/Chongqing");
     $listTpl = "%s:%s份;";
 	  if($ordercount){
 	     $orderarr = explode("*",$ordercount);
-	     $restaurantid = $_COOKIE["sj_uid"];
+	     $restaurantid = $_POST['restaurantid'];
 	     for($i=0; $i <count($orderarr); $i++){
 	        $order = $orderarr[$i];
 	        $menuid = explode(":",$order);
