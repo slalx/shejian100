@@ -14,14 +14,17 @@ $store_latitude = $_POST['store_latitude'];
 $store_longitude = $_POST['store_longitude'];
 $store_desc = $_POST['store_desc'];
 
+$store_starttime = $_POST['store_starttime'];
+$store_endtime = $_POST['store_endtime'];
+
 
 $select_query_string = "select username from store where username='$store_username';";
 $r = mysql_query($select_query_string);
 
 if(!mysql_fetch_array($r)){
 	//合成sql语句
-	$query_string = "insert into store(name,address,ownername,username,upassword,mobilephone,telephone,latitude,longitude,storedesc) values ".
-					"('$store_name','$store_address','$store_ownername','$store_username','$store_upassword','$store_mobilephone','$store_telephone','$store_latitude','$store_longitude','$store_desc')"; 
+	$query_string = "insert into store(name,address,ownername,username,upassword,mobilephone,telephone,latitude,longitude,storedesc,starttime,endtime) values ".
+					"('$store_name','$store_address','$store_ownername','$store_username','$store_upassword','$store_mobilephone','$store_telephone','$store_latitude','$store_longitude','$store_desc','$store_starttime','$store_endtime')"; 
 
 	//插入数据库
 	$r = mysql_query($query_string);

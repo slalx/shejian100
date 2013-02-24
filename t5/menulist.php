@@ -10,7 +10,7 @@
 include_once $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/publicLib/Menu.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/publicLib/page.php';
-
+date_default_timezone_set("Asia/Chongqing");
   //饭馆名称
   $restaurantid = -1;
   if (isset($_GET['restaurantid'])){
@@ -79,9 +79,18 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/publicLib/page.php';
       $storedesc = $row["storedesc"];
       $address = $row["address"];
       $telephone = $row["telephone"];
+      $mobiletelephone = $row["mobilephone"];
+      $starttime = $row["starttime"];
+      $endtime = $row["endtime"];
     }
   } 
 
+$nowdate = getdate();
+$nowhour = $nowdate["hours"];
+$isfinish = false;
+if($nowhour > $endtime || $nowhour < $starttime){
+  $isfinish = true;
+}
 //打印
 //echo $liststr ;
 
@@ -146,7 +155,7 @@ h3 {
 
 }
 .menuname{
-  width: 50%;
+  width: 93%;
 }
 .storeInfo{
   color: #8c8c8c;
@@ -199,7 +208,7 @@ h3 {
         <div style="position:fixed;opacity:0;" id="hasorder"><span class="totalcount">0</span><span class="right"><button data-gid="0" class="btnGrayS submitbtn" onclick="submitorder();">下一步</button></span></div>
         <div class="storename"><span><?= $name ?></span></div>
         <div class="storeaddress"><span>地址：<?= $address ?></span></div>
-        <div class="storedesc"><span style="display: inline-block; width: 69%;"><?= $storedesc ?></span><span class="address right"><a class="btnGrayS" href="tel:<?= $telephone ?>">拨打电话</a></span></div>
+        <div class="storedesc"><span style="display: inline-block; width: 69%;"><?= $storedesc ?></span><span class="address right"><?php if(!$isfinish){ ?><a class="btnGrayS" href="tel:<?= $mobiletelephone ?>">拨打电话</a><?php } else{echo "已打烊"; }?></span></div>
       </div>
       <div id="menulistcontent">
         <?= $liststr ?>
@@ -208,6 +217,10 @@ h3 {
   </body>
   <script type="text/javascript">
     function liclick(id){
+      var isfinish = <?= $isfinish?>;
+      if(isfinish){
+        return;
+      }
       var countobj = document.getElementById('countel_'+id);
       var minusobj = document.getElementById('minus_'+id);
       var hasorder = document.getElementById('hasorder');

@@ -30,7 +30,64 @@
 			    <a href="javascript:void(0);" onclick="showMapDialog(this);">在地图上标注</a>
 		    </div>
     		<input type="text" class="msg-input" name="store_address" id="store_addressid" data-message="地址不能为空且长度不能超过100字" value="" data-regex="^[\u4e00-\u9fa50-9a-zA-Z]{1,100}$">
-			
+		</div>
+		<div>
+			<label for="" class="block">营业时间<span style="color:red">&nbsp;&nbsp;*</span></label> 
+				<span>开始:&nbsp;&nbsp;</span>
+			    <select id="starttime" >
+			        <option>0</option>
+			        <option>1</option>
+			        <option>2</option>
+			        <option>3</option>
+			        <option>4</option>
+			        <option>5</option>
+			        <option>6</option>
+			        <option>7</option>
+			        <option>8</option>
+			        <option>9</option>
+			        <option>10</option>
+			        <option>11</option>
+			        <option>12</option>
+			        <option>13</option>
+			        <option>14</option>
+			        <option>15</option>
+			        <option>16</option>
+			        <option>17</option>
+			        <option>18</option>
+			        <option>19</option>
+			        <option>20</option>
+			        <option>21</option>
+			        <option>22</option>
+			        <option>23</option>
+			    </select>
+			    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			    <span>结束:&nbsp;&nbsp;</span>
+			    <select id="endtime">
+			        <option>0</option>
+			        <option>1</option>
+			        <option>2</option>
+			        <option>3</option>
+			        <option>4</option>
+			        <option>5</option>
+			        <option>6</option>
+			        <option>7</option>
+			        <option>8</option>
+			        <option>9</option>
+			        <option>10</option>
+			        <option>11</option>
+			        <option>12</option>
+			        <option>13</option>
+			        <option>14</option>
+			        <option>15</option>
+			        <option>16</option>
+			        <option>17</option>
+			        <option>18</option>
+			        <option>19</option>
+			        <option>20</option>
+			        <option>21</option>
+			        <option>22</option>
+			        <option>23</option>
+			    </select>
 		</div>  
 		<div>
 			<label for="" class="block">老板姓名<span style="color:red">&nbsp;&nbsp;*</span></label> 
@@ -106,6 +163,12 @@ document.body.onload = function(){
 	var store_latitude = GetV('store_latitudeid');
 	var store_longitude = GetV('store_longitudeid');
 
+	var store_starttime = getSelectedValue('starttime');
+	var store_endtime = getSelectedValue('endtime');
+	if(parseInt(store_starttime)>parseInt(store_endtime)){
+		ValidateForm.showTip('开始时间不能大于打烊时间');
+		return;
+	}
 	var data = {
 		store_name: store_name,
 		store_address: store_address,
@@ -116,7 +179,9 @@ document.body.onload = function(){
 		store_telephone: store_telephone,
 		store_desc: store_desc,
 		store_latitude: store_latitude,
-		store_longitude: store_longitude
+		store_longitude: store_longitude,
+		store_starttime :store_starttime,
+		store_endtime: store_endtime
 	}
 	addClass(obj,'btnDisable');
 	$.ajax({
