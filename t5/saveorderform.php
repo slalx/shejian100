@@ -9,6 +9,31 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/publicLib/UsersInfo.php';
 require_once $_SERVER['DOCUMENT_ROOT'].'/sms/demo_gbk.php';
 date_default_timezone_set("Asia/Chongqing");
 
+
+  function getorderliststr($ordercount){
+    $listTpl = "%s:%s份;";
+	  if($ordercount){
+	     $orderarr = explode("*",$ordercount);
+	     $restaurantid = $_COOKIE["sj_uid"];
+	     for($i=0; $i <count($orderarr); $i++){
+	        $order = $orderarr[$i];
+	        $menuid = explode(":",$order);
+	        $menuid = $menuid[0];
+	        $menucount = $menuid[1];
+	        $typeresult = mysql_query("select * from dish where restaurantid=$restaurantid and id=$menuid;");
+	        if ($typeresult != false){
+	          while($row = mysql_fetch_array($typeresult)){
+	            $name = $row["name"];
+	            $liststr.= sprintf($listTpl, $name,$menucount);     
+
+	          }
+	        }
+	     } 
+	     return   $liststr;
+	  }
+  }
+
+
 $restaurantid = $_POST['restaurantid'];
 $ordercountid = $_POST['ordercountid'];
 $fromuserid = $_POST['fromuserid'];
@@ -19,7 +44,12 @@ $chusername = $_POST['chusername'];
 //提交订单
 $order = new Order($fromuserid,$restaurantid ,$ordercountid,$addressid,$telephoneid,$chusername);
 
-$smsContent = '姓名:'.$chusername.';地址:'.$addressid.';电话:'.$telephoneid.';订单:'.$ordercountid;
+
+
+$ordercountstr = getorderliststr($ordercountid);
+
+
+$smsContent = '姓名:'.$chusername.';地址:'.$addressid.';电话:'.$telephoneid.';订单:'.$ordercountstr;
 
 if($order->save()){
 	if(sendSMS($smsContent)==0){
