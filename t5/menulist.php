@@ -87,9 +87,9 @@ date_default_timezone_set("Asia/Chongqing");
 
 $nowdate = getdate();
 $nowhour = $nowdate["hours"];
-$isfinish = false;
+$isfinish = 1;
 if($nowhour > $endtime || $nowhour < $starttime){
-  $isfinish = true;
+  $isfinish = 2;
 }
 //打印
 //echo $liststr ;
@@ -208,7 +208,7 @@ h3 {
         <div style="position:fixed;opacity:0;" id="hasorder"><span class="totalcount">0</span><span class="right"><button data-gid="0" class="btnGrayS submitbtn" onclick="submitorder();">下一步</button></span></div>
         <div class="storename"><span><?= $name ?></span></div>
         <div class="storeaddress"><span>地址：<?= $address ?></span></div>
-        <div class="storedesc"><span style="display: inline-block; width: 69%;"><?= $storedesc ?></span><span class="address right"><?php if(!$isfinish){ ?><a class="btnGrayS" href="tel:<?= $mobiletelephone ?>">拨打电话</a><?php } else{echo "已打烊"; }?></span></div>
+        <div class="storedesc"><span style="display: inline-block; width: 69%;"><?= $storedesc ?></span><span class="address right"><?php if($isfinish==1){ ?><a class="btnGrayS" href="tel:<?= $mobiletelephone ?>">拨打电话</a><?php } else{echo "已打烊"; }?></span></div>
       </div>
       <div id="menulistcontent">
         <?= $liststr ?>
@@ -217,8 +217,8 @@ h3 {
   </body>
   <script type="text/javascript">
     function liclick(id){
-      var isfinish = <?= $isfinish?>;
-      if(isfinish){
+      //var isfinish = ;
+      if(<?= $isfinish?>==2){
         return;
       }
       var countobj = document.getElementById('countel_'+id);
