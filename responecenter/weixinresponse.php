@@ -73,6 +73,12 @@ class wechatCallbackapiTest
                         $msgType = "news";
                         $articlesStr = $this->responseStores($postObj->Location_X,$postObj->Location_Y,$fromUsername);
                         
+                        //如果返回的信息含有@，则认为没有找到要查找的餐馆
+                        if(strpos($articlesStr,'@') !== false){
+                            $content = $articlesStr;
+                            $articlesStr = '';
+                            $msgType = "text";
+                        }
                     }elseif ($msgType == "event") {//如果是推送事件
                         $event = $postObj->Event;
                         if($event == 'ENTER'){
