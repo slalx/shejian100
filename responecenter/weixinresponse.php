@@ -73,6 +73,12 @@ class wechatCallbackapiTest
                         $msgType = "news";
                         $articlesStr = $this->responseStores($postObj->Location_X,$postObj->Location_Y,$fromUsername);
                         
+                    }elseif ($msgType == "event") {//如果是推送事件
+                        $event = $postObj->Event;
+                        if($event == 'ENTER'){
+                            $content = "欢迎再次光临！！！";
+                            $articlesStr = '';
+                        }
                     }
               		
                 	//$contentStr = "欢迎来到舌尖网,马上为您预订".$keyword;
