@@ -73,9 +73,9 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Order.php';
 	     $restaurantid = $_COOKIE["sj_uid"];
 	     for($i=0; $i <count($orderarr); $i++){
 	        $order = $orderarr[$i];
-	        $menuid = explode(":",$order);
-	        $menuid = $menuid[0];
-	        $menucount = $menuid[1];
+	        $menuidandcount = explode(":",$order);
+	        $menuid = $menuidandcount[0];
+	        $menucount = $menuidandcount[1];
 	        $typeresult = mysql_query("select * from dish where restaurantid=$restaurantid and id=$menuid;");
 	        if ($typeresult != false){
 	          while($row = mysql_fetch_array($typeresult)){
