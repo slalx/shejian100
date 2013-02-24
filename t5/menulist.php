@@ -155,7 +155,7 @@ h3 {
 
 }
 .menuname{
-  width: 93%;
+  width: 70%;
 }
 .storeInfo{
   color: #8c8c8c;
