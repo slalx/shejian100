@@ -2,6 +2,9 @@
 header('Content-Type: text/html; charset=utf-8');
 session_start(); 
 include $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/sms/demo_gbk.php';
+date_default_timezone_set("Asia/Chongqing");
+
 
 $store_name = $_POST['store_name'];
 $store_address = $_POST['store_address'];
@@ -42,6 +45,8 @@ if(!mysql_fetch_array($r)){
 		    $obj->status = 1;
 	    	$obj->uid = $row[id];
 	    	$obj->statusText = '注册成功';
+	    	//有人注册，发个短信通知我，以便于我来审核
+	    	sendSMS("姓名:$store_ownername;手机:$store_mobilephone;编号:$id","15901227752");
 		}
 	}
 }else{
