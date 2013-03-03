@@ -11,7 +11,7 @@ date_default_timezone_set("Asia/Chongqing");
 
 
   function getorderliststr($ordercount){
-    $listTpl = "%s:%s份;";
+    $listTpl = "%s:%s份 ";
 	  if($ordercount){
 	     $orderarr = explode("*",$ordercount);
 	     $restaurantid = $_POST['restaurantid'];
