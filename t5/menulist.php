@@ -267,7 +267,7 @@ h3 {
         }
       }
       
-      window.location.href = '/t5/orderform.php?restaurantid='+'<?= $restaurantid?>'+'&ordercount='+orderstr+"&fromuser="+'<?= $fromuser?>';
+      window.location.href = '/t5/orderform.php?restaurantid='+'<?= $restaurantid?>'+'&ordercount='+orderstr+"&fromuser="+'<?= $fromuser?>'+"&mobiletelephone="+'<?= $mobiletelephone?>';
     }
 
     /*window.document.onscroll = function(){

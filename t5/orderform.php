@@ -27,6 +27,12 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
     $fromuser = $_GET['fromuser'];
   } 
 
+  $mobiletelephone = '';
+  if (isset($_GET['mobiletelephone'])){
+    $mobiletelephone = $_GET['mobiletelephone'];
+  } 
+
+
 
   //totalcount
   $totalcount =0;
@@ -125,6 +131,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
       <input type="hidden" value="<?= $restaurantid ?>" id="restaurantid">
       <input type="hidden" value="<?= $ordercount ?>" id="ordercountid">
       <input type="hidden" value="<?= $fromuser ?>" id="fromuserid">
+      <input type="hidden" value="<?= $mobiletelephone ?>" id="mobiletelephone">
 
       <button onclick="submitform();" class="saveorderformbtn">确认下单</button>
     </div>
@@ -141,10 +148,12 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
     var addressid = document.getElementById('addressid').value;
     var telephoneid = document.getElementById('telephoneid').value;
     var chusername = document.getElementById('chusernameid').value;
+    var mobiletelephone = document.getElementById('mobiletelephone').value;
+
     $.ajax({
       type: "post",
       url: "/t5/saveorderform.php",
-      data: { ordercountid: ordercountid, restaurantid: restaurantid,fromuserid:fromuserid,addressid:addressid,telephoneid:telephoneid,chusername:chusername},
+      data: { ordercountid: ordercountid, restaurantid: restaurantid,fromuserid:fromuserid,addressid:addressid,telephoneid:telephoneid,chusername:chusername,mobiletelephone:mobiletelephone},
       dataType: 'json',
       success:function(data){
         if(data.status==1){

@@ -40,6 +40,7 @@ $fromuserid = $_POST['fromuserid'];
 $addressid = $_POST['addressid'];
 $telephoneid = $_POST['telephoneid'];
 $chusername = $_POST['chusername'];
+$mobiletelephone = $_POST['mobiletelephone'];
 
 //提交订单
 $order = new Order($fromuserid,$restaurantid ,$ordercountid,$addressid,$telephoneid,$chusername);
@@ -52,7 +53,7 @@ $ordercountstr = getorderliststr($ordercountid);
 $smsContent = '姓名:'.$chusername.';地址:'.$addressid.';电话:'.$telephoneid.';订单:'.$ordercountstr;
 
 if($order->save()){
-	if(sendSMS($smsContent)==0){
+	if(sendSMS($smsContent,$mobiletelephone)==0){
 		$obj->status = 1;
 		$obj->statusText = '订单提交成功';
 	}else{
