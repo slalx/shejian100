@@ -4,7 +4,7 @@
 	<div class="msg-editer">
 		<form action="/customer/uc/savereg.php" method="post" id="storeform">
 		<div>
-			<label for="" class="block">账号<span style="color:red">&nbsp;&nbsp;*</span></label> 
+			<label for="" class="block">用户名<span style="color:red">&nbsp;&nbsp;*</span></label> 
 			<input type="text" class="msg-input" name="store_username" id="store_usernameid" data-message="登陆名不能为空且长度不能超过18个字母或数字" value="" data-regex="^[0-9a-zA-Z]{1,18}$">
 		</div>
 		<div>
