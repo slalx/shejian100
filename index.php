@@ -11,7 +11,7 @@
 			<div class="headerContent">
 				<div class="icon left"></div>
 				<a class="right" href="/index.php?module=login" id="loginLink" un="login">登录</a>
-				<a class="right" href="/index.php?module=reg" id="regLink" un="reg">注册</a>
+				<a class="right" href="/index.php?module=reg" id="regLink" un="reg">商家入驻</a>
 				<div class="clr"></div>
 			</div>
 		</div>
