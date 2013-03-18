@@ -86,7 +86,7 @@ date_default_timezone_set("Asia/Chongqing");
       $storestatus = $row["storestatus"];
     }
   } 
-
+echo "zhangshengli:$storestatus";
 $nowdate = getdate();
 $nowhour = $nowdate["hours"];
 $isfinish = 1;
