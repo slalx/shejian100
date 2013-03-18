@@ -122,7 +122,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
         <li class="firstli">合计：<?= $totalcount ?>份<span class="right">￥<?= $totalprice?></span></li>
         <?= $liststr ?>
       </ul>
-      <?php if($storestatus == '1'){?>
+      <?php echo "$storestatus"; if($storestatus == '1'){?>
       <h3>送餐地址</h3>
       <ul class="userinfo" id="userinfoform">
         <li><span>地址</span><input class="msg-input" type="text" value="<?= $address ?>" id="addressid" data-message="地址不能为空且长度不能超过100字" data-regex="^[\u4e00-\u9fa50-9a-zA-Z]{1,100}$"></li>
