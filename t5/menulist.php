@@ -82,6 +82,8 @@ date_default_timezone_set("Asia/Chongqing");
       $mobiletelephone = $row["mobilephone"];
       $starttime = $row["starttime"];
       $endtime = $row["endtime"];
+      $storetype = $row["storetype"];
+      $storestatus = $row["storestatus"];
     }
   } 
 
@@ -267,7 +269,7 @@ h3 {
         }
       }
       
-      window.location.href = '/t5/orderform.php?restaurantid='+'<?= $restaurantid?>'+'&ordercount='+orderstr+"&fromuser="+'<?= $fromuser?>'+"&mobiletelephone="+'<?= $mobiletelephone?>';
+      window.location.href = '/t5/orderform.php?restaurantid='+'<?= $restaurantid?>'+'&ordercount='+orderstr+"&fromuser="+'<?= $fromuser?>'+"&mobiletelephone="+'<?= $mobiletelephone?>'+"&storestatus="+'<?= $storestatus?>';
     }
 
     /*window.document.onscroll = function(){
