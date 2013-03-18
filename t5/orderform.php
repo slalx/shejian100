@@ -134,7 +134,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
       <input type="hidden" value="<?= $fromuser ?>" id="fromuserid">
       <input type="hidden" value="<?= $mobiletelephone ?>" id="mobiletelephone">
        <button onclick="submitform();" class="saveorderformbtn">确认下单</button>
-      <?php }elseif ($storestatus == '0') { ?>
+      <?php }else if ($storestatus == '0') { ?>
         <a href="tel:<?= $mobiletelephone ?>" class="saveorderformbtn">电话下单</a>
       
      <?php }?>
