@@ -114,6 +114,13 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
     height: 45px;
     margin-bottom: 10px;
 }
+.abutton {
+  display: block;
+  line-height: 45px;
+  -webkit-appearance: button;
+  text-align: center;
+  color: black;
+}
 </style>
   <body class="">
     <div class="container">
@@ -122,7 +129,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
         <li class="firstli">合计：<?= $totalcount ?>份<span class="right">￥<?= $totalprice?></span></li>
         <?= $liststr ?>
       </ul>
-      <?php echo "$storestatus"; if($storestatus == '1'){?>
+      <?php if($storestatus == '1'){?>
       <h3>送餐地址</h3>
       <ul class="userinfo" id="userinfoform">
         <li><span>地址</span><input class="msg-input" type="text" value="<?= $address ?>" id="addressid" data-message="地址不能为空且长度不能超过100字" data-regex="^[\u4e00-\u9fa50-9a-zA-Z]{1,100}$"></li>
@@ -135,7 +142,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_close.php';
       <input type="hidden" value="<?= $mobiletelephone ?>" id="mobiletelephone">
        <button onclick="submitform();" class="saveorderformbtn">确认下单</button>
       <?php }else if ($storestatus == '0') { ?>
-        <a href="tel:<?= $mobiletelephone ?>" class="saveorderformbtn">电话下单</a>
+        <a href="tel:<?= $mobiletelephone ?>" class="saveorderformbtn abutton">电话下单</a>
       
      <?php }?>
     </div>

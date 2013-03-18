@@ -86,7 +86,6 @@ date_default_timezone_set("Asia/Chongqing");
       $storestatus = $row["storestatus"];
     }
   } 
-echo "zhangshengli:$storestatus";
 $nowdate = getdate();
 $nowhour = $nowdate["hours"];
 $isfinish = 1;
@@ -154,7 +153,7 @@ h3 {
   margin: 0 3px;
 }
 .submitbtn{
-
+ margin-right: 10px;
 }
 .menuname{
   width: 70%;
@@ -203,13 +202,16 @@ h3 {
 .price{
   margin-right: 5px;
 }
+.storeaddress{
+  padding-left: 10px;
+}
 </style>
   <body class="">
     <div class="container">
       <div class="storeInfo">
         <div style="position:fixed;opacity:0;" id="hasorder"><span class="totalcount">0</span><span class="right"><button data-gid="0" class="btnGrayS submitbtn" onclick="submitorder();">下一步</button></span></div>
         <div class="storename"><span><?= $name ?></span></div>
-        <div class="storeaddress"><span>地址：<?= $address ?></span></div>
+        <div class="storeaddress">地址：<?= $address ?></div>
         <div class="storedesc"><span style="display: inline-block; width: 69%;"><?= $storedesc ?></span><span class="address right"><?php if($isfinish==1){ ?><a class="btnGrayS" href="tel:<?= $mobiletelephone ?>">拨打电话</a><?php } else{echo "已打烊"; }?></span></div>
       </div>
       <div id="menulistcontent">
