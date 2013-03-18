@@ -204,6 +204,7 @@ h3 {
 }
 .storeaddress{
   padding-left: 10px;
+  width: 69%;
 }
 </style>
   <body class="">
