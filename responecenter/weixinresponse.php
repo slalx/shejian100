@@ -10,6 +10,8 @@ include $_SERVER['DOCUMENT_ROOT'].'/responecenter/responemenulist.php';
 include $_SERVER['DOCUMENT_ROOT'].'/responecenter/responestorelist.php';
 //
 include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Order.php';
+
+include $_SERVER['DOCUMENT_ROOT'].'/publicLib/MenuImage.php';
 //define your token
 define("TOKEN", "shejian");
 
@@ -40,6 +42,7 @@ class wechatCallbackapiTest
                 $time = time();
                 $content = "";
                 $msgType = $postObj->MsgType;
+                $MsgId = $postObj->MsgId;
                 if($msgType == "text"){
                     $keyword = trim($postObj->Content);
                 }elseif ($msgType == "location"){
@@ -85,6 +88,13 @@ class wechatCallbackapiTest
                             $content = "欢迎再次光临！！！";
                             $articlesStr = '';
                         }
+                    }elseif ($msgType == "image") {//如果是推送事件
+                        $image = $postObj->PicUrl;
+                        $createtime = $postObj->CreateTime;
+                        //把图片地址存到数据库中
+                        $resultStr = $this->saveMenuImage($image,$createtime,$MsgId,'',$fromUsername,0);
+                        echo "$resultStr";
+                        exit();
                     }
               		
                 	//$contentStr = "欢迎来到舌尖网,马上为您预订".$keyword;
@@ -129,6 +139,14 @@ class wechatCallbackapiTest
         $order->save();
         return "订餐成功，预计一个小时送到";     
     }
+
+    //根据#号表示订餐完成
+    private function saveMenuImage($url, $createtime,$msgid,$id,$username,$status){        
+        $order = new MenuImage($url, $createtime,$msgid,$id,$username,$status);
+        $order->save();
+        return "菜单上传成功，奖励盒饭一份";     
+    }
+
 
 
 	private function checkSignature()
