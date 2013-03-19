@@ -32,6 +32,7 @@ class wechatCallbackapiTest
     {
 		//get post data, May be due to the different environments
 		$postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
+
       	//extract post data
 		if (!empty($postStr)){
                 
@@ -47,6 +48,8 @@ class wechatCallbackapiTest
                     $keyword = trim($postObj->Content);
                 }elseif ($msgType == "location"){
                     $keyword = $postObj->Label;
+                }elseif ($msgType == "image"){
+                    $keyword = $postObj->PicUrl;
                 }
                 $textTpl = "<xml>
                             <ToUserName><![CDATA[%s]]></ToUserName>
@@ -88,7 +91,7 @@ class wechatCallbackapiTest
                             $content = "欢迎再次光临！！！";
                             $articlesStr = '';
                         }
-                    }elseif ($msgType == "image") {//如果是推送事件
+                    }elseif ($msgType == "image") {//如果图片
                         $image = $postObj->PicUrl;
                         $createtime = $postObj->CreateTime;
                         //把图片地址存到数据库中
@@ -101,6 +104,7 @@ class wechatCallbackapiTest
                 	$resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType,$content,$articlesStr);
                 	echo $resultStr;
                 }else{
+                   
                 	echo "Input something...";
                 }
 
@@ -142,8 +146,8 @@ class wechatCallbackapiTest
 
     //根据#号表示订餐完成
     private function saveMenuImage($url, $createtime,$msgid,$id,$username,$status){        
-        $order = new MenuImage($url, $createtime,$msgid,$id,$username,$status);
-        $order->save();
+        $menuImage = new MenuImage($url, $createtime,$msgid,$id,$username,$status);
+        $menuImage->save();
         return "菜单上传成功，奖励盒饭一份";     
     }
 

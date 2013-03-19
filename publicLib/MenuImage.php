@@ -20,7 +20,7 @@ class MenuImage
         $this->username = $username;
         $this->status = $status;
     }
-    //保存菜单信息
+    //保存菜单图片信息
     public function save(){
       //合成sql语句
       $username = $this->username;
