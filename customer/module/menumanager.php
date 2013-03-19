@@ -139,17 +139,23 @@ $restaurantid = $_COOKIE["sj_uid"];
 						  
 						  $typeresult = mysql_query("select * from menutype where restaurantid=$restaurantid;");
 						  $typei = 0;
+						  $stypemenustr="";
 						  if ($typeresult != false){
 							while($row = mysql_fetch_array($typeresult)){
 								$id=$row["id"];
 								$name=$row["name"];
 								$typei++;
+								$stypemenustr.='<option value="'.$id.'">'.$name.'</option>';
 					?>
 					<li <?php if($_GET['type']==$id){ ?>class="selected "<?php }?> > <a href="/customer/home.php?module=menumanager&type=<?= $id?>"><?= $name?></a> </li> 
 					<?php
 							}
+							$stypemenustr='<select id="menutypeselect">'.$stypemenustr.'</select>';
 						   }
 					?>
+					
+						
+					</li>
 					<li id="groupEdit" style="display:none;"><span><input class="groupInput" type="text" onblur="saveType();" id="groupEditValue"></span></li> 
 					<li id="groupAdd" class="group groupAdd"><a class="icon18C iconAdd" href="javascript:void(0);" onclick="document.getElementById('groupEdit').style.display=''";>添加分类</a></li>
 				</ul> 
@@ -247,7 +253,8 @@ $restaurantid = $_COOKIE["sj_uid"];
 <script type="text/javascript">
 	function showEditDialog(id,name,price){
 		var content = '<label>菜名：</label><input id="nameInput" class="textInput" type="text" value="'+name+'">'+
-		'<label>菜价：</label><input id="priceInput" class="textInput" type="text" value="'+price+'">';
+		'<label>菜价：</label><input id="priceInput" class="textInput" type="text" value="'+price+'">'+
+		'<label>种类：</label>'+'<?= $stypemenustr?>';
 
 		var sd = new SimpleDialog({
 			title:'修改菜单',
@@ -261,10 +268,11 @@ $restaurantid = $_COOKIE["sj_uid"];
 	function saveEdit(id){
 		var name = document.getElementById('nameInput').value;
 		var price = document.getElementById('priceInput').value;
+		var type = document.getElementById("menutypeselect").value;
 			$.ajax({
 			  type: "post",
 			  url: "/customer/module/menumanager/editMenu.php",
-			  data: { id: id,name:name,price:price},
+			  data: { id: id,name:name,price:price,type:type},
 			  dataType: 'json',
 			  success:function(data){
 			  	if(data.status == 1){

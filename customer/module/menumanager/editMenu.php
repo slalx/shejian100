@@ -7,11 +7,12 @@ include $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
 $id = $_POST['id'];
 $price = $_POST['price'];
 $name = $_POST['name'];
+$type = $_POST['type'];
 
 $restaurantid = $_COOKIE["sj_uid"];
 
 //合成sql语句
-$query_string = "update dish set name='$name', price='$price'   where id = $id"; 
+$query_string = "update dish set name='$name', price='$price', type='$type'   where id = $id"; 
 
 //插入数据库
 $result = mysql_query($query_string);
