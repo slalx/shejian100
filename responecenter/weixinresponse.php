@@ -90,14 +90,15 @@ class wechatCallbackapiTest
                         if($event == 'ENTER'){
                             $content = "欢迎再次光临！！！";
                             $articlesStr = '';
+                            $msgType = "text";
                         }
                     }elseif ($msgType == "image") {//如果图片
                         $image = $postObj->PicUrl;
                         $createtime = $postObj->CreateTime;
                         //把图片地址存到数据库中
-                        $resultStr = $this->saveMenuImage($image,$createtime,$MsgId,'',$fromUsername,0);
-                        echo "$resultStr";
-                        exit();
+                        $content = $this->saveMenuImage($image,$createtime,$MsgId,'',$fromUsername,0);
+                        $articlesStr = '';
+                        $msgType = "text";
                     }
               		
                 	//$contentStr = "欢迎来到舌尖网,马上为您预订".$keyword;
