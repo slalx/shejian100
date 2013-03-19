@@ -32,7 +32,7 @@ if (empty($_FILES) === false) {
     $new_name = $_COOKIE["sj_uid"].".".$file_ext;
     //将文件移动到存储目录下
     if(move_uploaded_file($_FILES["file"]["tmp_name"],"$file_path".$new_name)){
-        $query_string = "update store set coverimage=1 where id= $restaurantid"; 
+        $query_string = "update store set coverimage=1 and coverimageext='$file_ext' where id= $restaurantid"; 
         //更新数据库
         $r = mysql_query($query_string);
         if($r){

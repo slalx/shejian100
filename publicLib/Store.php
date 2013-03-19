@@ -8,15 +8,18 @@ class Store
   var $id;//店的编号
   var $lat;//纬度
   var $lon;//经度
+  var $coverimageext;
 
 	 //定义一个构造方法初始化赋值
-    function __construct($name, $address,$id,$lat,$lon) {
+    function __construct($name, $address,$id,$lat,$lon,$coverimageext) {
         $this->name = $name;
         $this->address = $address;
         $this->id = $id;
 
         $this->lat = $lat;
         $this->lon = $lon;
+
+        $this->coverimageext = $coverimageext;
     }
     //把一个数据库的查询结果转换成放有该对象的数组
     public function getStoreList($result){
@@ -27,7 +30,7 @@ class Store
                              $storerow["address"],
                              $storerow["id"],
                              $storerow["latitude"],
-                             $storerow["longitude"]);
+                             $storerow["longitude"],$storerow["coverimageext"]);
           array_push($storelist,$store);
         }
         return $storelist;

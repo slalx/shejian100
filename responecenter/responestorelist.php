@@ -27,7 +27,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Store.php';
     $storepage = new Page($page, 1000000000,$sqlcondition , 'store');
     $storeresult = $storepage->sqlQueryResults();
 
-    $store = new Store('','','','','');
+    $store = new Store('','','','','','');
     $storelist = $store->getStoreList($storeresult);
 
     $itemTpl = "<item>
@@ -46,7 +46,8 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Store.php';
       //如果距离小于3公里，才会显示出来
       if($distance < 3 && $storeobj->lat && $storeobj->lon){
         $picid = $storeobj->id;
-        $picurl = "http://42.96.139.171/customer/module/customersetting/upload/$picid.png";
+        $coverimageext =$storeobj->coverimageext;
+        $picurl = "http://42.96.139.171/customer/module/customersetting/upload/$picid.$coverimageext";
         $storesstr .= sprintf($itemTpl,$storeobj->name,$storeobj->address,$picurl,$storeobj->id);
         $j++;
       }

@@ -26,7 +26,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Menu.php';
       $storepage = new Page($page, 1000000000, $sqlcondition, 'store');
       $storeresult = $storepage->sqlQueryResults();
 
-      $store = new Store('','','','','');
+      $store = new Store('','','','','','');
       $storelist = $store->getStoreList($storeresult);
 
       $storesstr = '';
@@ -41,7 +41,8 @@ include $_SERVER['DOCUMENT_ROOT'].'/publicLib/Menu.php';
           $storeobj = $storelist[$i];
           //列出前
           $picid = $storeobj->id;
-          $picurl = "http://42.96.139.171/customer/module/customersetting/upload/$picid.png";
+          $coverimageext =$storeobj->coverimageext;
+          $picurl = "http://42.96.139.171/customer/module/customersetting/upload/$picid.$coverimageext";
           $storesstr .= sprintf($itemTpl,$storeobj->name,$storeobj->address,$picurl,$storeobj->id); 
           $j++; 
       }

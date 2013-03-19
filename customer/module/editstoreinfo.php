@@ -22,7 +22,7 @@
 	include_once $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
 	include_once $_SERVER['DOCUMENT_ROOT'].'/publicLib/Store.php';
 	$customerid = $_COOKIE["sj_uid"];
-	$store = new Store('','','','','');
+	$store = new Store('','','','','','');
 	$rs = $store->getOneStoreById($customerid);
 	$rows= mysql_fetch_array($rs);
 	if($rows){
