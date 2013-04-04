@@ -57,8 +57,8 @@ $(function(){
 
   var DATA = {};
   DATA.chartsData = {
-    recvMsgStat: [0,0,0,0,0,0,0],//每日新增订单数
-    fansStat: [0,0,0,0,0,0,0]//每日接收订单数
+    recvMsgStat: [0,1,0,1,0,0,0],//每日新增订单数
+    fansStat: [9,10,0,0,1,0,0]//每日接收订单数
   };
     
 
@@ -111,7 +111,7 @@ $(function(){
           tooltip: {
               formatter: function() {
                   var unit = {
-                      "每日新增订单数": "个"
+                      "每日新增订单数": "单"
 
                   }[this.series.name];
 
