@@ -57,8 +57,8 @@ $(function(){
 
   var DATA = {};
   DATA.chartsData = {
-    recvMsgStat: [0,0,0,0,0,1,0],//每日新增订单数
-    fansStat: [10,5,30,50,0,0,0]//每日接收订单数
+    recvMsgStat: [0,0,0,0,0,0,0],//每日新增订单数
+    fansStat: [0,0,0,0,0,0,0]//每日接收订单数
   };
     
 
