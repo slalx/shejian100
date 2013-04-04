@@ -9,6 +9,13 @@ $price = $_POST['price'];
 $name = $_POST['name'];
 $type = $_POST['type'];
 
+if(empty($price) || empty($name)){
+	$obj->status = 0;
+    $obj->statusText = '输入不能为空';
+	echo json_encode($obj);
+	exit(0);
+}
+
 $restaurantid = $_COOKIE["sj_uid"];
 
 //合成sql语句

@@ -169,6 +169,11 @@ $restaurantid = $_COOKIE["sj_uid"];
 		var typeobj = document.getElementById('groupEditValue');
 		var type = typeobj.value;
 		typeobj.style.display = "none";
+		if($.trim(type)==""){
+		 	alert("种类为空");	
+		 	return;
+		}
+		
 		$.ajax({
 			  type: "post",
 			  url: "/customer/module/menumanager/saveType.php",
@@ -269,20 +274,26 @@ $restaurantid = $_COOKIE["sj_uid"];
 		var name = document.getElementById('nameInput').value;
 		var price = document.getElementById('priceInput').value;
 		var type = document.getElementById("menutypeselect").value;
-			$.ajax({
-			  type: "post",
-			  url: "/customer/module/menumanager/editMenu.php",
-			  data: { id: id,name:name,price:price,type:type},
-			  dataType: 'json',
-			  success:function(data){
-			  	if(data.status == 1){
-			  		alert(data.statusText);
-			  		window.location.reload();
-			  	}else if (data.status == 0){
-			  		alert(data.statusText);
-			  	}
-			  }
-			})
+
+		if($.trim(name)=="" || $.trim==""){
+			alert("输入不能为空");
+			return;
+		}
+
+		$.ajax({
+		  type: "post",
+		  url: "/customer/module/menumanager/editMenu.php",
+		  data: { id: id,name:name,price:price,type:type},
+		  dataType: 'json',
+		  success:function(data){
+		  	if(data.status == 1){
+		  		alert(data.statusText);
+		  		window.location.reload();
+		  	}else if (data.status == 0){
+		  		alert(data.statusText);
+		  	}
+		  }
+		})
 	}
 </script>
 <?php

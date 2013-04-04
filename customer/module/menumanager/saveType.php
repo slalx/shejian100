@@ -8,6 +8,14 @@ $menutype = $_POST['menutype'];
 
 $restaurantid = $_COOKIE["sj_uid"];
 
+//判断不能为空
+if(empty($menutype)){
+	$obj->status = 0;
+    $obj->statusText = '保存失败,种类不能为空';
+	echo json_encode($obj);
+	exit(0);
+}
+
 //合成sql语句
 $query_string = "insert into menutype (name,restaurantid) values ('$menutype','$restaurantid')"; 
 //插入数据库
