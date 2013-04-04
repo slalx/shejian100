@@ -48,15 +48,17 @@ if($coverimage==0){
         </div> 
     </div>
 </div>
+<script src="/resource/js/jQuery.js"></script>
 <script src="/resource/js/highcharts3.0.js"></script>
 <script type="text/javascript">
 
-(function(){
+
+$(function(){
 
   var DATA = {};
   DATA.chartsData = {
-    recvMsgStat: [0,0,0,0,0,1,0],
-    fansStat: [0,0,1,0,0,0,0]
+    recvMsgStat: [0,0,0,0,0,1,0],//每日新增订单数
+    fansStat: [10,5,30,50,0,0,0]//每日接收订单数
   };
     
 
@@ -97,7 +99,7 @@ if($coverimage==0){
               },
               labels: {
                   formatter: function() {
-                      return this.value + '个';
+                      return this.value + '单';
                   },
                   style: {
                       color: '#4572A7'
@@ -160,7 +162,7 @@ if($coverimage==0){
           yAxis: [{ // Primary yAxis
               labels: {
                   formatter: function() {
-                      return this.value + '条';
+                      return this.value + '单';
                   },
                   style: {
                       color: '#89A54E'
@@ -252,7 +254,7 @@ if($coverimage==0){
   main();
 
 
-})();
+});
 </script>
 
 
