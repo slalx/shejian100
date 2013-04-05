@@ -6,15 +6,27 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'].'/db/db_open.php';
 
+  $typeid="";
+
+  if (isset($_GET['type'])){
+	$typeid = intval($_GET['type']);
+  }
+
   $restaurantid = $_COOKIE["sj_uid"];
   $typeresult = mysql_query("select * from menutype where restaurantid=$restaurantid;");
 
-  $optTpl = "<option value=\"%s\">%s</option>";
+
+  $optTpl = "<option value=\"%s\" %s>%s</option>";
+
   if ($typeresult != false){
 	while($row = mysql_fetch_array($typeresult)){
 		$id=$row["id"];
 		$name=$row["name"];
-		$optstr .= sprintf($optTpl, $id, $name);
+		 $selectedattr = "";
+		if($id==$typeid){
+			$selectedattr = "selected";
+		}
+		$optstr .= sprintf($optTpl, $id, $selectedattr, $name);
 	}
 	//echo $optstr;
   }			

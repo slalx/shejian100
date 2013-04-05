@@ -86,7 +86,7 @@ $restaurantid = $_COOKIE["sj_uid"];
 			<div class="cLine">
 				<div class="left"> 
 					<div id="allGroup" data-gid="0" class="selectArea left">
-						<button id="putIntoGroupAll" class="btnGrayS left" onclick="openhref('/customer/home.php?module=addmenu');">添加新菜</button>
+						<button id="putIntoGroupAll" class="btnGrayS left" onclick="openhref('/customer/home.php?module=addmenu<?= $urltype?>');">添加新菜</button>
 					</div> 
 					<div class="clr"></div> 
 				</div> 
