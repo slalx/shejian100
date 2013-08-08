@@ -15,6 +15,7 @@
 				<div class="clr"></div>
 			</div>
 		</div>
+		<?php echo phpinfo(); ?>
 		<?php 
             $module = $_GET["module"];
             if(!$module){
