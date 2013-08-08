@@ -4,16 +4,56 @@
 		"selected_items":
 		[
 			[
+				"typ",
+				"typeid"
+			],
+			[
+				"种类",
+				"种类id"
+			],
+			[
+				"e",
+				"echo	echo \"…\""
+			],
+			[
+				"sele",
+				"selected"
+			],
+			[
+				"s",
+				"selected"
+			],
+			[
+				"tp",
+				"typeid"
+			],
+			[
+				"ma",
+				"main"
+			],
+			[
+				"op",
+				"option	Tag"
+			],
+			[
+				"co",
+				"coverimage"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"store",
+				"storestatus"
+			],
+			[
 				"d",
 				"text-decoration"
 			],
 			[
 				"h",
 				"h1	Tag"
-			],
-			[
-				"e",
-				"elseif	elseif …"
 			],
 			[
 				"now",
@@ -42,10 +82,6 @@
 			[
 				"se",
 				"selvalue"
-			],
-			[
-				"s",
-				"script	Tag"
 			],
 			[
 				"pa",
@@ -100,10 +136,6 @@
 				"destnumber"
 			],
 			[
-				"co",
-				"color"
-			],
-			[
 				"ex",
 				"exit"
 			],
@@ -122,10 +154,6 @@
 			[
 				"re",
 				"regex"
-			],
-			[
-				"ma",
-				"margin-top"
 			],
 			[
 				"封面修改",
@@ -170,10 +198,6 @@
 			[
 				"v",
 				"value"
-			],
-			[
-				"mar",
-				"margin"
 			],
 			[
 				"lo",
@@ -408,18 +432,10 @@
 	"buffers":
 	[
 		{
-			"file": "t5/menulist.php",
-			"settings":
-			{
-				"buffer_size": 8281,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "t5/orderform.php",
 			"settings":
 			{
-				"buffer_size": 5521,
+				"buffer_size": 5876,
 				"line_ending": "Unix"
 			}
 		},
@@ -448,35 +464,99 @@
 			}
 		},
 		{
-			"file": "/Users/zhangshengli/Documents/git/css_lib/button.html",
+			"file": "responecenter/weixinresponse.php",
 			"settings":
 			{
-				"buffer_size": 1263,
+				"buffer_size": 6112,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/zhangshengli/Documents/git/css_lib/tip.html",
+			"file": "yunyingadmin/menuimagelist.php",
 			"settings":
 			{
-				"buffer_size": 1047,
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "customer/module/menumanager.php",
+			"settings":
+			{
+				"buffer_size": 9285,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "customer/module/menumanager/editMenu.php",
+			"settings":
+			{
+				"buffer_size": 750,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "customer/module/menumanager/saveType.php",
+			"settings":
+			{
+				"buffer_size": 690,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "customer/module/homemodule.php",
+			"settings":
+			{
+				"buffer_size": 7263,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/zhangshengli/Desktop/weixinhome.html",
+			"settings":
+			{
+				"buffer_size": 19908,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resource/js/highcharts3.0.js",
+			"settings":
+			{
+				"buffer_size": 133798,
 				"line_ending": "Unix",
-				"name": "<!DOCTYPE html>"
+				"name": "/*"
+			}
+		},
+		{
+			"file": "customer/module/addmenu.php",
+			"settings":
+			{
+				"buffer_size": 4085,
+				"line_ending": "Unix"
 			}
 		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 67.0,
+		"height": 392.0,
 		"selected_items":
 		[
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			]
 		],
-		"width": 392.0
+		"width": 467.0
 	},
 	"console":
 	{
-		"height": 0.0
+		"height": 139.0
 	},
 	"distraction_free":
 	{
@@ -489,7 +569,19 @@
 	},
 	"file_history":
 	[
+		"/Users/zhangshengli/Documents/git/shejian100/yunyingadmin/storedetal.php",
+		"/Users/zhangshengli/Documents/git/shejian100/t5/menulist.php",
+		"/Users/zhangshengli/Documents/git/css_lib/button.html",
 		"/Users/zhangshengli/Documents/git/shejian100/customer/module/editstoreinfo.php",
+		"/Users/zhangshengli/Documents/git/shejian100/responecenter/weixinresponse.php",
+		"/Users/zhangshengli/Documents/git/shejian100/publicLib/MenuImage.php",
+		"/Users/zhangshengli/Documents/git/shejian100/responecenter/responestorelist.php",
+		"/Users/zhangshengli/Documents/git/shejian100/publicLib/Store.php",
+		"/Users/zhangshengli/Documents/git/shejian100/responecenter/responemenulist.php",
+		"/Users/zhangshengli/Documents/git/shejian100/customer/module/customersetting/uploadcover.php",
+		"/Users/zhangshengli/Documents/git/shejian100/yunyingadmin/storedetail.php",
+		"/Users/zhangshengli/Documents/git/shejian100/index.php",
+		"/Users/zhangshengli/Documents/git/css_lib/tip.html",
 		"/Users/zhangshengli/Documents/git/shejian100/resource/js/cssclass.js",
 		"/Users/zhangshengli/Documents/git/shejian100/customer/include/footer.php",
 		"/Users/zhangshengli/Documents/git/shejian100/resource/js/messagetip.js",
@@ -499,16 +591,10 @@
 		"/Users/zhangshengli/Documents/git/shejian100/customer/module/customersettting.php",
 		"/Users/zhangshengli/Documents/git/shejian100/customer/uc/editpassword.php",
 		"/Users/zhangshengli/Documents/git/shejian100/customer/module/homemodule.php",
-		"/Users/zhangshengli/Documents/git/shejian100/customer/module/customersetting/uploadcover.php",
-		"/Users/zhangshengli/Documents/git/shejian100/publicLib/Store.php",
 		"/Users/zhangshengli/Documents/git/shejian100/publicLib/Order.php",
 		"/Users/zhangshengli/Documents/git/shejian100/customer/include/header.php",
 		"/Users/zhangshengli/Documents/git/shejian100/db/db_close.php",
-		"/Users/zhangshengli/Documents/git/shejian100/responecenter/responemenulist.php",
-		"/Users/zhangshengli/Documents/git/shejian100/responecenter/responestorelist.php",
 		"/Users/zhangshengli/Documents/git/shejian100/customer/uc/savereg.php",
-		"/Users/zhangshengli/Documents/git/shejian100/t5/menulist.php",
-		"/Users/zhangshengli/Documents/git/shejian100/responecenter/weixinresponse.php",
 		"/Users/zhangshengli/Documents/git/shejian100/t5/saveorderform.php",
 		"/Users/zhangshengli/Documents/git/shejian100/customer/module/ordermanager.php",
 		"/Users/zhangshengli/Documents/git/shejian100/customer/module/editstorecover.php",
@@ -527,7 +613,6 @@
 		"/Users/zhangshengli/Documents/git/shejian100/customer/module/customersetting/showeditpassword.php",
 		"/Users/zhangshengli/Documents/git/shejian100/customer/module/customersetting/updatestoreinfo.php",
 		"/Users/zhangshengli/Documents/git/shejian100/t5/feedback.php",
-		"/Users/zhangshengli/Documents/git/shejian100/index.php",
 		"/Users/zhangshengli/Documents/git/shejian100/customer/home.php",
 		"/Users/zhangshengli/Documents/git/shejian100/t5/orderform.php",
 		"/Users/zhangshengli/Documents/git/shejian100/resource/js/validateform.js",
@@ -587,6 +672,7 @@
 		"height": 0.0,
 		"where_history":
 		[
+			"/Users/zhangshengli/Documents/git/shejian100"
 		]
 	},
 	"find_state":
@@ -594,6 +680,16 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Highcharts.com",
+			"userinfo",
+			"chartsData",
+			"initChartsMsgNu",
+			"initChartsMsgNum",
+			"typei",
+			"textTpl",
+			"responseMsg",
+			"new Store",
+			"storestatus",
 			"status",
 			"状态",
 			"状态码",
@@ -719,51 +815,23 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 12,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "t5/menulist.php",
-					"settings":
-					{
-						"buffer_size": 8281,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2393,
-								2398
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 288.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "t5/orderform.php",
 					"settings":
 					{
-						"buffer_size": 5521,
+						"buffer_size": 5876,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								5521
+								659,
+								659
 							]
 						],
 						"settings":
@@ -772,14 +840,14 @@
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
+						"translation.x": 1.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 1,
 					"file": "t5/saveorderform.php",
 					"settings":
 					{
@@ -800,13 +868,13 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 523.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 2,
 					"file": "sms/demo_gbk.php",
 					"settings":
 					{
@@ -826,14 +894,14 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 0.0,
-						"translation.y": 4815.0,
+						"translation.x": 17.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 3,
 					"file": "customer/uc/savereg.php",
 					"settings":
 					{
@@ -853,32 +921,32 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 0.0,
-						"translation.y": 285.0,
+						"translation.x": 5.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "/Users/zhangshengli/Documents/git/css_lib/button.html",
+					"buffer": 4,
+					"file": "responecenter/weixinresponse.php",
 					"settings":
 					{
-						"buffer_size": 1263,
+						"buffer_size": 6112,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								1263
+								3301,
+								3301
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
@@ -888,28 +956,217 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "/Users/zhangshengli/Documents/git/css_lib/tip.html",
+					"buffer": 5,
+					"file": "yunyingadmin/menuimagelist.php",
 					"settings":
 					{
-						"buffer_size": 1047,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								497,
-								497
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"auto_name": "<!DOCTYPE html>",
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 200.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "customer/module/menumanager.php",
+					"settings":
+					{
+						"buffer_size": 9285,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1984,
+								1984
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 581.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "customer/module/menumanager/editMenu.php",
+					"settings":
+					{
+						"buffer_size": 750,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								310,
+								310
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "customer/module/menumanager/saveType.php",
+					"settings":
+					{
+						"buffer_size": 690,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								321,
+								321
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "customer/module/homemodule.php",
+					"settings":
+					{
+						"buffer_size": 7263,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2189,
+								2189
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 1.0,
+						"translation.y": 529.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "/Users/zhangshengli/Desktop/weixinhome.html",
+					"settings":
+					{
+						"buffer_size": 19908,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								19659,
+								18692
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 10387.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "resource/js/highcharts3.0.js",
+					"settings":
+					{
+						"buffer_size": 133798,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6925,
+								6925
+							]
+						],
+						"settings":
+						{
+							"auto_name": "/*",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 1600.0,
+						"translation.y": 36.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "customer/module/addmenu.php",
+					"settings":
+					{
+						"buffer_size": 4085,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								395,
+								395
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 24.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -919,7 +1176,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 34.0
 	},
 	"input":
 	{
@@ -973,6 +1230,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 386.0,
+	"side_bar_width": 436.0,
 	"status_bar_visible": true
 }
