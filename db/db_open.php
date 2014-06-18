@@ -1,7 +1,7 @@
 <?php 
 DEFINE('DB_HOST','42.96.139.171');
 DEFINE('DB_USER','root');
-DEFINE('DB_PASSWORD','41d16801c7');
+DEFINE('DB_PASSWORD','');
 DEFINE('DB_NAME','shejian100');
 
 $con = mysql_connect(DB_HOST,DB_USER,DB_PASSWORD);
